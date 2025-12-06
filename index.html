@@ -481,6 +481,12 @@
             }
             .logo { font-size: 2.2rem; }
             .form-wrapper { padding: 1.5rem; }
+            .smartscreen-notice > div[style*="grid-template-columns: repeat(2"] {
+                grid-template-columns: 1fr !important;
+            }
+            .smartscreen-notice div[style*="height: 280px"] {
+                height: 220px !important;
+            }
         }
     </style>
 </head>
@@ -682,6 +688,251 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Aviso SmartScreen -->
+            <div class="smartscreen-notice" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #fff9e6 0%, #fff 100%); border-radius: 12px; border: 1px solid #f0d060;">
+                <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                    <span style="font-size: 1.8rem;">🛡️</span>
+                    Aviso de Windows SmartScreen
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Al ejecutar la aplicación por primera vez, es posible que Windows muestre un aviso de seguridad indicando que "Windows protegió su PC". 
+                    <strong>Esto es completamente normal</strong> y ocurre con cualquier software descargado de Internet que no disponga de un certificado de firma de código comercial.
+                </p>
+                
+                <!-- Animación interactiva SmartScreen -->
+                <div class="smartscreen-demo">
+                    <div class="demo-container">
+                        <!-- Imagen 1: No ejecutar -->
+                        <div class="demo-slide" id="slide1">
+                            <img src="img/No ejecutar.png" alt="SmartScreen - Ventana inicial">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                        <!-- Imagen 2: Ejecutar de todos modos -->
+                        <div class="demo-slide" id="slide2">
+                            <img src="img/Ejecutados de todos modos.png" alt="SmartScreen - Ejecutar de todos modos">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container cursor-step2">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Indicadores de paso -->
+                    <div class="demo-steps">
+                        <div class="step-indicator active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-text">Clic en "Más información"</span>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step-indicator" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-text">Clic en "Ejecutar de todos modos"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .smartscreen-demo {
+                        background: white;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                    }
+                    
+                    .demo-container {
+                        position: relative;
+                        width: 100%;
+                        max-width: 500px;
+                        margin: 0 auto;
+                        aspect-ratio: 4/3;
+                        background: #ffffff;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+                        border: 1px solid #e0e0e0;
+                    }
+                    
+                    .demo-slide {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                    }
+                    
+                    .demo-slide.active {
+                        opacity: 1;
+                    }
+                    
+                    .demo-slide img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                    
+                    /* Cursor animado */
+                    .cursor-container {
+                        position: absolute;
+                        pointer-events: none;
+                        z-index: 10;
+                        /* Posición inicial fuera de vista */
+                        top: 30%;
+                        left: 20%;
+                        opacity: 0;
+                    }
+                    
+                    .cursor-icon {
+                        filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+                        transform-origin: top left;
+                    }
+                    
+                    .click-ripple {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background: rgba(255, 200, 0, 0.6);
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    
+                    /* Animación Paso 1: Cursor va a "Más información" */
+                    #slide1 .cursor-container {
+                        animation: cursor-move-step1 6s ease-in-out infinite;
+                    }
+                    
+                    #slide1 .click-ripple {
+                        animation: click-effect-step1 6s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step1 {
+                        0% { top: 50%; left: 50%; opacity: 0; }
+                        10% { top: 50%; left: 50%; opacity: 1; }
+                        40% { top: 26%; left: 22%; opacity: 1; }
+                        50% { top: 26%; left: 22%; opacity: 1; }
+                        55% { opacity: 0; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    @keyframes click-effect-step1 {
+                        0%, 40% { transform: scale(0); opacity: 0; }
+                        45% { transform: scale(1.5); opacity: 0.8; }
+                        50% { transform: scale(2); opacity: 0; }
+                        100% { transform: scale(0); opacity: 0; }
+                    }
+                    
+                    /* Animación Paso 2: Cursor va a "Ejecutar de todos modos" */
+                    #slide2 .cursor-container {
+                        animation: cursor-move-step2 6s ease-in-out infinite;
+                    }
+                    
+                    #slide2 .click-ripple {
+                        animation: click-effect-step2 6s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step2 {
+                        0%, 50% { top: 30%; left: 30%; opacity: 0; }
+                        55% { top: 30%; left: 30%; opacity: 1; }
+                        85% { top: 88%; left: 55%; opacity: 1; }
+                        95% { top: 88%; left: 55%; opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    @keyframes click-effect-step2 {
+                        0%, 85% { transform: scale(0); opacity: 0; }
+                        90% { transform: scale(1.5); opacity: 0.8; }
+                        95% { transform: scale(2); opacity: 0; }
+                        100% { transform: scale(0); opacity: 0; }
+                    }
+                    
+                    /* Indicadores de paso */
+                    .demo-steps {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        margin-top: 1.5rem;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .step-indicator {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        padding: 0.6rem 1rem;
+                        background: #f5f5f5;
+                        border-radius: 25px;
+                        transition: all 0.3s ease;
+                        opacity: 0.6;
+                    }
+                    
+                    .step-indicator.active {
+                        background: var(--accent);
+                        color: white;
+                        opacity: 1;
+                        transform: scale(1.05);
+                    }
+                    
+                    .step-num {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 22px;
+                        height: 22px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                    
+                    .step-indicator.active .step-num {
+                        background: rgba(255,255,255,0.3);
+                    }
+                    
+                    .step-text {
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                    }
+                    
+                    .step-arrow {
+                        color: var(--accent);
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    
+                    @media (max-width: 600px) {
+                        .demo-container {
+                            max-width: 100%;
+                        }
+                        .step-text {
+                            display: none;
+                        }
+                        .step-indicator {
+                            padding: 0.5rem 0.8rem;
+                        }
+                    }
+                </style>
+
+                <p style="font-size: 0.9rem; color: #666; background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                    <strong>¿Por qué ocurre esto?</strong> Windows SmartScreen advierte sobre aplicaciones que no tienen un certificado de firma de código comercial (con un coste de varios cientos de euros anuales). 
+                    Este aviso desaparece automáticamente en futuras ejecuciones. La aplicación es completamente segura y no contiene software malicioso.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -820,6 +1071,45 @@
                 alert('Hubo un problema al enviar el formulario. Por favor, inténtelo de nuevo.');
             });
         });
+
+        // =============================================
+        // 5. Animación SmartScreen Demo
+        // =============================================
+        (function() {
+            const slide1 = document.getElementById('slide1');
+            const slide2 = document.getElementById('slide2');
+            const stepIndicators = document.querySelectorAll('.step-indicator');
+            
+            if (!slide1 || !slide2) return;
+            
+            // Iniciar con slide1 activo
+            slide1.classList.add('active');
+            
+            // Duración de cada paso en ms (sincronizado con CSS animation de 6s)
+            const stepDuration = 3000;
+            let currentStep = 1;
+            
+            function switchSlide() {
+                if (currentStep === 1) {
+                    // Cambiar a paso 2
+                    slide1.classList.remove('active');
+                    slide2.classList.add('active');
+                    stepIndicators[0].classList.remove('active');
+                    stepIndicators[1].classList.add('active');
+                    currentStep = 2;
+                } else {
+                    // Volver a paso 1
+                    slide2.classList.remove('active');
+                    slide1.classList.add('active');
+                    stepIndicators[1].classList.remove('active');
+                    stepIndicators[0].classList.add('active');
+                    currentStep = 1;
+                }
+            }
+            
+            // Cambiar cada 3 segundos (la animación CSS dura 6s total, 3s por paso)
+            setInterval(switchSlide, stepDuration);
+        })();
     </script>
 
 </body>
