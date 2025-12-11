@@ -120,22 +120,21 @@
 
         /* Trial Highlight */
         .trial-highlight {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-            border: 1px solid #f0c674;
-            color: #856404;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #6c757d;
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
-            margin-bottom: 0.3rem;
+            display: block;
+            width: fit-content;
+            margin: 0.8rem auto 0.3rem auto;
             font-size: 0.9rem;
             animation: fadeInUp 0.6s ease-out 0.2s both;
         }
 
         .trial-highlight .highlight-icon {
             font-size: 1rem;
+            color: #495057;
         }
 
         @keyframes fadeInUp {
@@ -560,14 +559,14 @@
             <br><br>
             <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
             <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar y Probar Gratis</a>
-            <p class="download-counter" id="downloadCounter" style="display: none;">
-                <span class="counter-icon">📥</span>
-                <span class="counter-text">Más de <strong id="downloadCount">0</strong> descargas</span>
-            </p>
             <div class="trial-highlight">
                 <span class="highlight-icon">⚡</span>
                 <span class="highlight-text">5 días gratis • Sin compromiso • Funcionalidad completa</span>
             </div>
+            <p class="download-counter" id="downloadCounter" style="display: none;">
+                <span class="counter-icon">📥</span>
+                <span class="counter-text">Más de <strong id="downloadCount">0</strong> descargas</span>
+            </p>
             <p class="license-info">* Después del período de prueba requiere activación mediante licencia única.</p>
         </div>
     </header>
