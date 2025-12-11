@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de Delitos Leves | Herramienta Jurídica Profesional</title>
+    <!-- Favicon: Balanza de la Justicia (SVG en base64 para no depender de archivos externos) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f9f9f9;
+            --bg-white: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --accent: #2c3e50;
+            --accent-light: #34495e;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Header & Hero --- */
+        header {
+            background-color: var(--bg-white);
+            padding: 5rem 0 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-white);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+        }
+
+        .license-info {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Requirements Grid */
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .req-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .req-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .req-card ul {
+            list-style-type: none;
+            font-size: 0.95rem;
+        }
+
+        .req-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        .req-card li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            margin-top: 4rem;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta .btn-download {
+            background-color: white;
+            color: var(--accent);
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+        
+        .final-cta .btn-download:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- Content Sections --- */
+        .section {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-white);
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .text-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .text-block h3::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            margin-top: 1rem;
+        }
+
+        .text-block p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .image-block {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+            background-color: var(--white);
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-block:not(.panoramic) img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Efecto Panorámico para imágenes anchas */
+        .panoramic {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .panoramic img {
+            width: auto;
+            height: 100%;
+            max-width: none;
+            animation: panRight 15s linear infinite alternate;
+        }
+
+        @keyframes panRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% + 500px)); }
+        }
+        
+        @media (max-width: 768px) {
+             .panoramic { height: 200px; }
+             @keyframes panRight {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-100% + 300px)); }
+            }
+        }
+
+        /* Reverse layout for alternate sections */
+        .section.reverse .split-layout {
+            direction: rtl;
+        }
+        .section.reverse .split-layout > * {
+            direction: ltr;
+        }
+
+        /* --- Sección Activación (oculta por defecto) --- */
+        .section-activacion {
+            display: none;
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .section-activacion.visible {
+            display: block;
+        }
+
+        .section-activacion h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-activacion .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .form-wrapper {
+            max-width: 550px;
+            margin: 0 auto;
+            background: var(--bg-body);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+        }
+
+        .field {
+            margin-bottom: 1.25rem;
+        }
+
+        .field label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .field input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+        }
+
+        .field input[readonly] {
+            background-color: #fff;
+            color: var(--text-secondary);
+            cursor: default;
+        }
+
+        .field.hw-id input {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            background-color: #fef9e7;
+            border-color: #f4d03f;
+        }
+
+        .field small {
+            display: block;
+            margin-top: 0.3rem;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            width: 100%;
+            padding: 0.9rem 2rem;
+            background-color: var(--accent);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+        }
+
+        .info-box {
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            background: #fff;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+        }
+
+        .info-box ol {
+            margin: 0.4rem 0 0 1.1rem;
+            padding: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 0.2rem;
+        }
+
+        /* Mensaje de éxito */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message .icon {
+            font-size: 3rem;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message h3 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .success-message p {
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--accent);
+            color: rgba(255,255,255,0.8);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        /* Botón Volver Arriba */
+        .btn-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .btn-top:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .section.reverse .split-layout {
+                direction: ltr;
+            }
+            .logo { font-size: 2.2rem; }
+            .form-wrapper { padding: 1.5rem; }
+            .smartscreen-notice > div[style*="grid-template-columns: repeat(2"] {
+                grid-template-columns: 1fr !important;
+            }
+            .smartscreen-notice div[style*="height: 280px"] {
+                height: 220px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <div class="container">
+            <h1 class="logo">Procesador de Delitos Leves</h1>
+            <nav>
+                <a href="#caracteristicas">Características</a>
+                <a href="#requisitos">Requisitos e Instalación</a>
+                <a href="#descarga" style="font-weight: bold;">Descargar</a>
+                <a id="nav-activacion">Activación</a>
+            </nav>
+            <br><br>
+            <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
+            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar Aplicación</a>
+            <p class="license-info">* Requiere activación mediante licencia única.</p>
+        </div>
+    </header>
+
+    <!-- Sección Activación (oculta por defecto) -->
+    <section class="section-activacion" id="activacion">
+        <div class="container">
+            <h2>Solicitud de Activación</h2>
+            <p class="section-subtitle">Complete el formulario para iniciar el proceso de activación de su licencia</p>
+
+            <div class="form-wrapper">
+                <form id="activation-form" action="https://formspree.io/f/mqarlngo" method="POST">
+                    
+                    <div class="field">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre completo" required>
+                        <small id="nombre-hint">Debe coincidir exactamente con el introducido en la aplicación</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="destino">Destino judicial</label>
+                        <input type="text" id="destino" name="destino" placeholder="Ej: Juzgado de Instrucción Nº 1 de Madrid">
+                    </div>
+
+                    <div class="field hw-id">
+                        <label for="hw_id">ID de Hardware</label>
+                        <input type="text" id="hw_id" name="hw_id" placeholder="Consulte este dato en la aplicación" required>
+                        <small>Identificador único de su equipo (visible en la ventana de activación)</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Correo electrónico de contacto</label>
+                        <input type="email" id="email" name="email" placeholder="Introduzca su correo electrónico..." required>
+                    </div>
+
+                    <!-- Campos ocultos -->
+                    <input type="hidden" id="juzgado" name="juzgado">
+                    <input type="hidden" id="numero" name="numero">
+                    <input type="hidden" id="partido" name="partido">
+
+                    <button type="submit" class="btn-submit">Enviar Solicitud</button>
+
+                    <div class="info-box">
+                        <strong>Proceso de activación</strong>
+                        <ol>
+                            <li>Al enviar este formulario, recibirá un correo electrónico con las instrucciones para la facturación.</li>
+                            <li>Una vez verificado el pago, le enviaremos su código de activación personalizado.</li>
+                            <li>Introduzca el código en la aplicación para completar la activación.</li>
+                        </ol>
+                    </div>
+                </form>
+
+                <!-- Mensaje de éxito -->
+                <div class="success-message" id="success-message">
+                    <div class="icon">✓</div>
+                    <h3>Solicitud Enviada</h3>
+                    <p>Hemos recibido su solicitud de activación.</p>
+                    <p>Recibirá un correo con las instrucciones de facturación.</p>
+                    <p style="margin-top: 0.8rem; font-size: 0.85rem;">Una vez verificado el pago, le enviaremos su código de activación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 1: Interfaz Principal -->
+    <section class="section" id="caracteristicas">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Entorno de Trabajo Optimizado</h3>
+                    <p>La interfaz principal ha sido diseñada para minimizar las distracciones y maximizar la eficiencia.</p>
+                    <p>Todos los campos necesarios para la estructuración de la sentencia están accesibles en una sola vista, permitiendo un flujo de trabajo lineal y lógico, desde los antecedentes de hecho hasta el fallo.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/interfaz_principal.png" alt="Interfaz Principal de la Aplicación">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Gestión de Partes -->
+    <section class="section reverse">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Gestión Flexible de Partes</h3>
+                    <p>Adapte cada sentencia a la realidad del caso. El sistema permite gestionar múltiples intervinientes, diferenciando claramente entre denunciantes y denunciados.</p>
+                    <p>La herramienta ajusta automáticamente la concordancia gramatical y la estructura del texto legal según los sujetos introducidos, ahorrando tiempo en revisiones formales.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/partes.png" alt="Gestión de Denunciantes y Denunciados">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Repositorio de Argumentos -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Repositorio Jurídico Inteligente</h3>
+                    <p>Acceda a una base de conocimientos predefinida y personalizable. Seleccione argumentos jurídicos estandarizados para absoluciones, condenas o cuestiones procesales con un solo clic.</p>
+                    <p>Esta funcionalidad garantiza la consistencia legal de sus resoluciones y agiliza drásticamente la redacción de los fundamentos de derecho.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/argumentos.png" alt="Repositorio de Argumentos Jurídicos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nueva 1: Hechos Probados Dinámicos -->
+    <section class="section reverse">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Redacción Dinámica de Hechos</h3>
+                    <p>La herramienta ofrece flexibilidad total en la estructuración de la sentencia. Puede optar por un relato de hechos único o desglosarlo en apartados numerados ("Primero", "Segundo", "Tercero") para casos complejos.</p>
+                    <p>Esta versatilidad permite mantener el rigor expositivo sin importar la complejidad del litigio, adaptando la interfaz automáticamente a sus necesidades.</p>
+                </div>
+                <div class="image-block panoramic">
+                    <img src="img/hechos_probados.png" alt="Redacción de Hechos Probados con Múltiples Apartados">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nueva 2: Cálculo y Alerta de Penas -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Control Inteligente de Penas</h3>
+                    <p>El asistente de penas no solo calcula, sino que previene errores materiales. El sistema destaca visualmente (en rojo) las incongruencias o advertencias críticas al seleccionar tipos de condena como multas o trabajos comunitarios.</p>
+                    <p>Esta validación en tiempo real actúa como un segundo par de ojos, asegurando que el fallo cumpla con los requisitos legales antes de su redacción final.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/calculo_penas.png" alt="Alerta Visual en Cálculo de Penas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Configuración -->
+    <section class="section reverse">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Personalización y Control</h3>
+                    <p>Configure los parámetros de su juzgado, su firma y sus preferencias visuales.</p>
+                    <p>La aplicación se adapta a su identidad judicial, manteniendo sus datos seguros y accesibles para la generación automática de encabezados y pies de firma.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/configuracion.png" alt="Panel de Configuración">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Dictado por Voz -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Dictado por Voz Integrado</h3>
+                    <p>Redacte sin tocar el teclado. La aplicación incorpora reconocimiento de voz que transcribe automáticamente sus palabras en tiempo real.</p>
+                    <p>Active el micrófono con un solo clic y dicte directamente los hechos probados, notas o cualquier campo de texto. Ideal para agilizar la redacción durante las vistas orales o cuando prefiera expresarse verbalmente.</p>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">* Requiere conexión a Internet para el reconocimiento de voz.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/dictado por voz.png" alt="Dictado por Voz con Reconocimiento Automático">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 6: Asistente de IA -->
+    <section class="section reverse">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Análisis Jurídico con Inteligencia Artificial</h3>
+                    <p>Obtenga un análisis automatizado de los hechos probados. El asistente de IA examina la subsunción de los hechos en el tipo delictivo seleccionado, citando la doctrina y jurisprudencia relevante incluida en la aplicación.</p>
+                    <p>Compatible con los modelos GPT-4 de OpenAI y Gemini de Google, permite elegir entre análisis breve, normal o detallado según sus necesidades.</p>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">* Requiere API Key propia de OpenAI o Google Gemini.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/informe IA.png" alt="Análisis Jurídico con Inteligencia Artificial">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 7: Resaltado de Cambios -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="text-block">
+                    <h3>Visualización de Cambios en Tiempo Real</h3>
+                    <p>Cada modificación que realice se resalta brevemente con un fondo amarillo que se desvanece gradualmente. Este sistema visual le permite identificar inmediatamente qué partes del texto de la sentencia han cambiado.</p>
+                    <p>Una herramienta sutil pero poderosa para mantener el control sobre sus ediciones, facilitando la revisión y el control de calidad antes de generar el documento final.</p>
+                </div>
+                <div class="image-block">
+                    <img src="img/control de cambios.png" alt="Resaltado Visual de Cambios en Tiempo Real">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 8: Requisitos e Instalación -->
+    <section class="section" id="requisitos" style="background-color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Requisitos Técnicos e Instalación</h2>
+            <div class="req-grid">
+                <div class="req-card">
+                    <h4>Requisitos del Sistema</h4>
+                    <ul>
+                        <li>Sistema Operativo: Windows 10 o Windows 11 (64-bits).</li>
+                        <li>Resolución de pantalla: 1366x768 o superior.</li>
+                        <li>Espacio en disco: 100 MB libres.</li>
+                        <li>Permisos: No requiere permisos de administrador para ejecutarse.</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>Guía de Instalación</h4>
+                    <ul>
+                        <li>1. Descargue el archivo comprimido desde el botón de descarga.</li>
+                        <li>2. Descomprima el archivo en una carpeta de su elección (ej: Documentos).</li>
+                        <li>3. Ejecute el archivo principal (.exe).</li>
+                        <li>4. Siga las instrucciones en pantalla para la activación de su licencia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Aviso SmartScreen -->
+            <div class="smartscreen-notice" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #fff9e6 0%, #fff 100%); border-radius: 12px; border: 1px solid #f0d060;">
+                <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                    <span style="font-size: 1.8rem;">🛡️</span>
+                    Aviso de Windows SmartScreen
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Al ejecutar la aplicación por primera vez, es posible que Windows muestre un aviso de seguridad indicando que "Windows protegió su PC". 
+                    <strong>Esto es completamente normal</strong> y ocurre con cualquier software descargado de Internet que no disponga de un certificado de firma de código comercial.
+                </p>
+                
+                <!-- Animación interactiva SmartScreen -->
+                <div class="smartscreen-demo">
+                    <div class="demo-container">
+                        <!-- Imagen 1: No ejecutar -->
+                        <div class="demo-slide" id="slide1">
+                            <img src="img/No ejecutar.png" alt="SmartScreen - Ventana inicial">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                        <!-- Imagen 2: Ejecutar de todos modos -->
+                        <div class="demo-slide" id="slide2">
+                            <img src="img/Ejecutados de todos modos.png" alt="SmartScreen - Ejecutar de todos modos">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container cursor-step2">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Indicadores de paso -->
+                    <div class="demo-steps">
+                        <div class="step-indicator active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-text">Clic en "Más información"</span>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step-indicator" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-text">Clic en "Ejecutar de todos modos"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .smartscreen-demo {
+                        background: white;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                    }
+                    
+                    .demo-container {
+                        position: relative;
+                        width: 100%;
+                        max-width: 500px;
+                        margin: 0 auto;
+                        aspect-ratio: 4/3;
+                        background: #ffffff;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+                        border: 1px solid #e0e0e0;
+                    }
+                    
+                    .demo-slide {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                    }
+                    
+                    .demo-slide.active {
+                        opacity: 1;
+                    }
+                    
+                    .demo-slide img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                    
+                    /* Cursor animado */
+                    .cursor-container {
+                        position: absolute;
+                        pointer-events: none;
+                        z-index: 10;
+                        /* Posición inicial fuera de vista */
+                        top: 30%;
+                        left: 20%;
+                        opacity: 0;
+                    }
+                    
+                    .cursor-icon {
+                        filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+                        transform-origin: top left;
+                    }
+                    
+                    .click-ripple {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background: rgba(255, 200, 0, 0.6);
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    
+                    /* Animación Paso 1: Cursor va a "Más información" */
+                    #slide1 .cursor-container {
+                        animation: cursor-move-step1 6s ease-in-out infinite;
+                    }
+                    
+                    #slide1 .click-ripple {
+                        animation: click-effect-step1 6s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step1 {
+                        0% { top: 50%; left: 50%; opacity: 0; }
+                        10% { top: 50%; left: 50%; opacity: 1; }
+                        40% { top: 26%; left: 22%; opacity: 1; }
+                        50% { top: 26%; left: 22%; opacity: 1; }
+                        55% { opacity: 0; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    @keyframes click-effect-step1 {
+                        0%, 40% { transform: scale(0); opacity: 0; }
+                        45% { transform: scale(1.5); opacity: 0.8; }
+                        50% { transform: scale(2); opacity: 0; }
+                        100% { transform: scale(0); opacity: 0; }
+                    }
+                    
+                    /* Animación Paso 2: Cursor va a "Ejecutar de todos modos" */
+                    #slide2 .cursor-container {
+                        animation: cursor-move-step2 6s ease-in-out infinite;
+                    }
+                    
+                    #slide2 .click-ripple {
+                        animation: click-effect-step2 6s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step2 {
+                        0%, 50% { top: 30%; left: 30%; opacity: 0; }
+                        55% { top: 30%; left: 30%; opacity: 1; }
+                        85% { top: 88%; left: 55%; opacity: 1; }
+                        95% { top: 88%; left: 55%; opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    @keyframes click-effect-step2 {
+                        0%, 85% { transform: scale(0); opacity: 0; }
+                        90% { transform: scale(1.5); opacity: 0.8; }
+                        95% { transform: scale(2); opacity: 0; }
+                        100% { transform: scale(0); opacity: 0; }
+                    }
+                    
+                    /* Indicadores de paso */
+                    .demo-steps {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        margin-top: 1.5rem;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .step-indicator {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        padding: 0.6rem 1rem;
+                        background: #f5f5f5;
+                        border-radius: 25px;
+                        transition: all 0.3s ease;
+                        opacity: 0.6;
+                    }
+                    
+                    .step-indicator.active {
+                        background: var(--accent);
+                        color: white;
+                        opacity: 1;
+                        transform: scale(1.05);
+                    }
+                    
+                    .step-num {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 22px;
+                        height: 22px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                    
+                    .step-indicator.active .step-num {
+                        background: rgba(255,255,255,0.3);
+                    }
+                    
+                    .step-text {
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                    }
+                    
+                    .step-arrow {
+                        color: var(--accent);
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    
+                    @media (max-width: 600px) {
+                        .demo-container {
+                            max-width: 100%;
+                        }
+                        .step-text {
+                            display: none;
+                        }
+                        .step-indicator {
+                            padding: 0.5rem 0.8rem;
+                        }
+                    }
+                </style>
+
+                <p style="font-size: 0.9rem; color: #666; background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                    <strong>¿Por qué ocurre esto?</strong> Windows SmartScreen advierte sobre aplicaciones que no tienen un certificado de firma de código comercial (con un coste de varios cientos de euros anuales). 
+                    Este aviso desaparece automáticamente en futuras ejecuciones. La aplicación es completamente segura y no contiene software malicioso.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="descarga">
+        <div class="container">
+            <h2>Optimice su gestión judicial hoy mismo</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Únase a los profesionales que ya han modernizado su flujo de trabajo con una herramienta diseñada a medida para sus necesidades.</p>
+            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar Ahora</a>
+            <p class="license-info" style="color: rgba(255,255,255,0.6); margin-top: 1rem;">* Descarga segura desde GitHub</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Procesador de Delitos Leves. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">Desarrollado para el entorno Windows.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button class="btn-top" id="btnTop" title="Volver al inicio">↑</button>
+
+    <script>
+        // =============================================
+        // 1. Botón Volver Arriba
+        // =============================================
+        const btnTop = document.getElementById('btnTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btnTop.classList.add('visible');
+            } else {
+                btnTop.classList.remove('visible');
+            }
+        });
+
+        btnTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // =============================================
+        // 2. Sección de Activación
+        // =============================================
+        const seccionActivacion = document.getElementById('activacion');
+        const navActivacion = document.getElementById('nav-activacion');
+        const form = document.getElementById('activation-form');
+        const successMessage = document.getElementById('success-message');
+
+        // Mostrar sección y hacer scroll
+        function mostrarActivacion() {
+            seccionActivacion.classList.add('visible');
+            setTimeout(() => {
+                seccionActivacion.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        // Click en nav "Activación"
+        navActivacion.addEventListener('click', function(e) {
+            e.preventDefault();
+            mostrarActivacion();
+        });
+
+        // =============================================
+        // 3. Leer parámetros de URL (desde la app)
+        // =============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            const nombre = params.get('nombre');
+            const hwId = params.get('hw_id');
+            const juzgado = params.get('juzgado') || '';
+            const numero = params.get('numero') || '';
+            const partido = params.get('partido') || '';
+
+            // Si hay parámetros (viene desde la app), rellenar y bloquear campos
+            if (nombre || hwId) {
+                const campoNombre = document.getElementById('nombre');
+                const campoHwId = document.getElementById('hw_id');
+                const campoDestino = document.getElementById('destino');
+
+                // Rellenar y bloquear campos (deben coincidir con la licencia)
+                if (nombre) {
+                    campoNombre.value = decodeURIComponent(nombre);
+                    campoNombre.setAttribute('readonly', true);
+                }
+                if (hwId) {
+                    campoHwId.value = decodeURIComponent(hwId);
+                    campoHwId.setAttribute('readonly', true);
+                }
+                
+                // Campos ocultos
+                document.getElementById('juzgado').value = decodeURIComponent(juzgado);
+                document.getElementById('numero').value = decodeURIComponent(numero);
+                document.getElementById('partido').value = decodeURIComponent(partido);
+                
+                // Construir destino legible
+                if (juzgado || partido) {
+                    let destino = '';
+                    if (juzgado) destino += decodeURIComponent(juzgado);
+                    if (numero) destino += ' Nº ' + decodeURIComponent(numero);
+                    if (partido) destino += ' de ' + decodeURIComponent(partido);
+                    campoDestino.value = destino.trim();
+                    campoDestino.setAttribute('readonly', true);
+                }
+
+                // Mostrar sección automáticamente
+                mostrarActivacion();
+            }
+        });
+
+        // =============================================
+        // 4. Envío del formulario
+        // =============================================
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            })
+            .catch(error => {
+                alert('Hubo un problema al enviar el formulario. Por favor, inténtelo de nuevo.');
+            });
+        });
+
+        // =============================================
+        // 5. Animación SmartScreen Demo
+        // =============================================
+        (function() {
+            const slide1 = document.getElementById('slide1');
+            const slide2 = document.getElementById('slide2');
+            const stepIndicators = document.querySelectorAll('.step-indicator');
+            
+            if (!slide1 || !slide2) return;
+            
+            // Iniciar con slide1 activo
+            slide1.classList.add('active');
+            
+            // Duración de cada paso en ms (sincronizado con CSS animation de 6s)
+            const stepDuration = 3000;
+            let currentStep = 1;
+            
+            function switchSlide() {
+                if (currentStep === 1) {
+                    // Cambiar a paso 2
+                    slide1.classList.remove('active');
+                    slide2.classList.add('active');
+                    stepIndicators[0].classList.remove('active');
+                    stepIndicators[1].classList.add('active');
+                    currentStep = 2;
+                } else {
+                    // Volver a paso 1
+                    slide2.classList.remove('active');
+                    slide1.classList.add('active');
+                    stepIndicators[1].classList.remove('active');
+                    stepIndicators[0].classList.add('active');
+                    currentStep = 1;
+                }
+            }
+            
+            // Cambiar cada 3 segundos (la animación CSS dura 6s total, 3s por paso)
+            setInterval(switchSlide, stepDuration);
+        })();
+    </script>
+
+</body>
+</html>

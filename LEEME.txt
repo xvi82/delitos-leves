@@ -1,0 +1,26 @@
+INSTRUCCIONES PARA FINALIZAR LA WEB
+===================================
+
+He creado una página web elegante y sobria para tu aplicación. Para que quede perfecta, necesitas añadir las capturas de pantalla de tu programa.
+
+Sigue estos pasos sencillos:
+
+1. Abre tu aplicación "Procesador de Delitos Leves".
+2. Haz una captura de la pantalla principal y guárdala con el nombre: captura1.png
+3. Haz otra captura (por ejemplo, de la configuración o licencia) y guárdala como: captura2.png
+4. Mueve ambos archivos (.png) dentro de esta carpeta 'web_promocional'.
+
+5. Abre el archivo index.html con un editor de texto (o con el Bloc de Notas).
+   - Busca donde dice: <!-- <img src="captura1.png" ... -->
+   - Quita las flechas de comentario (<!-- y -->) para que quede así: <img src="captura1.png" alt="Interfaz Principal">
+   - Haz lo mismo con la segunda imagen.
+
+¡Listo! Ya puedes abrir index.html en tu navegador y verás la web terminada.
+
+
+
+
+
+
+
+
