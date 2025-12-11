@@ -506,6 +506,22 @@
             visibility: visible;
         }
 
+        /* CTA Trial Box */
+        .cta-trial-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+            border-left: 4px solid #28a745;
+            padding: 1rem 1.2rem;
+            margin-top: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.1);
+        }
+
+        .cta-trial-box strong {
+            color: #28a745;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .split-layout {
@@ -522,6 +538,10 @@
             }
             .smartscreen-notice div[style*="height: 280px"] {
                 height: 220px !important;
+            }
+            .cta-trial-box {
+                padding: 0.8rem 1rem;
+                margin-top: 1.2rem;
             }
         }
     </style>
@@ -616,6 +636,12 @@
                     <h3>Entorno de Trabajo Optimizado</h3>
                     <p>La interfaz principal ha sido diseñada para minimizar las distracciones y maximizar la eficiencia.</p>
                     <p>Todos los campos necesarios para la estructuración de la sentencia están accesibles en una sola vista, permitiendo un flujo de trabajo lineal y lógico, desde los antecedentes de hecho hasta el fallo.</p>
+
+                    <!-- Call-to-action del trial -->
+                    <div class="cta-trial-box">
+                        <strong>¡Pruébalo gratis 5 días!</strong><br>
+                        <span style="font-size: 0.9rem;">Descarga ahora y accede a todas las funcionalidades sin compromiso.</span>
+                    </div>
                 </div>
                 <div class="image-block">
                     <img src="img/interfaz_principal.png" alt="Interfaz Principal de la Aplicación">
