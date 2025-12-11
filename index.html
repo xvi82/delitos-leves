@@ -118,6 +118,26 @@
             font-weight: 600;
         }
 
+        /* Trial Highlight */
+        .trial-highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 1px solid #f0c674;
+            color: #856404;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .trial-highlight .highlight-icon {
+            font-size: 1rem;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -506,22 +526,6 @@
             visibility: visible;
         }
 
-        /* CTA Trial Box */
-        .cta-trial-box {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
-            border-left: 4px solid #28a745;
-            padding: 1rem 1.2rem;
-            margin-top: 1.5rem;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.1);
-        }
-
-        .cta-trial-box strong {
-            color: #28a745;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .split-layout {
@@ -539,10 +543,6 @@
             .smartscreen-notice div[style*="height: 280px"] {
                 height: 220px !important;
             }
-            .cta-trial-box {
-                padding: 0.8rem 1rem;
-                margin-top: 1.2rem;
-            }
         }
     </style>
 </head>
@@ -559,12 +559,16 @@
             </nav>
             <br><br>
             <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
-            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar Aplicación</a>
+            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar y Probar Gratis</a>
             <p class="download-counter" id="downloadCounter" style="display: none;">
                 <span class="counter-icon">📥</span>
                 <span class="counter-text">Más de <strong id="downloadCount">0</strong> descargas</span>
             </p>
-            <p class="license-info">* Requiere activación mediante licencia única.</p>
+            <div class="trial-highlight">
+                <span class="highlight-icon">⚡</span>
+                <span class="highlight-text">5 días gratis • Sin compromiso • Funcionalidad completa</span>
+            </div>
+            <p class="license-info">* Después del período de prueba requiere activación mediante licencia única.</p>
         </div>
     </header>
 
@@ -636,12 +640,6 @@
                     <h3>Entorno de Trabajo Optimizado</h3>
                     <p>La interfaz principal ha sido diseñada para minimizar las distracciones y maximizar la eficiencia.</p>
                     <p>Todos los campos necesarios para la estructuración de la sentencia están accesibles en una sola vista, permitiendo un flujo de trabajo lineal y lógico, desde los antecedentes de hecho hasta el fallo.</p>
-
-                    <!-- Call-to-action del trial -->
-                    <div class="cta-trial-box">
-                        <strong>¡Pruébalo gratis 5 días!</strong><br>
-                        <span style="font-size: 0.9rem;">Descarga ahora y accede a todas las funcionalidades sin compromiso.</span>
-                    </div>
                 </div>
                 <div class="image-block">
                     <img src="img/interfaz_principal.png" alt="Interfaz Principal de la Aplicación">
