@@ -93,6 +93,42 @@
             color: #888;
         }
 
+        /* Contador de descargas */
+        .download-counter {
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .download-counter .counter-icon {
+            font-size: 1.1rem;
+        }
+
+        .download-counter strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Navigation */
         nav {
             margin-top: 1.5rem;
@@ -504,6 +540,10 @@
             <br><br>
             <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
             <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar Aplicación</a>
+            <p class="download-counter" id="downloadCounter" style="display: none;">
+                <span class="counter-icon">📥</span>
+                <span class="counter-text">Más de <strong id="downloadCount">0</strong> descargas</span>
+            </p>
             <p class="license-info">* Requiere activación mediante licencia única.</p>
         </div>
     </header>
@@ -1159,6 +1199,45 @@
             
             // Cambiar cada 3 segundos (la animación CSS dura 6s total, 3s por paso)
             setInterval(switchSlide, stepDuration);
+        })();
+
+        // =============================================
+        // 6. Contador de Descargas (GitHub API)
+        // =============================================
+        (function() {
+            const MINIMUM_DOWNLOADS = 100; // Solo mostrar si hay >= 100 descargas
+            const counterElement = document.getElementById('downloadCounter');
+            const countElement = document.getElementById('downloadCount');
+            
+            if (!counterElement || !countElement) return;
+
+            // Consultar la API de GitHub Releases
+            fetch('https://api.github.com/repos/xvi82/delitos-leves/releases')
+                .then(response => response.json())
+                .then(releases => {
+                    // Sumar todas las descargas de todos los assets de todos los releases
+                    let totalDownloads = 0;
+                    
+                    releases.forEach(release => {
+                        if (release.assets && release.assets.length > 0) {
+                            release.assets.forEach(asset => {
+                                totalDownloads += asset.download_count || 0;
+                            });
+                        }
+                    });
+
+                    // Solo mostrar si supera el mínimo
+                    if (totalDownloads >= MINIMUM_DOWNLOADS) {
+                        // Redondear a la centena inferior para mostrar "Más de X"
+                        const roundedCount = Math.floor(totalDownloads / 100) * 100;
+                        countElement.textContent = roundedCount.toLocaleString('es-ES');
+                        counterElement.style.display = 'inline-flex';
+                    }
+                })
+                .catch(error => {
+                    // Si hay error, simplemente no mostramos el contador
+                    console.log('No se pudo obtener el contador de descargas');
+                });
         })();
     </script>
 
