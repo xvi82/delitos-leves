@@ -1,6 +1,6 @@
 {
     "version": "1.0.2",
     "fecha": "2025-12-15",
-    "novedades": "Introducción del sistema de actualizaciones",
+    "novedades": "- Nuevo: Sistema de comprobación de actualizaciones (Configuración → Avanzado)",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip"
 }
