@@ -1,7 +1,7 @@
 {
-    "version": "1.0.7",
+    "version": "1.0.8",
     "fecha": "2025-12-16",
-    "novedades": "Optimización de memoria: el diccionario de artículos del Código Penal ahora se define como constante a nivel de módulo (_ARTICULOS_CODIGO_PENAL) en lugar de recrearse en cada actualización de la vista previa de la sentencia, y se han convertido las listas de valores estáticos en Combobox a tuplas para reducir el uso de memoria.",
+    "novedades": "Se ha modificado la ventana de edición de argumentos para que, cuando se edita un argumento de tipo \"Motivo de Condena\" o \"Motivo de Absolución\" (guardados en la carpeta \"Argumentos para Sentencia\"), ahora se muestren correctamente los botones de referencias dinámicas ({denunciante}, {denunciado}, {denunciado_2}, {testigo}, {delito}, {delito_2}, {articulo}, {articulo_2}) que permiten insertar placeholders en el texto, funcionalidad que antes solo estaba disponible al crear el argumento pero no al editarlo; además, se ha aumentado la altura de la ventana de edición para argumentos normales a 25 líneas y se ha reducido el espacio del botón \"Guardar Cambios\" para optimizar el espacio disponible para el texto.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21583164
+    "file_size": 21585104
 }
