@@ -1,7 +1,7 @@
 {
     "version": "1.0.6",
     "fecha": "2025-12-16",
-    "novedades": "Mejoras y correcciones",
+    "novedades": "Fix: Corregido bug en validación de campos numéricos (solo_numeros) que permitía entradas inválidas como \"1..2\", \"1,,2\" o números con múltiples comas decimales",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21582605
+    "file_size": 21582380
 }
