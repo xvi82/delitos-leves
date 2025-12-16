@@ -1,7 +1,7 @@
 {
-    "version": "1.0.6",
+    "version": "1.0.7",
     "fecha": "2025-12-16",
-    "novedades": "Fix: Corregido bug en validación de campos numéricos (solo_numeros) que permitía entradas inválidas como \"1..2\", \"1,,2\" o números con múltiples comas decimales",
+    "novedades": "Optimización de memoria: el diccionario de artículos del Código Penal ahora se define como constante a nivel de módulo (_ARTICULOS_CODIGO_PENAL) en lugar de recrearse en cada actualización de la vista previa de la sentencia, y se han convertido las listas de valores estáticos en Combobox a tuplas para reducir el uso de memoria.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21582380
+    "file_size": 21583164
 }
