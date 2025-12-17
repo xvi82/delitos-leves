@@ -1,7 +1,7 @@
 {
-    "version": "1.0.10",
+    "version": "1.0.11",
     "fecha": "2025-12-17",
-    "novedades": "Se añadieron comandos de voz para insertar puntuación (punto, coma, etc.), capitalización automática después de puntos, y caché de calibración del micrófono para reducir el tiempo de espera de 1.5s a 0.5s en usos posteriores.",
+    "novedades": "Añadido botón \"Reportar un problema\" en Configuración > General que abre un formulario web para que los usuarios puedan informar de errores.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21587551
+    "file_size": 21588170
 }
