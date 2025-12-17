@@ -1,7 +1,7 @@
 {
-    "version": "1.0.11",
+    "version": "1.0.12",
     "fecha": "2025-12-17",
-    "novedades": "Añadido botón \"Reportar un problema\" en Configuración > General que abre un formulario web para que los usuarios puedan informar de errores.",
+    "novedades": "Añadida capitalización automática de nombres de las partes (denunciante, denunciados), convirtiendo \"juan de la torre\" en \"Juan de la Torre\" respetando partículas españolas (de, del, la, los, el, y).",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21588170
+    "file_size": 21588640
 }
