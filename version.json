@@ -1,7 +1,7 @@
 {
-    "version": "1.0.16",
+    "version": "1.0.17",
     "fecha": "2025-12-18",
-    "novedades": "Corregida función limpiar(): añadidas 17+ variables faltantes en funciones de restablecimiento, reset de estilos de entries para dte_2/dte_ddo, reset de borrador_abierto, y corregido el reset de textos de LabelFrames para 2 delitos y denuncias cruzadas.",
+    "novedades": "Añadida comprobación automática de actualizaciones cada 15 días al iniciar la aplicación (silenciosa, solo notifica si hay nueva versión disponible).",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21591860
+    "file_size": 21593924
 }
