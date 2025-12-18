@@ -1,7 +1,7 @@
 {
-    "version": "1.0.13",
-    "fecha": "2025-12-17",
-    "novedades": "Añadida capitalización automática de nombres (denunciante, denunciados, testigo, perito), convirtiendo \"juan de la torre\" en \"Juan de la Torre\" respetando partículas españolas (de, del, la, los, el, y).",
+    "version": "1.0.14",
+    "fecha": "2025-12-18",
+    "novedades": "Mejoras y correcciones",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
     "file_size": 21589299
 }
