@@ -1,7 +1,7 @@
 {
-    "version": "1.0.14",
+    "version": "1.0.15",
     "fecha": "2025-12-18",
-    "novedades": "Mejoras y correcciones",
+    "novedades": "Corrección de los nombres de hombres y mujeres, ampliación a 3.000 nombres en total",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21589299
+    "file_size": 21590983
 }
