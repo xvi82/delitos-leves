@@ -1,7 +1,7 @@
 {
-    "version": "1.0.17",
+    "version": "1.0.18",
     "fecha": "2025-12-18",
-    "novedades": "Añadida comprobación automática de actualizaciones cada 15 días al iniciar la aplicación (silenciosa, solo notifica si hay nueva versión disponible).",
+    "novedades": "Mejoras y correcciones",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21593924
+    "file_size": 21610941
 }
