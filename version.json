@@ -1,7 +1,7 @@
 {
-    "version": "1.0.19",
+    "version": "1.0.20",
     "fecha": "2025-12-19",
-    "novedades": " Reorganizada la ventana de configuración con 4 pestañas (Guardado, Apariencia, Extras, Ayuda), layout de 1 columna y ancho reducido a 400px para mejor legibilidad.",
+    "novedades": "Mejoras y correcciones",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21610537
+    "file_size": 21613539
 }
