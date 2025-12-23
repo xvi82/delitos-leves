@@ -904,12 +904,22 @@
                     <strong>Esto es completamente normal</strong> y ocurre con cualquier software descargado de Internet que no disponga de un certificado de firma de código comercial.
                 </p>
                 
-                <!-- Animación interactiva SmartScreen -->
-                <div class="smartscreen-demo">
+                <!-- Pestañas Windows 11 / Windows 10 -->
+                <div class="os-tabs">
+                    <button class="os-tab active" data-os="win11">
+                        <span class="os-icon">⊞</span> Windows 11
+                    </button>
+                    <button class="os-tab" data-os="win10">
+                        <span class="os-icon">⊞</span> Windows 10
+                    </button>
+                </div>
+
+                <!-- Animación interactiva SmartScreen - Windows 11 -->
+                <div class="smartscreen-demo" id="demo-win11">
                     <div class="demo-container">
                         <!-- Imagen 1: No ejecutar -->
-                        <div class="demo-slide" id="slide1">
-                            <img src="img/No ejecutar.png" alt="SmartScreen - Ventana inicial">
+                        <div class="demo-slide" id="slide1-win11">
+                            <img src="img/No ejecutar.png" alt="SmartScreen Windows 11 - Ventana inicial">
                             <!-- Cursor animado -->
                             <div class="cursor-container">
                                 <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
@@ -919,8 +929,8 @@
                             </div>
                         </div>
                         <!-- Imagen 2: Ejecutar de todos modos -->
-                        <div class="demo-slide" id="slide2">
-                            <img src="img/Ejecutados de todos modos.png" alt="SmartScreen - Ejecutar de todos modos">
+                        <div class="demo-slide" id="slide2-win11">
+                            <img src="img/Ejecutados de todos modos.png" alt="SmartScreen Windows 11 - Ejecutar de todos modos">
                             <!-- Cursor animado -->
                             <div class="cursor-container cursor-step2">
                                 <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
@@ -945,7 +955,87 @@
                     </div>
                 </div>
 
+                <!-- Animación interactiva SmartScreen - Windows 10 -->
+                <div class="smartscreen-demo" id="demo-win10" style="display: none;">
+                    <div class="demo-container">
+                        <!-- Imagen 1: Ventana inicial Win10 (desmarcar checkbox) -->
+                        <div class="demo-slide" id="slide1-win10">
+                            <img src="img/ejecutar en win10.png" alt="SmartScreen Windows 10 - Desmarcar checkbox">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                        <!-- Imagen 2: Botón Ejecutar Win10 -->
+                        <div class="demo-slide" id="slide2-win10">
+                            <img src="img/ejecutar de todos modos en win10.png" alt="SmartScreen Windows 10 - Botón Ejecutar">
+                            <!-- Cursor animado -->
+                            <div class="cursor-container cursor-step2">
+                                <svg class="cursor-icon" viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000" stroke="#fff" stroke-width="1" d="M4,4 L4,20 L8.5,15.5 L12,22 L14,21 L10.5,14.5 L17,14.5 Z"/>
+                                </svg>
+                                <div class="click-ripple"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Indicadores de paso -->
+                    <div class="demo-steps">
+                        <div class="step-indicator active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-text">Clic en "Preguntar siempre..."</span>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step-indicator" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-text">Clic en "Ejecutar"</span>
+                        </div>
+                    </div>
+                </div>
+
                 <style>
+                    /* Pestañas de Sistema Operativo */
+                    .os-tabs {
+                        display: flex;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .os-tab {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        padding: 0.7rem 1.5rem;
+                        background: #f5f5f5;
+                        border: 2px solid transparent;
+                        border-radius: 8px;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 0.95rem;
+                        font-weight: 500;
+                        color: var(--text-secondary);
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .os-tab:hover {
+                        background: #e8e8e8;
+                    }
+                    
+                    .os-tab.active {
+                        background: white;
+                        border-color: var(--accent);
+                        color: var(--accent);
+                        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+                    }
+                    
+                    .os-icon {
+                        font-size: 1.1rem;
+                    }
+
                     .smartscreen-demo {
                         background: white;
                         border-radius: 12px;
@@ -1015,53 +1105,87 @@
                         opacity: 0;
                     }
                     
-                    /* Animación Paso 1: Cursor va a "Más información" */
-                    #slide1 .cursor-container {
-                        animation: cursor-move-step1 6s ease-in-out infinite;
+                    /* Animación Paso 1: Cursor va a "Más información" - Windows 11 */
+                    #slide1-win11 .cursor-container {
+                        animation: cursor-move-step1-win11 3.2s ease-in-out infinite;
                     }
                     
-                    #slide1 .click-ripple {
-                        animation: click-effect-step1 6s ease-in-out infinite;
+                    #slide1-win11 .click-ripple {
+                        animation: click-effect-step1 3.2s ease-in-out infinite;
                     }
                     
-                    @keyframes cursor-move-step1 {
+                    @keyframes cursor-move-step1-win11 {
                         0% { top: 50%; left: 50%; opacity: 0; }
-                        10% { top: 50%; left: 50%; opacity: 1; }
-                        40% { top: 26%; left: 22%; opacity: 1; }
+                        15% { top: 50%; left: 50%; opacity: 1; }
                         50% { top: 26%; left: 22%; opacity: 1; }
-                        55% { opacity: 0; }
+                        90% { top: 26%; left: 22%; opacity: 1; }
                         100% { opacity: 0; }
                     }
                     
+                    /* Animación Paso 2: Cursor va a "Ejecutar de todos modos" - Windows 11 */
+                    #slide2-win11 .cursor-container {
+                        animation: cursor-move-step2-win11 3.2s ease-in-out infinite;
+                    }
+                    
+                    #slide2-win11 .click-ripple {
+                        animation: click-effect-step2 3.2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step2-win11 {
+                        0% { top: 30%; left: 30%; opacity: 0; }
+                        15% { top: 30%; left: 30%; opacity: 1; }
+                        50% { top: 88%; left: 55%; opacity: 1; }
+                        90% { top: 88%; left: 55%; opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    /* Efectos de click compartidos */
                     @keyframes click-effect-step1 {
-                        0%, 40% { transform: scale(0); opacity: 0; }
-                        45% { transform: scale(1.5); opacity: 0.8; }
-                        50% { transform: scale(2); opacity: 0; }
+                        0%, 50% { transform: scale(0); opacity: 0; }
+                        70% { transform: scale(1.5); opacity: 0.8; }
+                        90% { transform: scale(2); opacity: 0; }
                         100% { transform: scale(0); opacity: 0; }
-                    }
-                    
-                    /* Animación Paso 2: Cursor va a "Ejecutar de todos modos" */
-                    #slide2 .cursor-container {
-                        animation: cursor-move-step2 6s ease-in-out infinite;
-                    }
-                    
-                    #slide2 .click-ripple {
-                        animation: click-effect-step2 6s ease-in-out infinite;
-                    }
-                    
-                    @keyframes cursor-move-step2 {
-                        0%, 50% { top: 30%; left: 30%; opacity: 0; }
-                        55% { top: 30%; left: 30%; opacity: 1; }
-                        85% { top: 88%; left: 55%; opacity: 1; }
-                        95% { top: 88%; left: 55%; opacity: 1; }
-                        100% { opacity: 0; }
                     }
                     
                     @keyframes click-effect-step2 {
-                        0%, 85% { transform: scale(0); opacity: 0; }
-                        90% { transform: scale(1.5); opacity: 0.8; }
-                        95% { transform: scale(2); opacity: 0; }
+                        0%, 50% { transform: scale(0); opacity: 0; }
+                        70% { transform: scale(1.5); opacity: 0.8; }
+                        90% { transform: scale(2); opacity: 0; }
                         100% { transform: scale(0); opacity: 0; }
+                    }
+                    
+                    /* Animación Paso 1: Cursor va al checkbox "Preguntar siempre..." - Windows 10 */
+                    #slide1-win10 .cursor-container {
+                        animation: cursor-move-step1-win10 3.2s ease-in-out infinite;
+                    }
+                    
+                    #slide1-win10 .click-ripple {
+                        animation: click-effect-step1 3.2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step1-win10 {
+                        0% { top: 50%; left: 50%; opacity: 0; }
+                        15% { top: 50%; left: 50%; opacity: 1; }
+                        50% { top: 70%; left: 4%; opacity: 1; }
+                        90% { top: 70%; left: 4%; opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                    
+                    /* Animación Paso 2: Cursor va al botón "Ejecutar" - Windows 10 */
+                    #slide2-win10 .cursor-container {
+                        animation: cursor-move-step2-win10 3.2s ease-in-out infinite;
+                    }
+                    
+                    #slide2-win10 .click-ripple {
+                        animation: click-effect-step2 3.2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes cursor-move-step2-win10 {
+                        0% { top: 30%; left: 30%; opacity: 0; }
+                        15% { top: 30%; left: 30%; opacity: 1; }
+                        50% { top: 57%; left: 57%; opacity: 1; }
+                        90% { top: 57%; left: 57%; opacity: 1; }
+                        100% { opacity: 0; }
                     }
                     
                     /* Indicadores de paso */
@@ -1128,6 +1252,10 @@
                         }
                         .step-indicator {
                             padding: 0.5rem 0.8rem;
+                        }
+                        .os-tab {
+                            padding: 0.5rem 1rem;
+                            font-size: 0.85rem;
                         }
                     }
                 </style>
@@ -1266,42 +1394,185 @@
         });
 
         // =============================================
-        // 5. Animación SmartScreen Demo
+        // 5. Animación SmartScreen Demo (con pestañas Win10/Win11)
         // =============================================
         (function() {
-            const slide1 = document.getElementById('slide1');
-            const slide2 = document.getElementById('slide2');
-            const stepIndicators = document.querySelectorAll('.step-indicator');
+            // Referencias a elementos
+            const osTabs = document.querySelectorAll('.os-tab');
+            const demoWin11 = document.getElementById('demo-win11');
+            const demoWin10 = document.getElementById('demo-win10');
             
-            if (!slide1 || !slide2) return;
+            // Slides Windows 11
+            const slide1Win11 = document.getElementById('slide1-win11');
+            const slide2Win11 = document.getElementById('slide2-win11');
+            const stepsWin11 = demoWin11 ? demoWin11.querySelectorAll('.step-indicator') : [];
             
-            // Iniciar con slide1 activo
-            slide1.classList.add('active');
+            // Slides Windows 10
+            const slide1Win10 = document.getElementById('slide1-win10');
+            const slide2Win10 = document.getElementById('slide2-win10');
+            const stepsWin10 = demoWin10 ? demoWin10.querySelectorAll('.step-indicator') : [];
             
-            // Duración de cada paso en ms (sincronizado con CSS animation de 6s)
-            const stepDuration = 3000;
-            let currentStep = 1;
+            if (!slide1Win11 || !slide2Win11) return;
             
-            function switchSlide() {
-                if (currentStep === 1) {
-                    // Cambiar a paso 2
-                    slide1.classList.remove('active');
-                    slide2.classList.add('active');
-                    stepIndicators[0].classList.remove('active');
-                    stepIndicators[1].classList.add('active');
-                    currentStep = 2;
+            // Estado
+            let currentOS = 'win11';
+            let currentStepWin11 = 1;
+            let currentStepWin10 = 1;
+            
+            // Iniciar con slide1 activo en ambos
+            slide1Win11.classList.add('active');
+            if (slide1Win10) slide1Win10.classList.add('active');
+            
+            // Función para reiniciar animaciones de un contenedor
+            function restartAnimations(container) {
+                const cursors = container.querySelectorAll('.cursor-container');
+                const ripples = container.querySelectorAll('.click-ripple');
+                
+                // Forzar reinicio de animaciones quitando y añadiendo el estilo
+                [...cursors, ...ripples].forEach(el => {
+                    el.style.animation = 'none';
+                    el.offsetHeight; // Forzar reflow
+                    el.style.animation = '';
+                });
+            }
+            
+            // Función para cambiar de pestaña
+            function switchOS(os) {
+                currentOS = os;
+                
+                // Actualizar pestañas
+                osTabs.forEach(tab => {
+                    if (tab.dataset.os === os) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+                
+                // Mostrar/ocultar demos y resetear estado
+                if (os === 'win11') {
+                    demoWin11.style.display = 'block';
+                    demoWin10.style.display = 'none';
+                    
+                    // Resetear a slide 1
+                    slide1Win11.classList.add('active');
+                    slide2Win11.classList.remove('active');
+                    stepsWin11[0].classList.add('active');
+                    stepsWin11[1].classList.remove('active');
+                    currentStepWin11 = 1;
+                    
+                    // Reiniciar animaciones
+                    restartAnimations(demoWin11);
                 } else {
-                    // Volver a paso 1
-                    slide2.classList.remove('active');
-                    slide1.classList.add('active');
-                    stepIndicators[1].classList.remove('active');
-                    stepIndicators[0].classList.add('active');
-                    currentStep = 1;
+                    demoWin11.style.display = 'none';
+                    demoWin10.style.display = 'block';
+                    
+                    // Resetear a slide 1
+                    if (slide1Win10 && slide2Win10) {
+                        slide1Win10.classList.add('active');
+                        slide2Win10.classList.remove('active');
+                        stepsWin10[0].classList.add('active');
+                        stepsWin10[1].classList.remove('active');
+                        currentStepWin10 = 1;
+                        
+                        // Reiniciar animaciones
+                        restartAnimations(demoWin10);
+                    }
                 }
             }
             
-            // Cambiar cada 3 segundos (la animación CSS dura 6s total, 3s por paso)
-            setInterval(switchSlide, stepDuration);
+            // Detectar versión de Windows del usuario
+            async function detectWindowsVersion() {
+                // Intentar usar userAgentData (más preciso para Windows 11)
+                if (navigator.userAgentData && navigator.userAgentData.platform === 'Windows') {
+                    try {
+                        const ua = await navigator.userAgentData.getHighEntropyValues(['platformVersion']);
+                        const majorVersion = parseInt(ua.platformVersion.split('.')[0]);
+                        // Windows 11 tiene platformVersion >= 13
+                        if (majorVersion >= 13) {
+                            return 'win11';
+                        } else {
+                            return 'win10';
+                        }
+                    } catch (e) {
+                        // Si falla, continuar con el método tradicional
+                    }
+                }
+                
+                // Método tradicional usando userAgent (no puede distinguir Win10/11 con certeza)
+                const ua = navigator.userAgent;
+                if (ua.includes('Windows NT 10.0')) {
+                    // Windows 10 y 11 comparten "Windows NT 10.0"
+                    // Por defecto mostramos Windows 11 (más reciente)
+                    return 'win11';
+                }
+                
+                return 'win11'; // Por defecto
+            }
+            
+            // Detectar y mostrar la pestaña correcta según el SO del usuario
+            detectWindowsVersion().then(detectedOS => {
+                switchOS(detectedOS);
+            });
+            
+            // Event listeners para pestañas
+            osTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    switchOS(this.dataset.os);
+                });
+            });
+            
+            // Duración de cada paso en ms (3.2s para dar tiempo a ver el click)
+            const stepDuration = 3200;
+            
+            function switchSlideWin11() {
+                // Solo ejecutar si Win11 está activo
+                if (currentOS !== 'win11') return;
+                
+                if (currentStepWin11 === 1) {
+                    slide1Win11.classList.remove('active');
+                    slide2Win11.classList.add('active');
+                    stepsWin11[0].classList.remove('active');
+                    stepsWin11[1].classList.add('active');
+                    currentStepWin11 = 2;
+                } else {
+                    slide2Win11.classList.remove('active');
+                    slide1Win11.classList.add('active');
+                    stepsWin11[1].classList.remove('active');
+                    stepsWin11[0].classList.add('active');
+                    currentStepWin11 = 1;
+                }
+                
+                // Reiniciar animaciones del slide activo
+                restartAnimations(demoWin11);
+            }
+            
+            function switchSlideWin10() {
+                // Solo ejecutar si Win10 está activo
+                if (currentOS !== 'win10') return;
+                if (!slide1Win10 || !slide2Win10) return;
+                
+                if (currentStepWin10 === 1) {
+                    slide1Win10.classList.remove('active');
+                    slide2Win10.classList.add('active');
+                    stepsWin10[0].classList.remove('active');
+                    stepsWin10[1].classList.add('active');
+                    currentStepWin10 = 2;
+                } else {
+                    slide2Win10.classList.remove('active');
+                    slide1Win10.classList.add('active');
+                    stepsWin10[1].classList.remove('active');
+                    stepsWin10[0].classList.add('active');
+                    currentStepWin10 = 1;
+                }
+                
+                // Reiniciar animaciones del slide activo
+                restartAnimations(demoWin10);
+            }
+            
+            // Animaciones independientes para cada OS
+            setInterval(switchSlideWin11, stepDuration);
+            setInterval(switchSlideWin10, stepDuration);
         })();
 
         // =============================================
