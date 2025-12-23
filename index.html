@@ -458,6 +458,83 @@
             margin-bottom: 0.2rem;
         }
 
+        /* Caja de precio */
+        .price-box {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        .price-amount {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .price-iva {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.2rem;
+        }
+
+        /* Botón de pago */
+        .btn-pay {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        .btn-pay:hover {
+            background: linear-gradient(135deg, #219a52 0%, #27ae60 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Info de pago */
+        .payment-info {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .payment-methods {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .payment-methods strong {
+            color: #635bff;
+            font-weight: 600;
+        }
+
+        .payment-cards {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
         /* Mensaje de éxito */
         .success-message {
             display: none;
@@ -554,7 +631,7 @@
                 <a href="#caracteristicas">Características</a>
                 <a href="#requisitos">Requisitos e Instalación</a>
                 <a href="#descarga" style="font-weight: bold;">Descargar</a>
-                <a id="nav-activacion">Activación</a>
+                <a id="nav-activacion">Comprar Licencia</a>
             </nav>
             <br><br>
             <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
@@ -571,24 +648,31 @@
         </div>
     </header>
 
-    <!-- Sección Activación (oculta por defecto) -->
+    <!-- Sección Activación / Compra de Licencia (oculta por defecto) -->
     <section class="section-activacion" id="activacion">
         <div class="container">
-            <h2>Solicitud de Activación</h2>
-            <p class="section-subtitle">Complete el formulario para iniciar el proceso de activación de su licencia</p>
+            <h2>Adquirir Licencia Permanente</h2>
+            <p class="section-subtitle">Complete el formulario para proceder al pago seguro</p>
 
             <div class="form-wrapper">
-                <form id="activation-form" action="https://formspree.io/f/mqarlngo" method="POST">
+                <!-- Precio destacado -->
+                <div class="price-box">
+                    <span class="price-label">Licencia permanente</span>
+                    <span class="price-amount">300 €</span>
+                    <span class="price-iva">IVA incluido</span>
+                </div>
+
+                <form id="activation-form" action="https://web-production-d6fd5.up.railway.app/crear-sesion-pago" method="POST">
                     
                     <div class="field">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre completo" required>
-                        <small id="nombre-hint">Debe coincidir exactamente con el introducido en la aplicación</small>
+                        <small id="nombre-hint">⚠️ Debe coincidir exactamente con el introducido en la aplicación</small>
                     </div>
 
                     <div class="field">
-                        <label for="destino">Destino judicial</label>
-                        <input type="text" id="destino" name="destino" placeholder="Ej: Juzgado de Instrucción Nº 1 de Madrid">
+                        <label for="destino">Destino judicial <span style="color: #999; font-weight: normal;">(informativo)</span></label>
+                        <input type="text" id="destino" name="destino_info" placeholder="Ej: Juzgado de Instrucción Nº 1 de Madrid" readonly>
                     </div>
 
                     <div class="field hw-id">
@@ -598,35 +682,41 @@
                     </div>
 
                     <div class="field">
-                        <label for="email">Correo electrónico de contacto</label>
-                        <input type="email" id="email" name="email" placeholder="Introduzca su correo electrónico..." required>
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="Recibirá aquí su código de licencia" required>
+                        <small>A este correo se enviará su código de activación tras el pago</small>
                     </div>
 
-                    <!-- Campos ocultos -->
+                    <!-- Campos ocultos para compatibilidad -->
                     <input type="hidden" id="juzgado" name="juzgado">
                     <input type="hidden" id="numero" name="numero">
                     <input type="hidden" id="partido" name="partido">
 
-                    <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                    <button type="submit" class="btn-submit btn-pay">
+                        <span class="btn-icon">💳</span>
+                        Proceder al Pago Seguro
+                    </button>
+
+                    <div class="payment-info">
+                        <div class="payment-methods">
+                            <span>🔒 Pago seguro con</span>
+                            <strong>Stripe</strong>
+                        </div>
+                        <div class="payment-cards">
+                            Visa · Mastercard · American Express
+                        </div>
+                    </div>
 
                     <div class="info-box">
-                        <strong>Proceso de activación</strong>
+                        <strong>Proceso de compra</strong>
                         <ol>
-                            <li>Al enviar este formulario, recibirá un correo electrónico con las instrucciones para la facturación.</li>
-                            <li>Una vez verificado el pago, le enviaremos su código de activación personalizado.</li>
-                            <li>Introduzca el código en la aplicación para completar la activación.</li>
+                            <li>Complete los datos y haga clic en "Proceder al Pago Seguro".</li>
+                            <li>Será redirigido a la pasarela segura de Stripe para introducir su tarjeta.</li>
+                            <li>Una vez confirmado el pago, recibirá automáticamente su código de activación por email.</li>
+                            <li>Introduzca el código en la aplicación para activar su licencia.</li>
                         </ol>
                     </div>
                 </form>
-
-                <!-- Mensaje de éxito -->
-                <div class="success-message" id="success-message">
-                    <div class="icon">✓</div>
-                    <h3>Solicitud Enviada</h3>
-                    <p>Hemos recibido su solicitud de activación.</p>
-                    <p>Recibirá un correo con las instrucciones de facturación.</p>
-                    <p style="margin-top: 0.8rem; font-size: 0.85rem;">Una vez verificado el pago, le enviaremos su código de activación.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1093,7 +1183,6 @@
         const seccionActivacion = document.getElementById('activacion');
         const navActivacion = document.getElementById('nav-activacion');
         const form = document.getElementById('activation-form');
-        const successMessage = document.getElementById('success-message');
 
         // Mostrar sección y hacer scroll
         function mostrarActivacion() {
@@ -1158,31 +1247,21 @@
         });
 
         // =============================================
-        // 4. Envío del formulario
+        // 4. Validación del formulario antes de enviar
         // =============================================
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const hwId = document.getElementById('hw_id').value.trim();
+            const email = document.getElementById('email').value.trim();
             
-            const formData = new FormData(form);
+            if (!nombre || !hwId || !email) {
+                e.preventDefault();
+                alert('Por favor, complete todos los campos obligatorios.');
+                return false;
+            }
             
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                } else {
-                    throw new Error('Error en el envío');
-                }
-            })
-            .catch(error => {
-                alert('Hubo un problema al enviar el formulario. Por favor, inténtelo de nuevo.');
-            });
+            // El formulario se envía normalmente al servidor de pagos
+            // No necesitamos preventDefault() - dejamos que haga el POST
         });
 
         // =============================================
