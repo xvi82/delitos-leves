@@ -1,7 +1,7 @@
 {
-    "version": "1.0.22",
+    "version": "1.0.23",
     "fecha": "2025-12-25",
-    "novedades": "& \"c:/Users/xvi82/PycharmProjects/Procesador de Delitos Leves/Pruebas/Delitos Leves Cursor/.venv/Scripts/python.exe\" \"c:/Users/xvi82/PycharmProjects/Procesador de Delitos Leves/Pruebas/Delitos Leves Cursor/main26.py\"",
+    "novedades": "Corregido el texto descriptivo en la ventana de configuración que se cortaba y no mostraba completo, ajustando el wraplength de 420 a 350 píxeles para que se adapte correctamente al ancho de la ventana.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25157803
+    "file_size": 25158034
 }
