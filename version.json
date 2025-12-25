@@ -1,7 +1,7 @@
 {
-    "version": "1.0.21",
+    "version": "1.0.22",
     "fecha": "2025-12-25",
-    "novedades": "Mejoras de UX en la pantalla de bienvenida\nCapitalización automática del nombre del Juez respetando partículas españolas (de, del, la)\nAutocompletado en Partido Judicial que sugiere y filtra mientras escribes",
+    "novedades": "Nueva opción en Configuración > Extras para habilitar la protección de borradores con contraseña, permitiendo guardar archivos cifrados (.pdlx) que se pueden abrir tanto desde el menú como arrastrándolos a la aplicación.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21614236
+    "file_size": 25157803
 }
