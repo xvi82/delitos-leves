@@ -1,7 +1,7 @@
 {
     "version": "1.0.21",
     "fecha": "2025-12-25",
-    "novedades": "Mejoras y correcciones",
+    "novedades": "Añadida capitalización automática del nombre del Juez y autocompletado con sugerencias en el campo de Partido Judicial en la pantalla de bienvenida.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 21613539
+    "file_size": 21616198
 }
