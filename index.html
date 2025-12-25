@@ -8,7 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-body: #f9f9f9;
@@ -861,6 +861,26 @@
                 display: none;
             }
         }
+
+        /* ========================================
+           TÍTULOS CON PESO DINÁMICO
+           ======================================== */
+        
+        .text-block h3 {
+            font-variation-settings: 'wght' 400;
+            transition: font-variation-settings 0.3s ease;
+        }
+
+        /* Fallback para fuentes sin variable font */
+        @supports not (font-variation-settings: 'wght' 400) {
+            .text-block h3 {
+                font-weight: 400;
+                transition: font-weight 0.3s ease;
+            }
+            .text-block h3.weight-bold {
+                font-weight: 700;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1097,7 +1117,7 @@
                 <div class="text-block">
                     <h3>Asistencia inteligente en cada campo</h3>
                     <p>Cada campo de texto de la aplicación incorpora tres herramientas de IA accesibles con un solo clic, diseñadas para acelerar y mejorar su redacción:</p>
-                    <p><strong>✏️ Corrección ortográfica:</strong> Revisa y corrige automáticamente errores ortográficos y gramaticales, manteniendo el estilo y estructura original del texto.</p>
+                    <p><strong><span style="font-family: Georgia, serif; font-size: 1.1em; color: #555;">Aa</span> Corrección ortográfica:</strong> Revisa y corrige automáticamente errores ortográficos y gramaticales, manteniendo el estilo y estructura original del texto.</p>
                     <p><strong>✨ Reescritura jurídica:</strong> Transforma su texto en un lenguaje técnico-jurídico apropiado, adaptándose al contexto (hechos probados o fundamentos de derecho).</p>
                     <p><strong>🔗 Revisión de coherencia:</strong> Analiza el texto en busca de inconsistencias, contradicciones o problemas de estructura lógica.</p>
                     <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">* Requiere API Key de OpenAI o Google Gemini y conexión a Internet.</p>
@@ -2177,6 +2197,58 @@
             });
 
             updateShadows();
+        })();
+
+        // =============================================
+        // 13. Títulos con Peso Dinámico
+        // =============================================
+        (function() {
+            const titles = document.querySelectorAll('.text-block h3');
+            
+            if (titles.length === 0) return;
+
+            function updateTitleWeights() {
+                const windowHeight = window.innerHeight;
+                const optimalPosition = windowHeight * 0.35; // Posición óptima (35% desde arriba)
+
+                titles.forEach(title => {
+                    const rect = title.getBoundingClientRect();
+                    const titleCenter = rect.top + rect.height / 2;
+                    
+                    // Solo procesar si está visible
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        // Calcular distancia a la posición óptima
+                        const distance = Math.abs(titleCenter - optimalPosition);
+                        const maxDistance = windowHeight * 0.5;
+                        
+                        // Calcular peso: 700 cuando está en posición óptima, 400 cuando está lejos
+                        const progress = Math.max(0, 1 - (distance / maxDistance));
+                        const weight = Math.round(400 + (progress * 300)); // 400 a 700
+                        
+                        // Aplicar peso
+                        if (CSS.supports('font-variation-settings', '"wght" 400')) {
+                            title.style.fontVariationSettings = `'wght' ${weight}`;
+                        } else {
+                            // Fallback: usar clases
+                            title.classList.toggle('weight-bold', weight > 550);
+                        }
+                    }
+                });
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateTitleWeights();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // Ejecutar al cargar
+            updateTitleWeights();
         })();
     </script>
 
