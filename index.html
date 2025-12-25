@@ -259,14 +259,7 @@
             position: relative;
         }
 
-        .text-block h3::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-            margin-top: 1rem;
-        }
+        /* La línea animada se define más abajo en la sección de animaciones */
 
         .text-block p {
             font-size: 1.05rem;
@@ -621,9 +614,271 @@
                 height: 220px !important;
             }
         }
+
+        /* ========================================
+           NAVEGACIÓN LATERAL CON TEXTO
+           ======================================== */
+        
+        /* Contenedor de navegación */
+        .nav-dots {
+            position: fixed;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .nav-dots.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Cada item de navegación */
+        .nav-item {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 4px 0;
+            padding-left: 12px;
+            border-left: 2px solid #ddd;
+            transition: all 0.3s ease;
+            filter: blur(1.5px);
+            opacity: 0.5;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            color: var(--accent);
+            filter: blur(0);
+            opacity: 1;
+            border-left-color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        /* Estado activo */
+        .nav-item.active {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+            filter: blur(0);
+            opacity: 1;
+            border-left: 3px solid var(--accent);
+            padding-left: 11px;
+        }
+
+        /* Items cercanos al activo (menos blur) */
+        .nav-item.near {
+            filter: blur(0.5px);
+            opacity: 0.7;
+        }
+
+        /* Ocultar en móvil y tablets */
+        @media (max-width: 1100px) {
+            .nav-dots {
+                display: none !important;
+            }
+        }
+
+        /* ========================================
+           ANIMACIONES SCROLL REVEAL
+           ======================================== */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Variantes de animación */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Delay para elementos en secuencia */
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ========================================
+           EFECTO PARALLAX EN IMÁGENES
+           ======================================== */
+        
+        .parallax-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .parallax-img {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+
+        /* Desactivar parallax en móvil para mejor rendimiento */
+        @media (max-width: 768px) {
+            .reveal, .reveal-left, .reveal-right {
+                opacity: 1;
+                transform: none;
+            }
+            .parallax-img {
+                transform: none !important;
+            }
+        }
+
+        /* ========================================
+           LÍNEAS QUE SE DIBUJAN (h3)
+           ======================================== */
+        
+        .text-block h3::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent);
+            margin-top: 1rem;
+            transition: width 0.8s ease;
+        }
+
+        .text-block.visible h3::after {
+            width: 60px;
+        }
+
+        /* ========================================
+           SOMBRAS DINÁMICAS EN IMÁGENES
+           ======================================== */
+        
+        .image-block {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .dynamic-shadow-light {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .dynamic-shadow-medium {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .dynamic-shadow-deep {
+            box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+        }
+
+        /* ========================================
+           NÚMEROS DECORATIVOS DE SECCIÓN
+           ======================================== */
+        
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-number {
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(150px, 20vw, 280px);
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.02);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .section.reverse .section-number {
+            right: auto;
+            left: -20px;
+        }
+
+        .section > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========================================
+           SEPARADORES ANIMADOS ENTRE SECCIONES
+           ======================================== */
+        
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            transition: width 1s ease;
+        }
+
+        .section-divider.visible::before {
+            width: 80%;
+        }
+
+        /* Ocultar números en móvil */
+        @media (max-width: 768px) {
+            .section-number {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navegación Lateral con Texto -->
+    <nav class="nav-dots" id="navDots">
+        <a class="nav-item" data-target="caracteristicas">Interfaz</a>
+        <a class="nav-item" data-target="sec-partes">Partes</a>
+        <a class="nav-item" data-target="sec-argumentos">Argumentos</a>
+        <a class="nav-item" data-target="sec-hechos">Hechos</a>
+        <a class="nav-item" data-target="sec-penas">Penas</a>
+        <a class="nav-item" data-target="sec-config">Configuración</a>
+        <a class="nav-item" data-target="sec-dictado">Dictado</a>
+        <a class="nav-item" data-target="sec-herramientas-ia">Herramientas IA</a>
+        <a class="nav-item" data-target="sec-analisis-ia">Análisis IA</a>
+        <a class="nav-item" data-target="sec-cambios">Cambios</a>
+        <a class="nav-item" data-target="sec-estadisticas">Estadísticas</a>
+    </nav>
 
     <header id="inicio">
         <div class="container">
@@ -739,7 +994,7 @@
     </section>
 
     <!-- Sección 2: Gestión de Partes -->
-    <section class="section reverse">
+    <section class="section reverse" id="sec-partes">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -755,7 +1010,7 @@
     </section>
 
     <!-- Sección 3: Repositorio de Argumentos -->
-    <section class="section">
+    <section class="section" id="sec-argumentos">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -771,7 +1026,7 @@
     </section>
 
     <!-- Sección Nueva 1: Hechos Probados Dinámicos -->
-    <section class="section reverse">
+    <section class="section reverse" id="sec-hechos">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -787,7 +1042,7 @@
     </section>
 
     <!-- Sección Nueva 2: Cálculo y Alerta de Penas -->
-    <section class="section">
+    <section class="section" id="sec-penas">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -803,7 +1058,7 @@
     </section>
 
     <!-- Sección 4: Configuración -->
-    <section class="section reverse">
+    <section class="section reverse" id="sec-config">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -819,7 +1074,7 @@
     </section>
 
     <!-- Sección 5: Dictado por Voz -->
-    <section class="section">
+    <section class="section" id="sec-dictado">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -836,7 +1091,7 @@
     </section>
 
     <!-- Sección 6: Herramientas de IA en Texto -->
-    <section class="section reverse">
+    <section class="section reverse" id="sec-herramientas-ia">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -855,7 +1110,7 @@
     </section>
 
     <!-- Sección 7: Asistente de IA -->
-    <section class="section">
+    <section class="section" id="sec-analisis-ia">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -872,7 +1127,7 @@
     </section>
 
     <!-- Sección 8: Resaltado de Cambios -->
-    <section class="section reverse">
+    <section class="section reverse" id="sec-cambios">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -888,7 +1143,7 @@
     </section>
 
     <!-- Sección 9: Estadísticas de Uso -->
-    <section class="section">
+    <section class="section" id="sec-estadisticas">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1651,6 +1906,277 @@
                     // Si hay error, simplemente no mostramos el contador
                     console.log('No se pudo obtener el contador de descargas');
                 });
+        })();
+
+        // =============================================
+        // 7. Navegación Lateral con Texto
+        // =============================================
+        (function() {
+            const navDots = document.getElementById('navDots');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            if (!navDots || navItems.length === 0) return;
+
+            // Secciones a observar
+            const sectionIds = [
+                'caracteristicas', 'sec-partes', 'sec-argumentos', 'sec-hechos',
+                'sec-penas', 'sec-config', 'sec-dictado', 'sec-herramientas-ia',
+                'sec-analisis-ia', 'sec-cambios', 'sec-estadisticas'
+            ];
+
+            // Mostrar/ocultar navegación según scroll
+            function updateNavVisibility() {
+                const scrollY = window.scrollY;
+                const showNav = scrollY > 400;
+                navDots.classList.toggle('visible', showNav);
+            }
+
+            // Actualizar item activo según la sección visible
+            function updateActiveItem() {
+                const scrollY = window.scrollY + window.innerHeight / 3;
+                let activeIndex = 0;
+
+                sectionIds.forEach((id, index) => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = rect.top + window.scrollY;
+                        if (scrollY >= sectionTop) {
+                            activeIndex = index;
+                        }
+                    }
+                });
+
+                // Actualizar clases: active, near, y el resto con blur
+                navItems.forEach((item, index) => {
+                    const distance = Math.abs(index - activeIndex);
+                    
+                    item.classList.remove('active', 'near');
+                    
+                    if (index === activeIndex) {
+                        item.classList.add('active');
+                    } else if (distance === 1) {
+                        item.classList.add('near');
+                    }
+                });
+            }
+
+            // Click en items de navegación
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('data-target');
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Eventos de scroll
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    updateNavVisibility();
+                    updateActiveItem();
+                }, 10);
+            });
+
+            // Inicializar
+            updateNavVisibility();
+            updateActiveItem();
+        })();
+
+        // =============================================
+        // 8. Scroll Reveal Animations
+        // =============================================
+        (function() {
+            // Añadir clases reveal a los elementos
+            const sections = document.querySelectorAll('.section .split-layout');
+            
+            sections.forEach(section => {
+                const textBlock = section.querySelector('.text-block');
+                const imageBlock = section.querySelector('.image-block');
+                
+                if (textBlock) {
+                    textBlock.classList.add('reveal');
+                }
+                if (imageBlock) {
+                    imageBlock.classList.add('reveal', 'reveal-delay-2');
+                    // Añadir clase para parallax
+                    imageBlock.classList.add('parallax-container');
+                    const img = imageBlock.querySelector('img');
+                    if (img) {
+                        img.classList.add('parallax-img');
+                    }
+                }
+            });
+
+            // También animar las req-cards
+            const reqCards = document.querySelectorAll('.req-card');
+            reqCards.forEach((card, index) => {
+                card.classList.add('reveal');
+                card.classList.add('reveal-delay-' + ((index % 3) + 1));
+            });
+
+            // Intersection Observer para reveal
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos los elementos con clase reveal
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                revealObserver.observe(el);
+            });
+        })();
+
+        // =============================================
+        // 9. Parallax Effect on Images
+        // =============================================
+        (function() {
+            // Solo activar en pantallas grandes
+            if (window.innerWidth <= 768) return;
+
+            const parallaxImages = document.querySelectorAll('.parallax-img');
+            
+            if (parallaxImages.length === 0) return;
+
+            let ticking = false;
+
+            function updateParallax() {
+                parallaxImages.forEach(img => {
+                    const container = img.closest('.parallax-container');
+                    if (!container) return;
+
+                    const rect = container.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    // Solo aplicar si el elemento está visible
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        // Calcular el offset basado en la posición
+                        const scrollPercent = (windowHeight - rect.top) / (windowHeight + rect.height);
+                        const parallaxOffset = (scrollPercent - 0.5) * 30; // 30px de movimiento máximo
+                        
+                        img.style.transform = `translateY(${parallaxOffset}px)`;
+                    }
+                });
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            });
+
+            // Ejecutar una vez al cargar
+            updateParallax();
+        })();
+
+        // =============================================
+        // 10. Números Decorativos de Sección
+        // =============================================
+        (function() {
+            const sections = document.querySelectorAll('.section:not(#requisitos)');
+            
+            sections.forEach((section, index) => {
+                // Crear el número decorativo
+                const number = document.createElement('span');
+                number.className = 'section-number';
+                number.textContent = String(index + 1).padStart(2, '0');
+                section.appendChild(number);
+            });
+        })();
+
+        // =============================================
+        // 11. Separadores Animados entre Secciones
+        // =============================================
+        (function() {
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                // No añadir separador después de la última sección ni antes de requisitos
+                if (index < sections.length - 1 && !section.id?.includes('requisitos')) {
+                    const divider = document.createElement('div');
+                    divider.className = 'section-divider';
+                    section.after(divider);
+                }
+            });
+
+            // Observer para animar los separadores
+            const dividerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.section-divider').forEach(divider => {
+                dividerObserver.observe(divider);
+            });
+        })();
+
+        // =============================================
+        // 12. Sombras Dinámicas en Imágenes
+        // =============================================
+        (function() {
+            const imageBlocks = document.querySelectorAll('.image-block');
+            
+            if (imageBlocks.length === 0) return;
+
+            function updateShadows() {
+                const windowHeight = window.innerHeight;
+                const centerY = windowHeight / 2;
+
+                imageBlocks.forEach(block => {
+                    const rect = block.getBoundingClientRect();
+                    const blockCenter = rect.top + rect.height / 2;
+                    
+                    // Calcular distancia al centro de la pantalla
+                    const distanceFromCenter = Math.abs(blockCenter - centerY);
+                    const maxDistance = windowHeight / 2;
+                    
+                    // Quitar clases anteriores
+                    block.classList.remove('dynamic-shadow-light', 'dynamic-shadow-medium', 'dynamic-shadow-deep');
+                    
+                    // Solo aplicar si está visible
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        if (distanceFromCenter < maxDistance * 0.3) {
+                            block.classList.add('dynamic-shadow-deep');
+                        } else if (distanceFromCenter < maxDistance * 0.6) {
+                            block.classList.add('dynamic-shadow-medium');
+                        } else {
+                            block.classList.add('dynamic-shadow-light');
+                        }
+                    }
+                });
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateShadows();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            updateShadows();
         })();
     </script>
 
