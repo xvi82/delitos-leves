@@ -1,7 +1,7 @@
 {
-    "version": "1.0.24",
+    "version": "1.0.25",
     "fecha": "2025-12-26",
-    "novedades": "Se ha implementado un sistema de vista adaptativa que muestra información adicional cuando la ventana está maximizada (mediana, tiempo total invertido, promedio de sentencias por hora, mejor racha diaria, tendencia de eficiencia, multa máxima y mínima, totales históricos, sentencias del año, promedio mensual, mejor mes, días desde la última sentencia y más delitos frecuentes), junto con truncado automático de textos largos con tooltip gris al estilo de la aplicación, corrección de decimales al formato español con comas, coherencia visual añadiendo el símbolo \"•\" a todos los conceptos de Eficiencia, y actualización del panel de instrucciones indicando que al maximizar se muestra información adicional.",
+    "novedades": "Corregido el sistema de estadísticas que no registraba los tiempos de eficiencia, las denuncias simples, los casos de dos delitos ni el abogado denunciante, además de añadir soporte completo para múltiples fallos, delitos, multas e indemnizaciones en denuncias cruzadas y dos delitos, e implementar 12 nuevos campos que no se actualizaban (sentencias por año, multa/indemnización máxima y mínima, totales históricos, tipos de delitos diferentes, mejor racha diaria, última sentencia y tiempos para cálculo de tendencia).",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25163723
+    "file_size": 25164700
 }
