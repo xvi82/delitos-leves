@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.31",
+    "latest": "1.0.32",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25170981,
+    "file_size": 25167518,
     "versions": [
         {
             "version": "1.0.26",
@@ -31,7 +31,12 @@
         {
             "version": "1.0.31",
             "fecha": "2025-12-26",
-            "novedades": "Se ha implementado un sistema de formateo automático de texto que capitaliza automáticamente la primera letra y añade un punto final al perder el foco en los campos de Hechos Probados (siempre), Razón para conceder/denegar la indemnización (siempre), Razón para conceder/denegar el alejamiento (siempre), y Motivación propia para el caso concreto (capitalización solo cuando el motivo de condena o absolución seleccionado es \"Motivación propia\", pero punto final siempre), aplicándose tanto al escribir directamente en los campos de entrada como al usar la ventana emergente \"Continuar escribiendo\", y cubriendo todos los escenarios posibles incluyendo un denunciado, dos denunciados/delitos y denuncias cruzadas."
+            "novedades": "Se ha implementado un sistema de formateo automático de texto que capitaliza automáticamente la primera letra y añade un punto final al perder el foco en los campos de Hechos Probados (siempre), Razón para conceder/denegar la indemnización (siempre), Razón para conceder/denegar el alejamiento (siempre), y Motivación propia para el caso concreto (capitalización solo cuando el motivo de condena o absolución seleccionado es "Motivación propia", pero punto final siempre), aplicándose tanto al escribir directamente en los campos de entrada como al usar la ventana emergente "Continuar escribiendo", y cubriendo todos los escenarios posibles incluyendo un denunciado, dos denunciados/delitos y denuncias cruzadas."
+        },
+        {
+            "version": "1.0.32",
+            "fecha": "2025-12-26",
+            "novedades": "Reducido el límite de caracteres de 60 a 55 en los textos de delitos más frecuentes y económicas."
         }
     ]
 }
