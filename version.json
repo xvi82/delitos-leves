@@ -1,7 +1,17 @@
 {
-    "version": "1.0.26",
-    "fecha": "2025-12-26",
-    "novedades": "Corregido error que causaba que la comprobación automática de actualizaciones se ejecutara en cada inicio en lugar de cada 15 días.",
+    "latest": "1.0.27",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25165866
+    "file_size": 25167411,
+    "versions": [
+        {
+            "version": "1.0.26",
+            "fecha": "2025-12-26",
+            "novedades": "Corregido error que causaba que la comprobación automática de actualizaciones se ejecutara en cada inicio en lugar de cada 15 días."
+        },
+        {
+            "version": "1.0.27",
+            "fecha": "2025-12-26",
+            "novedades": "Corregida la comprobación automática de actualizaciones (ahora cada 15 días) y añadido historial de novedades para ver todos los cambios desde tu versión."
+        }
+    ]
 }
