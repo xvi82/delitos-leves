@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.29",
+    "latest": "1.0.30",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25166458,
+    "file_size": 25166982,
     "versions": [
         {
             "version": "1.0.26",
@@ -22,6 +22,11 @@
             "version": "1.0.29",
             "fecha": "2025-12-26",
             "novedades": "Corregido el sistema de estadísticas para que ahora mida el tiempo real de trabajo (desde la selección del tipo de delito hasta guardar, en lugar de solo los 2 segundos de generación del documento), además de arreglar los contadores de denuncias simples, dos delitos y abogado denunciante que no funcionaban, añadir soporte para múltiples fallos/delitos/multas/indemnizaciones en denuncias cruzadas y dos delitos, e implementar los 12 campos que faltaban (sentencias por año, multa/indemnización máxima y mínima, totales históricos, mejor racha diaria, última sentencia y tendencia de eficiencia)."
+        },
+        {
+            "version": "1.0.30",
+            "fecha": "2025-12-26",
+            "novedades": "Ampliado el límite de caracteres de 45 a 60 en los textos de delitos más frecuentes y añadido un ancho mínimo de 380px a los LabelFrames de la derecha (Económicas y Delitos más frecuentes) para acomodar nombres de delitos largos."
         }
     ]
 }
