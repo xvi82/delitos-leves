@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.27",
+    "latest": "1.0.28",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25167411,
+    "file_size": 25167288,
     "versions": [
         {
             "version": "1.0.26",
@@ -12,6 +12,11 @@
             "version": "1.0.27",
             "fecha": "2025-12-26",
             "novedades": "Corregida la comprobación automática de actualizaciones (ahora cada 15 días) y añadido historial de novedades para ver todos los cambios desde tu versión."
+        },
+        {
+            "version": "1.0.28",
+            "fecha": "2025-12-26",
+            "novedades": "Mejoras y correcciones"
         }
     ]
 }
