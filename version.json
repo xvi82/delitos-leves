@@ -1,7 +1,7 @@
 {
-    "version": "1.0.25",
+    "version": "1.0.26",
     "fecha": "2025-12-26",
-    "novedades": "Corregido el sistema de estadísticas que no registraba los tiempos de eficiencia, las denuncias simples, los casos de dos delitos ni el abogado denunciante, además de añadir soporte completo para múltiples fallos, delitos, multas e indemnizaciones en denuncias cruzadas y dos delitos, e implementar 12 nuevos campos que no se actualizaban (sentencias por año, multa/indemnización máxima y mínima, totales históricos, tipos de delitos diferentes, mejor racha diaria, última sentencia y tiempos para cálculo de tendencia).",
+    "novedades": "Corregido error que causaba que la comprobación automática de actualizaciones se ejecutara en cada inicio en lugar de cada 15 días.",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25164700
+    "file_size": 25165866
 }
