@@ -1,12 +1,17 @@
 {
-    "latest": "1.0.33",
+    "latest": "1.0.34",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25171334,
+    "file_size": 25173611,
     "versions": [
         {
             "version": "1.0.33",
             "fecha": "2025-12-27",
-            "novedades": "Corregido el algoritmo de tendencia para usar ventana deslizante continua, añadido \"Dos denunciados\" como nuevo tipo de denuncia separado de \"simple\", y restaurado \"Última sentencia\" en la vista expandida de estadísticas."
+            "novedades": "Corregido el algoritmo de tendencia para usar ventana deslizante continua, añadido "Dos denunciados" como nuevo tipo de denuncia separado de "simple", y restaurado "Última sentencia" en la vista expandida de estadísticas."
+        },
+        {
+            "version": "1.0.34",
+            "fecha": "2025-12-27",
+            "novedades": "Se han añadido tooltips enriquecidos en la sección \"Delitos más frecuentes\" que muestran estadísticas detalladas por delito (condenas, absoluciones, tiempo medio y multa media), con un nuevo sistema de almacenamiento de datos por delito donde el tiempo solo se registra en sentencias con un único delito para mayor precisión, se han corregido los algoritmos de alineación de índices entre delitos, fallos y multas para casos de denuncias cruzadas y dos denunciados, y se ha mejorado el diseño visual del tooltip con el título centrado en negrita y los datos con guiones para mejor legibilidad."
         }
     ]
 }
