@@ -1,42 +1,12 @@
 {
-    "latest": "1.0.32",
+    "latest": "1.0.33",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25167518,
+    "file_size": 25171334,
     "versions": [
         {
-            "version": "1.0.26",
-            "fecha": "2025-12-26",
-            "novedades": "Corregido error que causaba que la comprobación automática de actualizaciones se ejecutara en cada inicio en lugar de cada 15 días."
-        },
-        {
-            "version": "1.0.27",
-            "fecha": "2025-12-26",
-            "novedades": "Corregida la comprobación automática de actualizaciones (ahora cada 15 días) y añadido historial de novedades para ver todos los cambios desde tu versión."
-        },
-        {
-            "version": "1.0.28",
-            "fecha": "2025-12-26",
-            "novedades": "Mejoras y correcciones"
-        },
-        {
-            "version": "1.0.29",
-            "fecha": "2025-12-26",
-            "novedades": "Corregido el sistema de estadísticas para que ahora mida el tiempo real de trabajo (desde la selección del tipo de delito hasta guardar, en lugar de solo los 2 segundos de generación del documento), además de arreglar los contadores de denuncias simples, dos delitos y abogado denunciante que no funcionaban, añadir soporte para múltiples fallos/delitos/multas/indemnizaciones en denuncias cruzadas y dos delitos, e implementar los 12 campos que faltaban (sentencias por año, multa/indemnización máxima y mínima, totales históricos, mejor racha diaria, última sentencia y tendencia de eficiencia)."
-        },
-        {
-            "version": "1.0.30",
-            "fecha": "2025-12-26",
-            "novedades": "Ampliado el límite de caracteres de 45 a 60 en los textos de delitos más frecuentes y añadido un ancho mínimo de 380px a los LabelFrames de la derecha (Económicas y Delitos más frecuentes) para acomodar nombres de delitos largos."
-        },
-        {
-            "version": "1.0.31",
-            "fecha": "2025-12-26",
-            "novedades": "Se ha implementado un sistema de formateo automático de texto que capitaliza automáticamente la primera letra y añade un punto final al perder el foco en los campos de Hechos Probados (siempre), Razón para conceder/denegar la indemnización (siempre), Razón para conceder/denegar el alejamiento (siempre), y Motivación propia para el caso concreto (capitalización solo cuando el motivo de condena o absolución seleccionado es "Motivación propia", pero punto final siempre), aplicándose tanto al escribir directamente en los campos de entrada como al usar la ventana emergente "Continuar escribiendo", y cubriendo todos los escenarios posibles incluyendo un denunciado, dos denunciados/delitos y denuncias cruzadas."
-        },
-        {
-            "version": "1.0.32",
-            "fecha": "2025-12-26",
-            "novedades": "Reducido el límite de caracteres de 60 a 55 en los textos de delitos más frecuentes y económicas."
+            "version": "1.0.33",
+            "fecha": "2025-12-27",
+            "novedades": "Corregido el algoritmo de tendencia para usar ventana deslizante continua, añadido \"Dos denunciados\" como nuevo tipo de denuncia separado de \"simple\", y restaurado \"Última sentencia\" en la vista expandida de estadísticas."
         }
     ]
 }
