@@ -1,12 +1,17 @@
 {
-    "latest": "1.0.35",
+    "latest": "1.0.36",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25177166,
+    "file_size": 25176580,
     "versions": [
         {
             "version": "1.0.35",
             "fecha": "2026-01-04",
             "novedades": "Se corrigió el conteo de sentencias “in voce” para que computen como orales, se amplió el historial de tiempos a 100 (manteniendo la tendencia sobre una ventana reciente), se unificó el denominador de porcentajes del Tipo de proceso incluyendo dos denunciados, se corrigió el alineamiento delitos–fallos–multas en denuncias cruzadas para que los tooltips por delito registren correctamente condenas/absoluciones/tiempos/multas, se reemplazó Mediana por Tiempo típico (P50) y Variabilidad (P90−P50), se renombró Tiempo total invertido a Tiempo acumulado (últimas 100), se añadió tooltip explicativo a esas métricas técnicas, se agregó el registro mensual de indemnizaciones (indemnizaciones_mes) y la métrica Impacto económico mensual (multas + indemnizaciones), y se hizo que los nuevos datos económicos (“Total indemnizaciones este mes” e “Impacto económico mensual”) solo aparezcan cuando la ventana está maximizada."
+        },
+        {
+            "version": "1.0.36",
+            "fecha": "2026-01-04",
+            "novedades": "Pedo"
         }
     ]
 }
