@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.36",
+    "latest": "1.0.37",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25176580,
+    "file_size": 25179718,
     "versions": [
         {
             "version": "1.0.35",
@@ -12,6 +12,11 @@
             "version": "1.0.36",
             "fecha": "2026-01-04",
             "novedades": "Pedo"
+        },
+        {
+            "version": "1.0.37",
+            "fecha": "2026-01-04",
+            "novedades": "Añadido indicador visual \"· SIN GUARDAR\" en el título de la ventana que aparece solo cuando el usuario realiza cambios en el formulario, desapareciendo automáticamente al guardar, autoguardar, limpiar o abrir un borrador."
         }
     ]
 }
