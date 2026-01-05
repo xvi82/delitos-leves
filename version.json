@@ -4,9 +4,19 @@
     "file_size": 25180461,
     "versions": [
         {
+            "version": "1.0.37",
+            "fecha": "2026-01-05",
+            "novedades": "AÃ±adido indicador visual \"Â· SIN GUARDAR\" en el tÃ­tulo de la ventana que aparece solo cuando el usuario realiza cambios en el formulario, desapareciendo automÃ¡ticamente al guardar, autoguardar, limpiar o abrir un borrador."
+        },
+        {
+            "version": "1.0.38",
+            "fecha": "2026-01-05",
+            "novedades": "Se aÃ±adiÃ³ un tooltip explicativo (con cursor de ayuda) a la mÃ©trica \"Tendencia\" en la pestaÃ±a de EstadÃ­sticas para aclarar que compara el tiempo medio de las Ãºltimas 10 sentencias con las 10 anteriores y el significado de â†‘/â†“/â†’."
+        },
+        {
             "version": "1.0.39",
             "fecha": "2026-01-05",
-            "novedades": "Implementado lazy loading para el árbol de argumentos (solo se carga al acceder a la pestaña) y debounce de 300ms en la búsqueda para reducir lecturas de disco innecesarias."
+            "novedades": "Implementado lazy loading para el Ã¡rbol de argumentos (solo se carga al acceder a la pestaÃ±a) y debounce de 300ms en la bÃºsqueda para reducir lecturas de disco innecesarias."
         }
     ]
 }
