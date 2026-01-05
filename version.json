@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.39",
+    "latest": "1.0.40",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25180461,
+    "file_size": 25179575,
     "versions": [
         {
             "version": "1.0.37",
@@ -17,6 +17,11 @@
             "version": "1.0.39",
             "fecha": "2026-01-05",
             "novedades": "Implementado lazy loading para el arbol de argumentos (solo se carga al acceder a la pestana) y debounce de 300ms en la busqueda para reducir lecturas de disco innecesarias."
+        },
+        {
+            "version": "1.0.40",
+            "fecha": "2026-01-05",
+            "novedades": "Mejorado el sistema de actualización de versiones con reintentos automáticos y protección contra pérdida de historial."
         }
     ]
 }
