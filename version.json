@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.40",
+    "latest": "1.0.41",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25179575,
+    "file_size": 25181348,
     "versions": [
         {
             "version": "1.0.37",
@@ -22,6 +22,11 @@
             "version": "1.0.40",
             "fecha": "2026-01-05",
             "novedades": "Mejorado el sistema de actualización de versiones con reintentos automáticos y protección contra pérdida de historial."
+        },
+        {
+            "version": "1.0.41",
+            "fecha": "2026-01-05",
+            "novedades": "Mejorada la compatibilidad y estabilidad en la versión compilada: corrección del cálculo de la fecha y de la carga de nombres/fundamentos para evitar errores y asegurar que los textos se generan correctamente."
         }
     ]
 }
