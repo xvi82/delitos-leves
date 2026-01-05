@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.37",
+    "latest": "1.0.38",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25179718,
+    "file_size": 25179654,
     "versions": [
         {
             "version": "1.0.35",
@@ -16,7 +16,12 @@
         {
             "version": "1.0.37",
             "fecha": "2026-01-04",
-            "novedades": "Añadido indicador visual \"· SIN GUARDAR\" en el título de la ventana que aparece solo cuando el usuario realiza cambios en el formulario, desapareciendo automáticamente al guardar, autoguardar, limpiar o abrir un borrador."
+            "novedades": "Añadido indicador visual "· SIN GUARDAR" en el título de la ventana que aparece solo cuando el usuario realiza cambios en el formulario, desapareciendo automáticamente al guardar, autoguardar, limpiar o abrir un borrador."
+        },
+        {
+            "version": "1.0.38",
+            "fecha": "2026-01-05",
+            "novedades": "Se añadió un tooltip explicativo (con cursor de ayuda) a la métrica “Tendencia” en la pestaña de Estadísticas para aclarar que compara el tiempo medio de las últimas 10 sentencias con las 10 anteriores y el significado de ↑/↓/→."
         }
     ]
 }
