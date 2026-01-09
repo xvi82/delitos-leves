@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.43",
+    "latest": "1.0.44",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25182585,
+    "file_size": 25181819,
     "versions": [
         {
             "version": "1.0.37",
@@ -37,6 +37,11 @@
             "version": "1.0.43",
             "fecha": "2026-01-09",
             "novedades": "Facturación automática con PDF adjunto al email de licencia. Nuevo email de contacto: procesadordelitosleves@gmail.com"
+        },
+        {
+            "version": "1.0.44",
+            "fecha": "2026-01-09",
+            "novedades": "Ventana de bienvenida: Rediseño visual con icono ⚖, eslogan profesional, estructura jerárquica mejorada, texto más conciso y nota informativa destacada en paleta monocromática."
         }
     ]
 }
