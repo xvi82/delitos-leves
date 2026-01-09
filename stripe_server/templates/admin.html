@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Ventas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-size: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #2d3436 0%, #3d3d3d 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4CAF50;
+            display: block;
+        }
+        
+        .stat-card.revenue .number {
+            color: #FFD700;
+        }
+        
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 0.5rem;
+        }
+        
+        .table-container {
+            background: #2d3436;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: #3d3d3d;
+            border-bottom: 1px solid #444;
+        }
+        
+        .table-header h2 {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .export-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+        
+        .export-btn:hover {
+            background: #45a049;
+        }
+        
+        .export-btn.csv {
+            background: #2196F3;
+        }
+        
+        .export-btn.csv:hover {
+            background: #1976D2;
+        }
+        
+        .export-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .juzgado-info {
+            font-size: 0.8rem;
+            color: #888;
+            max-width: 150px;
+        }
+        
+        .pais-badge {
+            background: #1a1a2e;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: #3d3d3d;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #3d3d3d;
+            font-size: 0.9rem;
+        }
+        
+        tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+        
+        .license-key {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #4CAF50;
+        }
+        
+        .amount {
+            font-weight: 600;
+            color: #FFD700;
+        }
+        
+        .date {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        
+        .email-cell {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .hw-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #888;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+        
+        .empty-state .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 900px) {
+            .table-container {
+                overflow-x: auto;
+            }
+            
+            table {
+                min-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Panel de Administración</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="number">{{ total_count }}</span>
+                <span class="label">Licencias vendidas</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">{{ "%.2f"|format(total_bruto) }} €</span>
+                <span class="label">Ingresos brutos</span>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+                <span class="number" style="color: #ffcccc;">-{{ "%.2f"|format(total_comisiones) }} €</span>
+                <span class="label">Comisiones Stripe</span>
+            </div>
+            <div class="stat-card revenue">
+                <span class="number">{{ "%.2f"|format(total_neto) }} €</span>
+                <span class="label">Ingresos netos</span>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <div class="table-header">
+                <h2>📋 Registro de Ventas</h2>
+                <div class="export-buttons">
+                    <a href="/admin/export-csv?key={{ request.args.get('key', '') }}" class="export-btn csv">📊 Descargar Excel/CSV</a>
+                    <a href="/admin/export?key={{ request.args.get('key', '') }}" class="export-btn">📥 Exportar JSON</a>
+                </div>
+            </div>
+            
+            {% if sales %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Destino Judicial</th>
+                        <th>HW ID</th>
+                        <th>Licencia</th>
+                        <th>Bruto</th>
+                        <th>Neto</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sale in sales %}
+                    <tr>
+                        <td>{{ sale.id }}</td>
+                        <td class="date">{{ sale.created_at.strftime('%d/%m/%Y %H:%M') if sale.created_at else 'N/A' }}</td>
+                        <td>{{ sale.nombre }}</td>
+                        <td class="email-cell" title="{{ sale.email }}">{{ sale.email }}</td>
+                        <td class="juzgado-info">
+                            {% if sale.juzgado or sale.partido_judicial %}
+                                {{ sale.juzgado }}{% if sale.numero_juzgado %} Nº {{ sale.numero_juzgado }}{% endif %}
+                                {% if sale.partido_judicial %}<br><small>{{ sale.partido_judicial }}</small>{% endif %}
+                            {% else %}
+                                <span style="color:#555">—</span>
+                            {% endif %}
+                        </td>
+                        <td class="hw-id">{{ sale.hw_id[:18] }}...</td>
+                        <td><span class="license-key">{{ sale.license_key }}</span></td>
+                        <td class="amount">{{ "%.2f"|format(sale.amount) }} €</td>
+                        <td class="amount" style="color: #4CAF50;">{{ "%.2f"|format(sale.amount - (sale.amount * 0.015 + 0.25)) }} €</td>
+                        <td>
+                            {% if sale.pais_facturacion %}
+                                <span class="pais-badge">{{ sale.pais_facturacion }}</span>
+                            {% else %}
+                                <span style="color:#555">—</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div class="icon">📭</div>
+                <p>No hay ventas registradas todavía.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

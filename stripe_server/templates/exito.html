@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pago Completado! | Procesador de Delitos Leves</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2c3e50;
+            --success: #27ae60;
+            --bg: #f9f9f9;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 550px;
+            width: 100%;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--success);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .email-info {
+            background: #f0f9f4;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .email-info strong {
+            color: var(--accent);
+        }
+        
+        .spam-warning {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            color: #856404;
+            font-size: 0.85rem;
+        }
+        
+        .license-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .license-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .license-key {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--accent);
+            letter-spacing: 2px;
+            word-break: break-all;
+            margin-bottom: 20px;
+        }
+        
+        .copy-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .copy-btn:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        
+        .copy-btn.copied {
+            background: var(--success);
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+        
+        .instructions h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #555;
+        }
+        
+        .instructions li {
+            margin-bottom: 5px;
+        }
+        
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.3s;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        .user-info {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        
+        <h1>¡Pago Completado!</h1>
+        <p class="subtitle">Gracias por su compra, {{ nombre }}</p>
+        
+        <div class="email-info">
+            📧 Hemos enviado una copia de su licencia a: <strong>{{ email }}</strong>
+            <div class="spam-warning">
+                ⚠️ <strong>Importante:</strong> Si no ve el correo en su bandeja de entrada, 
+                <strong>revise la carpeta de Spam o Correo no deseado</strong>.
+            </div>
+        </div>
+        
+        <div class="license-box">
+            <p class="license-label">Su código de licencia es:</p>
+            <div class="license-key" id="licenseKey">{{ license_key }}</div>
+            <button class="copy-btn" id="copyBtn" onclick="copyLicense()">
+                <span id="copyIcon">📋</span>
+                <span id="copyText">Copiar al portapapeles</span>
+            </button>
+        </div>
+        
+        <div class="instructions">
+            <h3>Para activar su licencia:</h3>
+            <ol>
+                <li>Abra el <strong>Procesador de Delitos Leves</strong></li>
+                <li>Vaya a la ventana de <strong>Activación</strong></li>
+                <li>Pegue el código de licencia</li>
+                <li>Haga clic en <strong>Activar</strong></li>
+            </ol>
+        </div>
+        
+        <a href="https://xvi82.github.io/delitos-leves/" class="back-link">
+            ← Volver a la página principal
+        </a>
+        
+        <div class="user-info">
+            Licencia vinculada a: {{ nombre }}
+        </div>
+    </div>
+    
+    <script>
+        function copyLicense() {
+            const licenseKey = document.getElementById('licenseKey').textContent;
+            const copyBtn = document.getElementById('copyBtn');
+            const copyIcon = document.getElementById('copyIcon');
+            const copyText = document.getElementById('copyText');
+            
+            navigator.clipboard.writeText(licenseKey).then(() => {
+                copyBtn.classList.add('copied');
+                copyIcon.textContent = '✓';
+                copyText.textContent = '¡Copiado!';
+                
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyIcon.textContent = '📋';
+                    copyText.textContent = 'Copiar al portapapeles';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
+

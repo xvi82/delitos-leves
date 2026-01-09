@@ -1,0 +1,34 @@
+# ============================================================
+# Variables de entorno para el servidor de pagos
+# ============================================================
+# En Railway, estas se configuran en el panel de Variables
+
+# --- Stripe (TEST) ---
+STRIPE_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXX
+STRIPE_PUBLISHABLE_KEY=pk_test_XXXXXXXXXXXXXXXXXXXXXXXX
+STRIPE_PRICE_ID=price_XXXXXXXXXXXXXXXXXXXXXXXX
+STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXX  # Se obtiene al crear el webhook en Stripe
+
+# --- Generación de licencias ---
+# IMPORTANTE: Esta clave DEBE coincidir con la de license_manager.py
+LICENSE_SECRET_KEY=tu-clave-secreta-aqui
+
+# --- Email (Gmail) ---
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_EMAIL=tu-email@gmail.com
+SMTP_PASSWORD=xxxx xxxx xxxx xxxx  # Contraseña de aplicacion de Gmail (16 caracteres)
+
+# --- Servidor ---
+FLASK_DEBUG=False
+
+# --- Datos Fiscales para Facturas ---
+# Estos datos aparecerán en las facturas generadas automáticamente
+SELLER_NAME=Javier Ercilla Garcia
+SELLER_NIF=75775047Y
+SELLER_ADDRESS=Avda. Federico Garcia Lorca 3, 1-D-Dcha
+SELLER_CITY=Las Palmas de Gran Canaria, 35011
+SELLER_EMAIL=jercilla@gmail.com
+IVA_PERCENT=21
+
+
