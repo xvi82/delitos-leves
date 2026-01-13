@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.55",
+    "latest": "1.0.56",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 58875840,
+    "file_size": 58875076,
     "versions": [
-        {
-            "version": "1.0.41",
-            "fecha": "2026-01-05",
-            "novedades": "Mejorada la compatibilidad y estabilidad en la versión compilada: corrección del cálculo de la fecha y de la carga de nombres/fundamentos para evitar errores y asegurar que los textos se generan correctamente."
-        },
         {
             "version": "1.0.42",
             "fecha": "2026-01-08",
@@ -77,6 +72,11 @@
             "version": "1.0.55",
             "fecha": "2026-01-13",
             "novedades": "Test sin limpieza para verificar SSL"
+        },
+        {
+            "version": "1.0.56",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido carga de SSL en aplicacion compilada"
         }
     ]
 }
