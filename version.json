@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.45",
+    "latest": "1.0.46",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 24968183,
+    "file_size": 24994302,
     "versions": [
         {
             "version": "1.0.37",
@@ -47,6 +47,11 @@
             "version": "1.0.45",
             "fecha": "2026-01-13",
             "novedades": "Nuevo sistema de alertas críticas que notifica al usuario de actualizaciones urgentes de seguridad o correcciones importantes"
+        },
+        {
+            "version": "1.0.46",
+            "fecha": "2026-01-13",
+            "novedades": "Añadida la Biblioteca Comunitaria, una nueva función para usuarios con licencia que permite compartir argumentos jurídicos con la comunidad, explorar argumentos publicados por otros usuarios, y descargarlos para usarlos en tus sentencias."
         }
     ]
 }
