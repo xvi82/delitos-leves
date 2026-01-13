@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.53",
+    "latest": "1.0.54",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25173531,
+    "file_size": 25390945,
     "versions": [
-        {
-            "version": "1.0.39",
-            "fecha": "2026-01-05",
-            "novedades": "Implementado lazy loading para el arbol de argumentos (solo se carga al acceder a la pestana) y debounce de 300ms en la busqueda para reducir lecturas de disco innecesarias."
-        },
         {
             "version": "1.0.40",
             "fecha": "2026-01-05",
@@ -77,6 +72,11 @@
             "version": "1.0.53",
             "fecha": "2026-01-13",
             "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones"
+        },
+        {
+            "version": "1.0.54",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones otra vez."
         }
     ]
 }
