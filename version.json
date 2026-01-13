@@ -3,22 +3,22 @@
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
     "file_size": 25019334,
     "critical": true,
-    "critical_message": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada \"Argumentos para Sentencia\" o \"Descargados de la comunidad\", ahora se crea en la raíz del repositorio en lugar de dentro de esas carpetas especiales.",
+    "critical_message": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada \"Argumentos para Sentencia\" o \"Descargados de la comunidad\", ahora se crea en la raiz del repositorio en lugar de dentro de esas carpetas especiales.",
     "versions": [
         {
             "version": "1.0.46",
             "fecha": "2026-01-13",
-            "novedades": "Añadida la Biblioteca Comunitaria, una nueva función para usuarios con licencia que permite compartir argumentos jurídicos con la comunidad, explorar argumentos publicados por otros usuarios, y descargarlos para usarlos en tus sentencias."
+            "novedades": "Anadida la Biblioteca Comunitaria, una nueva funcion para usuarios con licencia que permite compartir argumentos juridicos con la comunidad, explorar argumentos publicados por otros usuarios, y descargarlos para usarlos en tus sentencias."
         },
         {
             "version": "1.0.47",
             "fecha": "2026-01-13",
-            "novedades": "Se ha implementado drag and drop en el Treeview de la pestaña Notas, permitiendo arrastrar argumentos entre carpetas (incluyendo Argumentos para Sentencia que actualiza automáticamente los motivos de condena/absolución), con tooltip visual durante el arrastre, posibilidad de mover a la raíz y cancelación con Escape."
+            "novedades": "Se ha implementado drag and drop en el Treeview de la pestana Notas, permitiendo arrastrar argumentos entre carpetas (incluyendo Argumentos para Sentencia que actualiza automaticamente los motivos de condena/absolucion), con tooltip visual durante el arrastre, posibilidad de mover a la raiz y cancelacion con Escape."
         },
         {
             "version": "1.0.48",
             "fecha": "2026-01-13",
-            "novedades": "Corregido fallo de actualización causado por emojis en GitHub Pages (Jekyll), añadido sistema anti-caché con timestamp, verificación automática de despliegue, validación robusta de versiones y ZIP, y aumentados los timeouts de conexión."
+            "novedades": "Corregido fallo de actualizacion causado por emojis en GitHub Pages (Jekyll), anadido sistema anti-cache con timestamp, verificacion automatica de despliegue, validacion robusta de versiones y ZIP, y aumentados los timeouts de conexion."
         },
         {
             "version": "1.0.49",
@@ -28,17 +28,17 @@
         {
             "version": "1.0.50",
             "fecha": "2026-01-13",
-            "novedades": "Mejorada la consistencia visual de la ventana de configuración: se ajustó el ancho del texto en los LabelFrames de Dictado por voz y Estadísticas de uso, se aplicó el estilo gris a los textos explicativos de la pestaña Comunidad, y se añadieron textos informativos al panel de Inteligencia Artificial que varían según esté habilitada o no."
+            "novedades": "Mejorada la consistencia visual de la ventana de configuracion: se ajusto el ancho del texto en los LabelFrames de Dictado por voz y Estadisticas de uso, se aplico el estilo gris a los textos explicativos de la pestana Comunidad, y se anadieron textos informativos al panel de Inteligencia Artificial que varian segun este habilitada o no."
         },
         {
             "version": "1.0.51",
             "fecha": "2026-01-13",
-            "novedades": "Corregido error de conexión al comprobar actualizaciones en versión compilada"
+            "novedades": "Corregido error de conexion al comprobar actualizaciones en version compilada"
         },
         {
             "version": "1.0.52",
             "fecha": "2026-01-13",
-            "novedades": "Corregido error de conexión HTTPS al comprobar actualizaciones en versión compilada"
+            "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones en version compilada"
         },
         {
             "version": "1.0.53",
@@ -73,12 +73,12 @@
         {
             "version": "1.0.59",
             "fecha": "2026-01-13",
-            "novedades": "Se corrigió la ruta del "Repositorio de argumentos" para que funcione correctamente en la versión compilada, añadiendo la función get_internal_path() que detecta automáticamente si buscar los recursos dentro de _internal (compilado) o junto al script (desarrollo)."
+            "novedades": "Se corrigio la ruta del Repositorio de argumentos para que funcione correctamente en la version compilada, anadiendo la funcion get_internal_path() que detecta automaticamente si buscar los recursos dentro de _internal (compilado) o junto al script (desarrollo)."
         },
         {
             "version": "1.0.60",
             "fecha": "2026-01-13",
-            "novedades": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada \"Argumentos para Sentencia\" o \"Descargados de la comunidad\", ahora se crea en la raíz del repositorio en lugar de dentro de esas carpetas especiales."
+            "novedades": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada Argumentos para Sentencia o Descargados de la comunidad, ahora se crea en la raiz del repositorio en lugar de dentro de esas carpetas especiales."
         }
     ]
 }
