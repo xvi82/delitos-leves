@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.49",
+    "latest": "1.0.50",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 24998757,
+    "file_size": 24999580,
     "versions": [
         {
             "version": "1.0.37",
@@ -67,6 +67,11 @@
             "version": "1.0.49",
             "fecha": "2026-01-13",
             "novedades": "Mejoras y correcciones"
+        },
+        {
+            "version": "1.0.50",
+            "fecha": "2026-01-13",
+            "novedades": "Mejorada la consistencia visual de la ventana de configuración: se ajustó el ancho del texto en los LabelFrames de Dictado por voz y Estadísticas de uso, se aplicó el estilo gris a los textos explicativos de la pestaña Comunidad, y se añadieron textos informativos al panel de Inteligencia Artificial que varían según esté habilitada o no."
         }
     ]
 }
