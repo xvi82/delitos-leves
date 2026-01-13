@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.44",
+    "latest": "1.0.45",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25181819,
+    "file_size": 24968183,
     "versions": [
         {
             "version": "1.0.37",
@@ -42,6 +42,11 @@
             "version": "1.0.44",
             "fecha": "2026-01-09",
             "novedades": "Ventana de bienvenida: Rediseño visual con icono ⚖, eslogan profesional, estructura jerárquica mejorada, texto más conciso y nota informativa destacada en paleta monocromática."
+        },
+        {
+            "version": "1.0.45",
+            "fecha": "2026-01-13",
+            "novedades": "Nuevo sistema de alertas críticas que notifica al usuario de actualizaciones urgentes de seguridad o correcciones importantes"
         }
     ]
 }
