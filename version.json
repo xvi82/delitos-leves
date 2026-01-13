@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.46",
+    "latest": "1.0.47",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 24994302,
+    "file_size": 24997917,
     "versions": [
         {
             "version": "1.0.37",
@@ -52,6 +52,11 @@
             "version": "1.0.46",
             "fecha": "2026-01-13",
             "novedades": "Añadida la Biblioteca Comunitaria, una nueva función para usuarios con licencia que permite compartir argumentos jurídicos con la comunidad, explorar argumentos publicados por otros usuarios, y descargarlos para usarlos en tus sentencias."
+        },
+        {
+            "version": "1.0.47",
+            "fecha": "2026-01-13",
+            "novedades": "Se ha implementado drag and drop en el Treeview de la pestaña Notas, permitiendo arrastrar argumentos entre carpetas (incluyendo Argumentos para Sentencia que actualiza automáticamente los motivos de condena/absolución), con tooltip visual durante el arrastre, posibilidad de mover a la raíz y cancelación con Escape."
         }
     ]
 }
