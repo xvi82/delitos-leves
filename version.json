@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.54",
+    "latest": "1.0.55",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25390945,
+    "file_size": 58875840,
     "versions": [
-        {
-            "version": "1.0.40",
-            "fecha": "2026-01-05",
-            "novedades": "Mejorado el sistema de actualización de versiones con reintentos automáticos y protección contra pérdida de historial."
-        },
         {
             "version": "1.0.41",
             "fecha": "2026-01-05",
@@ -77,6 +72,11 @@
             "version": "1.0.54",
             "fecha": "2026-01-13",
             "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones otra vez."
+        },
+        {
+            "version": "1.0.55",
+            "fecha": "2026-01-13",
+            "novedades": "Test sin limpieza para verificar SSL"
         }
     ]
 }
