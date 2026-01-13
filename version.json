@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.57",
+    "latest": "1.0.58",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25000386,
+    "file_size": 25019349,
     "versions": [
-        {
-            "version": "1.0.43",
-            "fecha": "2026-01-09",
-            "novedades": "Facturación automática con PDF adjunto al email de licencia. Nuevo email de contacto: procesadordelitosleves@gmail.com"
-        },
         {
             "version": "1.0.44",
             "fecha": "2026-01-09",
@@ -77,6 +72,11 @@
             "version": "1.0.57",
             "fecha": "2026-01-13",
             "novedades": "Restaurado script de compilacion original"
+        },
+        {
+            "version": "1.0.58",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido error SSL al comprobar actualizaciones"
         }
     ]
 }
