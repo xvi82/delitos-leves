@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.56",
+    "latest": "1.0.57",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 58875076,
+    "file_size": 58875629,
     "versions": [
-        {
-            "version": "1.0.42",
-            "fecha": "2026-01-08",
-            "novedades": "Nueva función de recuperación de sesión: Se añade autoguardado automático cada 3 minutos en segundo plano que permite recuperar el trabajo pendiente si la aplicación se cierra de forma inesperada (crash), preguntando al usuario si desea restaurar la sesión al volver a abrir la aplicación."
-        },
         {
             "version": "1.0.43",
             "fecha": "2026-01-09",
@@ -77,6 +72,11 @@
             "version": "1.0.56",
             "fecha": "2026-01-13",
             "novedades": "Corregido carga de SSL en aplicacion compilada"
+        },
+        {
+            "version": "1.0.57",
+            "fecha": "2026-01-13",
+            "novedades": "Revertido sistema de actualizaciones al codigo original"
         }
     ]
 }
