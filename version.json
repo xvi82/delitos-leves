@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.51",
+    "latest": "1.0.52",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25000073,
+    "file_size": 25000304,
     "versions": [
-        {
-            "version": "1.0.37",
-            "fecha": "2026-01-05",
-            "novedades": "Indicador visual SIN GUARDAR en el titulo de la ventana que aparece solo cuando el usuario realiza cambios en el formulario, desapareciendo automaticamente al guardar, autoguardar, limpiar o abrir un borrador."
-        },
         {
             "version": "1.0.38",
             "fecha": "2026-01-05",
@@ -77,6 +72,11 @@
             "version": "1.0.51",
             "fecha": "2026-01-13",
             "novedades": "Corregido error de conexión al comprobar actualizaciones en versión compilada"
+        },
+        {
+            "version": "1.0.52",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido error de conexión HTTPS al comprobar actualizaciones en versión compilada"
         }
     ]
 }
