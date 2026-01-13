@@ -1,7 +1,7 @@
 {
     "latest": "1.0.57",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 58875629,
+    "file_size": 25000386,
     "versions": [
         {
             "version": "1.0.43",
@@ -76,7 +76,7 @@
         {
             "version": "1.0.57",
             "fecha": "2026-01-13",
-            "novedades": "Revertido sistema de actualizaciones al codigo original"
+            "novedades": "Restaurado script de compilacion original"
         }
     ]
 }
