@@ -1,7 +1,7 @@
 {
-    "latest": "1.0.47",
+    "latest": "1.0.48",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 24997917,
+    "file_size": 24997941,
     "versions": [
         {
             "version": "1.0.37",
@@ -57,6 +57,11 @@
             "version": "1.0.47",
             "fecha": "2026-01-13",
             "novedades": "Se ha implementado drag and drop en el Treeview de la pestaña Notas, permitiendo arrastrar argumentos entre carpetas (incluyendo Argumentos para Sentencia que actualiza automáticamente los motivos de condena/absolución), con tooltip visual durante el arrastre, posibilidad de mover a la raíz y cancelación con Escape."
+        },
+        {
+            "version": "1.0.48",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido fallo de actualización causado por emojis en GitHub Pages (Jekyll), añadido sistema anti-caché con timestamp, verificación automática de despliegue, validación robusta de versiones y ZIP, y aumentados los timeouts de conexión."
         }
     ]
 }
