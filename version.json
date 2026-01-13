@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.52",
+    "latest": "1.0.53",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25000304,
+    "file_size": 25173531,
     "versions": [
-        {
-            "version": "1.0.38",
-            "fecha": "2026-01-05",
-            "novedades": "Tooltip explicativo (con cursor de ayuda) a la metrica Tendencia en la pestana de Estadisticas para aclarar que compara el tiempo medio de las ultimas 10 sentencias con las 10 anteriores."
-        },
         {
             "version": "1.0.39",
             "fecha": "2026-01-05",
@@ -77,6 +72,11 @@
             "version": "1.0.52",
             "fecha": "2026-01-13",
             "novedades": "Corregido error de conexión HTTPS al comprobar actualizaciones en versión compilada"
+        },
+        {
+            "version": "1.0.53",
+            "fecha": "2026-01-13",
+            "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones"
         }
     ]
 }
