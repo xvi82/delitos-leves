@@ -1,15 +1,8 @@
 {
-    "latest": "1.0.60",
+    "latest": "1.0.61",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25019334,
-    "critical": true,
-    "critical_message": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada \"Argumentos para Sentencia\" o \"Descargados de la comunidad\", ahora se crea en la raiz del repositorio en lugar de dentro de esas carpetas especiales.",
+    "file_size": 25021780,
     "versions": [
-        {
-            "version": "1.0.46",
-            "fecha": "2026-01-13",
-            "novedades": "Anadida la Biblioteca Comunitaria, una nueva funcion para usuarios con licencia que permite compartir argumentos juridicos con la comunidad, explorar argumentos publicados por otros usuarios, y descargarlos para usarlos en tus sentencias."
-        },
         {
             "version": "1.0.47",
             "fecha": "2026-01-13",
@@ -79,6 +72,11 @@
             "version": "1.0.60",
             "fecha": "2026-01-13",
             "novedades": "Corregido: al crear un nuevo argumento o carpeta teniendo seleccionada Argumentos para Sentencia o Descargados de la comunidad, ahora se crea en la raiz del repositorio en lugar de dentro de esas carpetas especiales."
+        },
+        {
+            "version": "1.0.61",
+            "fecha": "2026-01-14",
+            "novedades": "Se anadio autocompletado con filtrado dinamico al teclear en los Combobox de Delito de principal26.py (pestanas Sentencia y SenorIA, para uno o dos delitos), mostrando solo coincidencias y sugiriendo la primera opcion que empieza por el texto escrito."
         }
     ]
 }
