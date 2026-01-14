@@ -1,7 +1,7 @@
 {
     "latest": "1.0.63",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25024104,
+    "file_size": 25023350,
     "versions": [
         {
             "version": "1.0.49",
@@ -76,7 +76,7 @@
         {
             "version": "1.0.63",
             "fecha": "2026-01-14",
-            "novedades": "Se ha actualizado el estilo de los botones en los dialogos de actualizacion para que tengan fondo blanco (incluyendo estados hover/active) y desaparezca el fondo gris que mostraba Windows."
+            "novedades": "Resolucion de problemas en los botones de actualizacion"
         }
     ]
 }
