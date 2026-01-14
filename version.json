@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.68",
+    "latest": "1.0.69",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25035553,
+    "file_size": 25036254,
     "versions": [
-        {
-            "version": "1.0.54",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones otra vez."
-        },
         {
             "version": "1.0.55",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.68",
             "fecha": "2026-01-14",
             "novedades": "Anadido sistema de logging para depuracion que registra errores de estadisticas y autoguardado en debug_principal26.log."
+        },
+        {
+            "version": "1.0.69",
+            "fecha": "2026-01-14",
+            "novedades": "Seccion de rollback separada en configuracion que muestra info del backup y solo aparece si hay backup disponible."
         }
     ]
 }
