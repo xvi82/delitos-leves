@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.61",
+    "latest": "1.0.62",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25021780,
+    "file_size": 25021801,
     "versions": [
-        {
-            "version": "1.0.47",
-            "fecha": "2026-01-13",
-            "novedades": "Se ha implementado drag and drop en el Treeview de la pestana Notas, permitiendo arrastrar argumentos entre carpetas (incluyendo Argumentos para Sentencia que actualiza automaticamente los motivos de condena/absolucion), con tooltip visual durante el arrastre, posibilidad de mover a la raiz y cancelacion con Escape."
-        },
         {
             "version": "1.0.48",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.61",
             "fecha": "2026-01-14",
             "novedades": "Se anadio autocompletado con filtrado dinamico al teclear en los Combobox de Delito de principal26.py (pestanas Sentencia y SenorIA, para uno o dos delitos), mostrando solo coincidencias y sugiriendo la primera opcion que empieza por el texto escrito."
+        },
+        {
+            "version": "1.0.62",
+            "fecha": "2026-01-14",
+            "novedades": "Se ha reforzado el prompt de SenorIA para limitarse estrictamente a la doctrina aportada (sin inferencias ni citas inventadas), se ha mejorado la logica de 1/2 delitos con validacion de doctrina y fallback seguro, y se ha anadido una notificacion toast al completarse el informe si el usuario no esta en la pestana, con mensaje narrativo y texto ajustado (mas alto y menos ancho)."
         }
     ]
 }
