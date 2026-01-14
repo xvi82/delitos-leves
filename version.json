@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.70",
+    "latest": "1.0.71",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25035397,
+    "file_size": 25035402,
     "versions": [
-        {
-            "version": "1.0.56",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido carga de SSL en aplicacion compilada"
-        },
         {
             "version": "1.0.57",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.70",
             "fecha": "2026-01-14",
             "novedades": "Mejorada la disposicion del panel de rollback en configuracion, con el boton en linea separada."
+        },
+        {
+            "version": "1.0.71",
+            "fecha": "2026-01-14",
+            "novedades": "Correccion del sistema de rollback: Los archivos de control interno (rollback_info.json, startup_ok.flag, startup_count.txt) ya no se copian a la carpeta de la aplicacion al restaurar una version anterior."
         }
     ]
 }
