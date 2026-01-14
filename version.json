@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.62",
+    "latest": "1.0.63",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25021801,
+    "file_size": 25024104,
     "versions": [
-        {
-            "version": "1.0.48",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido fallo de actualizacion causado por emojis en GitHub Pages (Jekyll), anadido sistema anti-cache con timestamp, verificacion automatica de despliegue, validacion robusta de versiones y ZIP, y aumentados los timeouts de conexion."
-        },
         {
             "version": "1.0.49",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.62",
             "fecha": "2026-01-14",
             "novedades": "Se ha reforzado el prompt de SenorIA para limitarse estrictamente a la doctrina aportada (sin inferencias ni citas inventadas), se ha mejorado la logica de 1/2 delitos con validacion de doctrina y fallback seguro, y se ha anadido una notificacion toast al completarse el informe si el usuario no esta en la pestana, con mensaje narrativo y texto ajustado (mas alto y menos ancho)."
+        },
+        {
+            "version": "1.0.63",
+            "fecha": "2026-01-14",
+            "novedades": "Se ha actualizado el estilo de los botones en los dialogos de actualizacion para que tengan fondo blanco (incluyendo estados hover/active) y desaparezca el fondo gris que mostraba Windows."
         }
     ]
 }
