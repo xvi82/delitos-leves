@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.69",
+    "latest": "1.0.70",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25036254,
+    "file_size": 25035397,
     "versions": [
-        {
-            "version": "1.0.55",
-            "fecha": "2026-01-13",
-            "novedades": "Test sin limpieza para verificar SSL"
-        },
         {
             "version": "1.0.56",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.69",
             "fecha": "2026-01-14",
             "novedades": "Seccion de rollback separada en configuracion que muestra info del backup y solo aparece si hay backup disponible."
+        },
+        {
+            "version": "1.0.70",
+            "fecha": "2026-01-14",
+            "novedades": "Mejorada la disposicion del panel de rollback en configuracion, con el boton en linea separada."
         }
     ]
 }
