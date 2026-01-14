@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.64",
+    "latest": "1.0.65",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25023745,
+    "file_size": 25023204,
     "versions": [
-        {
-            "version": "1.0.50",
-            "fecha": "2026-01-13",
-            "novedades": "Mejorada la consistencia visual de la ventana de configuracion: se ajusto el ancho del texto en los LabelFrames de Dictado por voz y Estadisticas de uso, se aplico el estilo gris a los textos explicativos de la pestana Comunidad, y se anadieron textos informativos al panel de Inteligencia Artificial que varian segun este habilitada o no."
-        },
         {
             "version": "1.0.51",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.64",
             "fecha": "2026-01-14",
             "novedades": "Sistema de notificaciones toast unificado: Se ha implementado un nuevo sistema de toasts con tipos diferenciados (success, error, warning, info, procesando, dictado_calibrando, dictado_grabando, dictado_warning, dictado_error, autoguardado, advertencia), cada uno con su icono y titulo correspondiente (eXITO, ERROR, ADVERTENCIA, INFORMACIoN, PROCESANDO, CALIBRANDO/GRABANDO/DICTADO), eliminando los emojis hardcodeados en los mensajes y proporcionando una experiencia visual coherente en toda la aplicacion."
+        },
+        {
+            "version": "1.0.65",
+            "fecha": "2026-01-14",
+            "novedades": "Se anade notificacion toast cuando la valoracion de SenorIA se completa y la aplicacion no tiene el foco, ademas de cuando el usuario esta en otra pestana."
         }
     ]
 }
