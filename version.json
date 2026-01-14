@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.65",
+    "latest": "1.0.66",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25023204,
+    "file_size": 25025221,
     "versions": [
-        {
-            "version": "1.0.51",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido error de conexion al comprobar actualizaciones en version compilada"
-        },
         {
             "version": "1.0.52",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.65",
             "fecha": "2026-01-14",
             "novedades": "Se anade notificacion toast cuando la valoracion de SenorIA se completa y la aplicacion no tiene el foco, ademas de cuando el usuario esta en otra pestana."
+        },
+        {
+            "version": "1.0.66",
+            "fecha": "2026-01-14",
+            "novedades": "Se ha implementado un sistema unificado de notificaciones toast con tipos diferenciados (success, error, warning, info, procesando, dictado_), animacion slide-in desde la derecha, hover para pausar el temporizador, fade-out al cerrar, duracion ajustada al tiempo real de calibracion del microfono, icono de informacion en azul, y funcionalidad de clic en el toast de informe IA exitoso que navega automaticamente a la pestana SenorIA."
         }
     ]
 }
