@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.66",
+    "latest": "1.0.67",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25025221,
+    "file_size": 25034992,
     "versions": [
-        {
-            "version": "1.0.52",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido error de conexion HTTPS al comprobar actualizaciones en version compilada"
-        },
         {
             "version": "1.0.53",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.66",
             "fecha": "2026-01-14",
             "novedades": "Se ha implementado un sistema unificado de notificaciones toast con tipos diferenciados (success, error, warning, info, procesando, dictado_), animacion slide-in desde la derecha, hover para pausar el temporizador, fade-out al cerrar, duracion ajustada al tiempo real de calibracion del microfono, icono de informacion en azul, y funcionalidad de clic en el toast de informe IA exitoso que navega automaticamente a la pestana SenorIA."
+        },
+        {
+            "version": "1.0.67",
+            "fecha": "2026-01-14",
+            "novedades": "Sistema de rollback para actualizaciones: Implementado sistema que permite restaurar la version anterior de la aplicacion si una actualizacion causa problemas, con backup automatico persistente en AppData, deteccion de posibles fallos post-actualizacion, limpieza automatica tras 15 dias, y nueva seccion en Configuracion  Ayuda que muestra informacion del backup disponible (version, fecha, tamano) con opcion de restaurar."
         }
     ]
 }
