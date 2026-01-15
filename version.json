@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.72",
+    "latest": "1.0.73",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25035567,
+    "file_size": 25040331,
     "versions": [
-        {
-            "version": "1.0.58",
-            "fecha": "2026-01-13",
-            "novedades": "Corregido error SSL al comprobar actualizaciones"
-        },
         {
             "version": "1.0.59",
             "fecha": "2026-01-13",
@@ -77,6 +72,11 @@
             "version": "1.0.72",
             "fecha": "2026-01-15",
             "novedades": "Correcciones menores"
+        },
+        {
+            "version": "1.0.73",
+            "fecha": "2026-01-15",
+            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\"Paso X de 68\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
         }
     ]
 }
