@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.73",
+    "latest": "1.0.74",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25040331,
+    "file_size": 25038664,
     "versions": [
-        {
-            "version": "1.0.59",
-            "fecha": "2026-01-13",
-            "novedades": "Se corrigio la ruta del Repositorio de argumentos para que funcione correctamente en la version compilada, anadiendo la funcion get_internal_path() que detecta automaticamente si buscar los recursos dentro de _internal (compilado) o junto al script (desarrollo)."
-        },
         {
             "version": "1.0.60",
             "fecha": "2026-01-13",
@@ -76,7 +71,12 @@
         {
             "version": "1.0.73",
             "fecha": "2026-01-15",
-            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\"Paso X de 68\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
+            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\"Paso X de 68\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
+        },
+        {
+            "version": "1.0.74",
+            "fecha": "2026-01-15",
+            "novedades": "Se anadio la funcionalidad de ordenamiento en la Biblioteca Comunitaria: ahora al hacer clic en los encabezados de las columnas (Titulo, Categoria, Autor, Descargas) se ordenan los argumentos alfabeticamente o numericamente, alternando entre orden ascendente y descendente con cada clic."
         }
     ]
 }
