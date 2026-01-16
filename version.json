@@ -1,7 +1,7 @@
 {
     "latest": "1.0.75",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25038620,
+    "file_size": 25038941,
     "versions": [
         {
             "version": "1.0.61",
@@ -66,7 +66,7 @@
         {
             "version": "1.0.73",
             "fecha": "2026-01-15",
-            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
+            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
         },
         {
             "version": "1.0.74",
@@ -76,7 +76,7 @@
         {
             "version": "1.0.75",
             "fecha": "2026-01-16",
-            "novedades": "Correccion de errores tipograficos y de concordancia en los tooltips del tour (IDs 9, 42), mejora de redaccion para mayor claridad y coherencia en segunda persona (IDs 3, 34, 40, 44, 45, 46.1), y ajuste de posicion vertical de los tooltips de \\\\\"Hechos Probados\\\\\" para centrarlos correctamente dentro del LabelFrame (tanto con la barra a la izquierda como a la derecha)."
+            "novedades": "Corregido bug en save_config() que sobrescribia la fecha de ultima comprobacion de actualizaciones, causando que la ventana de actualizacion apareciera siempre en lugar de cada 15 dias."
         }
     ]
 }
