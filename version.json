@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.75",
+    "latest": "1.0.76",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25038941,
+    "file_size": 25038910,
     "versions": [
-        {
-            "version": "1.0.61",
-            "fecha": "2026-01-14",
-            "novedades": "Se anadio autocompletado con filtrado dinamico al teclear en los Combobox de Delito de principal26.py (pestanas Sentencia y SenorIA, para uno o dos delitos), mostrando solo coincidencias y sugiriendo la primera opcion que empieza por el texto escrito."
-        },
         {
             "version": "1.0.62",
             "fecha": "2026-01-14",
@@ -66,7 +61,7 @@
         {
             "version": "1.0.73",
             "fecha": "2026-01-15",
-            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
+            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
         },
         {
             "version": "1.0.74",
@@ -77,6 +72,11 @@
             "version": "1.0.75",
             "fecha": "2026-01-16",
             "novedades": "Corregido bug en save_config() que sobrescribia la fecha de ultima comprobacion de actualizaciones, causando que la ventana de actualizacion apareciera siempre en lugar de cada 15 dias."
+        },
+        {
+            "version": "1.0.76",
+            "fecha": "2026-01-17",
+            "novedades": "Corregidos errores de estabilidad: IDs duplicados en la lista, validacion de contenido nulo, cancelacion de descargas con boton/X, imports optimizados, proteccion contra cierres durante carga, normalizacion de categorias Absolucion/Absolucion, y sanitizacion mejorada de nombres de archivo con soporte Unicode."
         }
     ]
 }
