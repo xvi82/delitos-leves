@@ -1,13 +1,8 @@
 {
-    "latest": "1.0.77",
+    "latest": "1.0.78",
     "download_url": "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size": 25040776,
+    "file_size": 25040934,
     "versions": [
-        {
-            "version": "1.0.63",
-            "fecha": "2026-01-14",
-            "novedades": "Botones de actualizacion arreglados."
-        },
         {
             "version": "1.0.64",
             "fecha": "2026-01-14",
@@ -56,7 +51,7 @@
         {
             "version": "1.0.73",
             "fecha": "2026-01-15",
-            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
+            "novedades": "Mejoras en el indicador del Tour: Se anadio una barra de progreso visual verde, boton de cerrar () para saltar el tour anticipadamente dejando la aplicacion limpia como al inicio, formato mejorado del indicador (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Paso X de 68\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"), y se corrigieron varios tooltips que tapaban el indicador anadiendo saltos de linea."
         },
         {
             "version": "1.0.74",
@@ -77,6 +72,11 @@
             "version": "1.0.77",
             "fecha": "2026-01-17",
             "novedades": "Se corrige el bloqueo de interfaz en la Biblioteca Comunitaria al mover las operaciones de red (cargar, descargar y publicar argumentos) a hilos secundarios, y se mejora el mensaje de descarga para argumentos de Absolucion/Condena indicando que apareceran en el menu de opciones del Fallo de la sentencia."
+        },
+        {
+            "version": "1.0.78",
+            "fecha": "2026-01-17",
+            "novedades": "Corregido bug en el sistema de actualizaciones que mostraba el aviso todos los dias despues del dia 15 aunque el usuario dijera \\\\\"Ahora no\\\\\", moviendo el guardado de la fecha de ultima comprobacion al momento de la interaccion del usuario con el dialogo en lugar de antes de mostrarlo."
         }
     ]
 }
