@@ -3823,7 +3823,7 @@
                     <div class="flow-container" style="min-width: 600px;">
                         <!-- Paso 1 -->
                         <div class="flow-row">
-                            <div class="flow-node" style="background: #2c3e50; color: white; border-color: #2c3e50;">
+                            <div class="flow-node" style="background: #6c7a89; color: white; border-color: #6c7a89;">
                                 <strong>Paso 1</strong><br>
                                 ⚙️ Abrir Configuración
                             </div>
@@ -5685,6 +5685,25 @@
 
         window.addEventListener('scroll', updateActiveNav);
         updateActiveNav();
+
+        // Corregir navegación con lazy loading (scroll persistente)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    // Scroll inmediato sin animación para ir directo
+                    targetSection.scrollIntoView({ behavior: 'instant' });
+                    // Scrolls adicionales para compensar lazy loading
+                    [100, 300, 600, 1000].forEach(delay => {
+                        setTimeout(() => {
+                            targetSection.scrollIntoView({ behavior: 'instant' });
+                        }, delay);
+                    });
+                }
+            });
+        });
 
         // ==================== BUSCADOR INTERNO ====================
         const searchInput = document.getElementById('searchInput');
