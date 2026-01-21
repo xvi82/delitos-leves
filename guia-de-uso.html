@@ -717,6 +717,7 @@
                 <li><a href="#guardado"><span class="nav-icon">💾</span>Guardado</a></li>
                 <li><a href="#notas"><span class="nav-icon">🗒️</span>Notas y Repositorio</a></li>
                 <li><a href="#senoria"><span class="nav-icon">🤖</span>SeñorIA</a></li>
+                <li><a href="#herramientas-texto"><span class="nav-icon">✨</span>Herramientas de Texto</a></li>
                 <li><a href="#estadisticas"><span class="nav-icon">📊</span>Estadísticas</a></li>
                 <li><a href="#configuracion"><span class="nav-icon">⚙️</span>Configuración</a></li>
                 <li><a href="#atajos"><span class="nav-icon">⌨️</span>Atajos de Teclado</a></li>
@@ -3183,6 +3184,34 @@
                     El botón "Proteger Borrador" solo aparece si has activado la opción <strong>Protección de borradores</strong> en Configuración → Extras.
                 </div>
 
+                <h3>Indicador de Cambios Sin Guardar</h3>
+                <p>La aplicación te avisa visualmente cuando tienes cambios pendientes de guardar. En la <strong>barra de título</strong> de la ventana aparece el texto <code>· SIN GUARDAR</code> junto al nombre de la aplicación:</p>
+
+                <!-- IMAGEN: Captura de la barra de título mostrando "SIN GUARDAR" -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/indicador-sin-guardar.png" alt="Indicador SIN GUARDAR en la barra de título">
+                    <figcaption>El indicador "· SIN GUARDAR" aparece en la barra de título cuando hay cambios pendientes</figcaption>
+                </figure>
+
+                <h4>¿Cuándo aparece?</h4>
+                <ul>
+                    <li>Cuando <strong>modificas cualquier campo</strong> (nombres, hechos probados, selecciones, etc.)</li>
+                    <li>Cuando <strong>cambias opciones</strong> (checkboxes, radiobuttons, desplegables)</li>
+                    <li>Cuando <strong>escribes en las notas</strong></li>
+                </ul>
+
+                <h4>¿Cuándo desaparece?</h4>
+                <ul>
+                    <li>Al <strong>guardar la sentencia</strong> (.docx)</li>
+                    <li>Al <strong>guardar un borrador</strong> (.pdl o .pdlx)</li>
+                    <li>Al <strong>limpiar</strong> el formulario</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>ℹ️ Aviso al cerrar</strong>
+                    <p style="margin-top: 0.5rem;">Si intentas cerrar la aplicación con cambios sin guardar, aparecerá un diálogo de confirmación preguntando si realmente deseas cerrar sin guardar.</p>
+                </div>
+
                 <h3>Guardar Sentencia (.docx)</h3>
                 <p>Genera el <strong>documento Word final</strong> con la sentencia completa, lista para imprimir o archivar.</p>
 
@@ -3317,6 +3346,71 @@
                         <li>El autoguardado se encargará de actualizar el archivo automáticamente</li>
                         <li>Cuando termines, guarda la sentencia (<code>Ctrl + G</code>)</li>
                     </ol>
+                </div>
+
+                <h3>Recuperación de Emergencia (Anti-Crash)</h3>
+                <p>Además del autoguardado de borradores, la aplicación cuenta con un <strong>sistema de recuperación de emergencia</strong> que funciona de forma automática y transparente, sin necesidad de configuración.</p>
+
+                <h4>¿Cómo funciona?</h4>
+                <p>Cada <strong>3 minutos</strong>, la aplicación guarda automáticamente una copia temporal de tu trabajo en un archivo interno. Este guardado:</p>
+                <ul>
+                    <li><strong>Funciona siempre</strong>, incluso si no has guardado ningún borrador manualmente</li>
+                    <li><strong>Es invisible</strong>: no verás notificaciones ni interrupciones</li>
+                    <li><strong>Se elimina automáticamente</strong> cuando cierras la aplicación correctamente</li>
+                </ul>
+
+                <h4>¿Cuándo se activa la recuperación?</h4>
+                <p>Si la aplicación se cierra de forma inesperada (corte de luz, error del sistema, cierre forzado, etc.), al volver a abrirla aparecerá un diálogo ofreciendo recuperar el trabajo:</p>
+
+                <!-- IMAGEN: Diálogo de recuperación de crash -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/dialogo-recuperacion-crash.png" alt="Diálogo de recuperación de trabajo">
+                    <figcaption>Al detectar un cierre inesperado, la aplicación ofrece recuperar el trabajo perdido</figcaption>
+                </figure>
+
+                <ul>
+                    <li><strong>Sí:</strong> Recupera el estado guardado automáticamente (todos los campos, selecciones y notas)</li>
+                    <li><strong>No:</strong> Descarta la copia de emergencia y comienza con un formulario vacío</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>ℹ️ Diferencia con el Autoguardado de Borradores</strong>
+                    <table style="width: 100%; margin-top: 0.5rem; border-collapse: collapse; font-size: 0.85rem;">
+                        <thead>
+                            <tr style="background: #f5f5f5;">
+                                <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Característica</th>
+                                <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Autoguardado de Borradores</th>
+                                <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Recuperación de Emergencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Requisito</strong></td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Guardar borrador manualmente primero</td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Ninguno, funciona siempre</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Intervalo</strong></td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Configurable (1, 5 o 10 min)</td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Fijo: cada 3 minutos</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Archivo</strong></td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Tu archivo .pdl</td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Archivo temporal interno</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Propósito</strong></td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Guardar progreso regularmente</td>
+                                <td style="padding: 0.5rem; border: 1px solid #ddd;">Red de seguridad ante crashes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box tip">
+                    <strong>💡 Tranquilidad total</strong>
+                    <p style="margin-top: 0.5rem;">Aunque esta función está diseñada para emergencias, puedes trabajar con tranquilidad sabiendo que <strong>nunca perderás más de 3 minutos de trabajo</strong>, incluso si se va la luz o el ordenador se bloquea.</p>
                 </div>
 
                 <h3>Ruta de Guardado</h3>
@@ -4150,6 +4244,267 @@
                         </tr>
                     </tbody>
                 </table>
+
+            </section>
+
+            <!-- Herramientas de Texto (IA + Dictado) -->
+            <section class="guide-section" id="herramientas-texto">
+                <h2><span class="section-icon">✨</span> Herramientas de Texto</h2>
+                <p>Además del asistente SeñorIA, la aplicación incluye <strong>herramientas de asistencia</strong> integradas directamente en los campos de texto. Estas herramientas aparecen como pequeños iconos en la esquina inferior derecha de ciertas áreas de escritura.</p>
+
+                <div class="info-box">
+                    <strong>ℹ️ ¿Dónde aparecen?</strong>
+                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>En la ventana <strong>"Seguir escribiendo..."</strong> (al expandir un campo de Hechos Probados)</li>
+                        <li>En el área de <strong>Notas</strong> (pestaña Notas)</li>
+                        <li>Los iconos solo aparecen si tienes habilitada la IA y/o el Dictado en Configuración</li>
+                    </ul>
+                </div>
+
+                <!-- ==================== HERRAMIENTAS DE IA ==================== -->
+                <h3>Herramientas de IA en Campos de Texto</h3>
+                <p>Cuando tienes la <strong>Inteligencia Artificial habilitada</strong> (Configuración → Extras → Inteligencia Artificial), aparecen tres iconos de asistencia en los campos de texto expandidos:</p>
+
+                <!-- IMAGEN: Captura de los 3 iconos de IA (Aa, ✨, 🔗) en la esquina de un campo de texto -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/iconos-ia-texto.png" alt="Iconos de herramientas de IA">
+                    <figcaption>Los tres iconos de IA aparecen en la esquina inferior derecha del campo de texto</figcaption>
+                </figure>
+
+                <table style="width: 100%; margin: 1rem 0; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f5f5f5;">
+                            <th style="padding: 0.5rem; border: 1px solid #ddd; width: 80px;">Icono</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Función</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; text-align: center;"><strong style="font-family: 'Segoe UI', sans-serif; font-size: 1.1em;">Aa</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Corrección ortográfica</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Corrige errores ortográficos y gramaticales manteniendo el estilo y estructura original del texto</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; text-align: center;">✨</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Reescritura jurídica</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Transforma el texto a lenguaje técnico-jurídico apropiado, adaptándose al contexto (hechos probados o fundamentos)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; text-align: center;">🔗</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Revisar coherencia</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Analiza el texto buscando inconsistencias, contradicciones o problemas de estructura lógica</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Cómo Activar las Herramientas de IA</h4>
+                <ol>
+                    <li>Ve a <strong>Configuración → Extras</strong></li>
+                    <li>Activa <strong>"Inteligencia Artificial"</strong></li>
+                    <li>Selecciona un modelo (GPT-5.2 o Gemini)</li>
+                    <li>Introduce tu <strong>API Key</strong> del proveedor elegido</li>
+                    <li><strong>Reinicia la aplicación</strong></li>
+                </ol>
+
+                <h4>Cómo Usar Cada Herramienta</h4>
+
+                <h5>Aa - Corrección Ortográfica</h5>
+                <ol>
+                    <li>Escribe o pega tu texto en el campo</li>
+                    <li>Haz clic en el icono <strong>Aa</strong></li>
+                    <li>Espera unos segundos mientras la IA procesa</li>
+                    <li>El texto se actualiza automáticamente con las correcciones</li>
+                </ol>
+
+                <!-- GIF: Animación mostrando clic en Aa y corrección del texto -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/correccion-ortografica.gif" alt="Corrección ortográfica en acción">
+                    <figcaption>GIF: Clic en Aa → el texto se corrige automáticamente</figcaption>
+                </figure>
+
+                <h5>✨ - Reescritura Jurídica</h5>
+                <ol>
+                    <li>Escribe los hechos en lenguaje coloquial o resumido</li>
+                    <li>Haz clic en el icono <strong>✨</strong></li>
+                    <li>La IA reescribe el texto con terminología jurídica apropiada</li>
+                    <li>El resultado mantiene el significado pero con estilo formal</li>
+                </ol>
+
+                <div class="info-box tip">
+                    <strong>💡 Contexto Inteligente</strong>
+                    La reescritura se adapta al contexto: si estás en "Hechos Probados", genera texto narrativo de hechos; si estás en otra sección, genera argumentación jurídica.
+                </div>
+
+                <!-- GIF: Animación mostrando texto coloquial → clic en ✨ → texto jurídico -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/reescritura-juridica.gif" alt="Reescritura jurídica en acción">
+                    <figcaption>GIF: Texto informal → clic en ✨ → texto en lenguaje jurídico</figcaption>
+                </figure>
+
+                <h5>🔗 - Revisar Coherencia</h5>
+                <ol>
+                    <li>Escribe o revisa tu texto completo</li>
+                    <li>Haz clic en el icono <strong>🔗</strong></li>
+                    <li>La IA analiza el texto buscando:
+                        <ul>
+                            <li>Inconsistencias o contradicciones</li>
+                            <li>Problemas de estructura lógica</li>
+                            <li>Datos que no cuadran</li>
+                        </ul>
+                    </li>
+                    <li>El resultado aparece al final del texto con un separador</li>
+                </ol>
+
+                <!-- IMAGEN: Captura mostrando el resultado de revisión (CORRECTO o PROBLEMAS) -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/revision-coherencia.png" alt="Resultado de revisión de coherencia">
+                    <figcaption>La revisión aparece al final del texto: verde si todo está correcto, rojo si hay problemas</figcaption>
+                </figure>
+
+                <div class="info-box warning">
+                    <strong>⚠️ Importante</strong>
+                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>Estas herramientas <strong>requieren conexión a Internet</strong></li>
+                        <li>Cada uso consume créditos de tu API Key (consulta precios del proveedor)</li>
+                        <li>El icono cambia a <strong>azul</strong> mientras procesa; espera a que vuelva a gris</li>
+                        <li>Puedes <strong>deshacer</strong> con Ctrl+Z si no te gusta el resultado</li>
+                    </ul>
+                </div>
+
+                <!-- ==================== DICTADO POR VOZ ==================== -->
+                <h3>Dictado por Voz</h3>
+                <p>El dictado por voz te permite <strong>escribir hablando</strong> en lugar de teclear. Es especialmente útil para redactar hechos probados extensos o tomar notas rápidas durante el juicio.</p>
+
+                <h4>Cómo Activar el Dictado</h4>
+                <ol>
+                    <li>Ve a <strong>Configuración → Extras</strong></li>
+                    <li>Activa <strong>"Dictado por voz"</strong></li>
+                    <li><strong>Reinicia la aplicación</strong></li>
+                    <li>Aparecerá un botón <strong>🎙</strong> en las áreas de texto</li>
+                </ol>
+
+                <!-- IMAGEN: Captura mostrando el botón del micrófono en el área de texto -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/boton-dictado.png" alt="Botón de dictado por voz">
+                    <figcaption>El botón del micrófono aparece junto a los campos de texto cuando el dictado está activado</figcaption>
+                </figure>
+
+                <h4>Cómo Usar el Dictado</h4>
+                <ol>
+                    <li><strong>Haz clic en el botón 🎙</strong> (micrófono)</li>
+                    <li>Aparece una notificación <strong>"CALIBRANDO"</strong> - espera en silencio unos segundos</li>
+                    <li>Cuando cambie a <strong>"GRABANDO"</strong> (con indicador rojo), empieza a hablar</li>
+                    <li>Habla de forma clara y pausada</li>
+                    <li>Cuando termines, espera unos segundos o haz clic de nuevo en el micrófono</li>
+                    <li>El texto se insertará automáticamente en el campo activo</li>
+                </ol>
+
+                <!-- GIF: Animación del flujo completo de dictado -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/dictado-flujo.gif" alt="Flujo completo de dictado por voz">
+                    <figcaption>GIF: Clic en 🎙 → calibración → grabando → texto insertado</figcaption>
+                </figure>
+
+                <h4>Comandos de Voz para Puntuación</h4>
+                <p>Puedes dictar signos de puntuación usando comandos de voz. Di el comando y el sistema lo convertirá automáticamente:</p>
+
+                <table style="width: 100%; margin: 1rem 0; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f5f5f5;">
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Dices...</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Se escribe...</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"punto"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>.</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"El día tres punto" → "El día tres."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"coma"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>,</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"Juan coma María" → "Juan, María"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"punto y aparte"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>.</code> + nueva línea</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Termina el párrafo y empieza uno nuevo</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"punto y coma"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>;</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"primero punto y coma segundo" → "primero; segundo"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"dos puntos"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>:</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"declara dos puntos" → "declara:"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"abrir paréntesis" / "cerrar paréntesis"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>(</code> / <code>)</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"abrir paréntesis artículo 234 cerrar paréntesis" → "(artículo 234)"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"abrir comillas" / "cerrar comillas"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>"</code> / <code>"</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Para citas textuales</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"signo de interrogación"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><code>?</code></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"qué ocurrió signo de interrogación" → "qué ocurrió?"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">"nueva línea" / "nuevo párrafo"</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Salto de línea</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Para estructurar el texto</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box tip">
+                    <strong>💡 Capitalización Automática</strong>
+                    El sistema capitaliza automáticamente la primera letra después de un punto y al inicio del texto. No necesitas decir "mayúscula" o similar.
+                </div>
+
+                <h4>Calibración del Micrófono</h4>
+                <p>La primera vez que uses el dictado (y periódicamente después), el sistema calibra el micrófono:</p>
+                <ul>
+                    <li><strong>Permanece en silencio</strong> durante la calibración (2-3 segundos)</li>
+                    <li>El sistema aprende el nivel de ruido ambiental</li>
+                    <li>La calibración se <strong>guarda automáticamente</strong> para futuras sesiones</li>
+                    <li>Si cambias de micrófono o entorno, el sistema se recalibrará</li>
+                </ul>
+
+                <h4>Requisitos del Dictado</h4>
+                <ul>
+                    <li><strong>Micrófono funcional</strong> conectado al equipo</li>
+                    <li><strong>Conexión a Internet</strong> (usa reconocimiento de voz en la nube)</li>
+                    <li><strong>Permisos de micrófono</strong> en Windows (Configuración → Privacidad → Micrófono)</li>
+                </ul>
+
+                <div class="info-box warning">
+                    <strong>⚠️ Si el dictado no funciona</strong>
+                    <ol style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>Verifica que el micrófono está conectado y funciona</li>
+                        <li>Abre <strong>Configuración de Windows → Privacidad → Micrófono</strong></li>
+                        <li>Activa "Permitir que las aplicaciones accedan al micrófono"</li>
+                        <li>Reinicia la aplicación</li>
+                    </ol>
+                </div>
+
+                <h4>Consejos para un Buen Dictado</h4>
+                <ul>
+                    <li><strong>Habla claro y pausado:</strong> No es necesario hablar lento, pero sí articular bien</li>
+                    <li><strong>Evita ruido de fondo:</strong> El dictado funciona mejor en ambientes silenciosos</li>
+                    <li><strong>Usa los comandos de puntuación:</strong> Es más preciso que esperar que el sistema los deduzca</li>
+                    <li><strong>Revisa el texto:</strong> Siempre comprueba el resultado y corrige si es necesario</li>
+                    <li><strong>Combina con IA:</strong> Dicta primero y luego usa ✨ para mejorar el estilo jurídico</li>
+                </ul>
 
             </section>
 
