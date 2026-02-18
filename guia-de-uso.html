@@ -1356,17 +1356,42 @@
                     <figcaption>Campo de indemnización (aparece al seleccionar "Sí")</figcaption>
                 </figure>
 
-                <h5>5. ¿Solicita Orden de Alejamiento?</h5>
-                <p>Pregunta Sí/No. Si seleccionas "Sí", aparecen dos campos:</p>
+                <h5>5. ¿Solicita Orden de Prohibición? (art. 48 CP)</h5>
+                <p>El sistema de prohibiciones funciona en <strong>dos pasos</strong>:</p>
+                <ol>
+                    <li>Seleccionar <strong>"Sí"</strong> en <em>"¿Solicita Orden?"</em></li>
+                    <li>Elegir el tipo de prohibición: <strong>Comunicación</strong>, <strong>Aproximación</strong> o <strong>Ambas</strong></li>
+                </ol>
+
+                <!-- IMAGEN: Frame "¿Solicita Orden?" con opciones Sí/No -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/prohibicion-orden-si-no.png" alt="¿Solicita Orden? Sí/No">
+                    <figcaption>Primer paso: seleccionar si se solicita una orden de prohibición</figcaption>
+                </figure>
+
+                <p>Según el tipo seleccionado aparecen distintos campos:</p>
                 <ul>
-                    <li><strong>Distancia alejamiento:</strong> Metros de distancia mínima (ej: 200, 500)</li>
-                    <li><strong>Tiempo alejamiento:</strong> Meses de duración. Se selecciona con <strong>botones del 1 al 6</strong></li>
+                    <li><strong>Comunicación:</strong> Solo aparecen los botones de meses (1 a 6) para la duración de la prohibición de comunicación</li>
+                    <li><strong>Aproximación:</strong> Aparece el campo de distancia en metros y los botones de meses para la prohibición de aproximación</li>
+                    <li><strong>Ambas:</strong> Aparece el campo de distancia y los botones de meses para ambas prohibiciones</li>
                 </ul>
 
-                <!-- IMAGEN: Captura mostrando los campos de alejamiento con los 6 botones de meses -->
+                <!-- IMAGEN: Tipo "Comunicación" seleccionado -->
                 <figure class="guide-image">
-                    <img loading="lazy" src="img/guia/alejamiento-mf.png" alt="Campos de alejamiento del MF">
-                    <figcaption>Campos de alejamiento con botones de 1 a 6 meses</figcaption>
+                    <img loading="lazy" src="img/guia/prohibicion-tipo-comunicacion.png" alt="Prohibición de comunicación">
+                    <figcaption>Comunicación: solo aparecen los botones de duración en meses</figcaption>
+                </figure>
+
+                <!-- IMAGEN: Tipo "Aproximación" seleccionado -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/prohibicion-tipo-aproximacion.png" alt="Prohibición de aproximación">
+                    <figcaption>Aproximación: campo de distancia y botones de duración en meses</figcaption>
+                </figure>
+
+                <!-- IMAGEN: Tipo "Ambas" seleccionado -->
+                <figure class="guide-image">
+                    <img loading="lazy" src="img/guia/prohibicion-tipo-ambas.png" alt="Prohibición de comunicación y aproximación">
+                    <figcaption>Ambas: campo de distancia y botones de duración para ambas prohibiciones</figcaption>
                 </figure>
 
                 <h5>6. ¿Solicita Inhabilitación Especial? (Solo ciertos delitos)</h5>
@@ -1542,12 +1567,14 @@
                 <h4>Indemnización</h4>
                 <p>Importe de la responsabilidad civil si procede.</p>
 
-                <h4>Alejamiento</h4>
-                <p>Si el delito lo permite, campos para:</p>
+                <h4>Prohibición del art. 48 CP</h4>
+                <p>Si el MF o el Abogado solicitaron una orden de prohibición, los campos del fallo se adaptan dinámicamente según el tipo solicitado:</p>
                 <ul>
-                    <li>Tiempo de alejamiento (meses)</li>
-                    <li>Distancia en metros</li>
+                    <li><strong>Comunicación:</strong> Solo aparece el campo de tiempo (meses)</li>
+                    <li><strong>Aproximación:</strong> Aparecen campos de distancia (metros) y tiempo (meses)</li>
+                    <li><strong>Ambas:</strong> Aparecen campos de distancia (metros) y tiempo (meses)</li>
                 </ul>
+                <p>El título de la sección se adapta al tipo de prohibición: <em>"Prohibición de comunicación"</em>, <em>"Prohibición de aproximación"</em> o <em>"Prohibición de comunicación y aproximación"</em>.</p>
 
                 <div class="info-box tip">
                     <strong>💡 Validación en Tiempo Real</strong>
@@ -2270,14 +2297,14 @@
                     <li><strong>Pena:</strong> Días de multa / Días de localización / Horas de trabajos (según el delito)</li>
                     <li><strong>Cuota multa:</strong> Importe en euros por día (ej: 6€, 10€)</li>
                     <li><strong>Indemnización:</strong> Cantidad solicitada en euros</li>
-                    <li><strong>Alejamiento:</strong> Tiempo (meses) y distancia (metros)</li>
+                    <li><strong>Prohibición (art. 48 CP):</strong> Tipo de prohibición (Comunicación/Aproximación/Ambas), tiempo (meses) y distancia (metros, si aplica)</li>
                     <li><strong>Inhabilitación:</strong> Tiempo en meses (para ciertos delitos)</li>
                 </ul>
 
                 <!-- GIF: Animación expandiendo y contrayendo las subsecciones del MF -->
                 <figure class="guide-image">
                     <img loading="lazy" src="img/guia/expandir-subsecciones-mf.gif" alt="Expandir subsecciones del MF">
-                    <figcaption>GIF: Expandir/contraer las subsecciones de Pena, Indemnización, Alejamiento, Inhabilitación</figcaption>
+                    <figcaption>GIF: Expandir/contraer las subsecciones de Pena, Indemnización, Prohibición, Inhabilitación</figcaption>
                 </figure>
 
                 <h4>Abogado del Denunciante</h4>
@@ -2317,7 +2344,7 @@
                     <ul style="margin-top: 0.5rem; margin-bottom: 0;">
                         <li>Si introduces más días de multa de los solicitados por MF o Abogado</li>
                         <li>Si la cuota diaria supera la solicitada por las partes</li>
-                        <li>Si el tiempo de alejamiento excede lo solicitado</li>
+                        <li>Si el tiempo de prohibición excede lo solicitado</li>
                         <li>El campo se resalta en <span style="color: red; font-weight: bold;">rojo</span></li>
                         <li>Aparece una <strong>notificación emergente (toast)</strong> explicando el error</li>
                     </ul>
@@ -2326,18 +2353,22 @@
                 <h3>Penas Accesorias</h3>
                 <p>Algunos delitos permiten o requieren penas accesorias que se configuran en secciones separadas:</p>
 
-                <h4>Alejamiento</h4>
+                <h4>Prohibición del art. 48 CP</h4>
                 <ul>
+                    <li>La sección se adapta dinámicamente al tipo de prohibición solicitada por el MF o Abogado</li>
+                    <li>El título del LabelFrame refleja el tipo concreto: <em>"Prohibición de comunicación"</em>, <em>"Prohibición de aproximación"</em> o <em>"Prohibición de comunicación y aproximación"</em></li>
+                    <li>Si solo se solicitó un tipo de prohibición, las opciones son <strong>Conceder / Denegar</strong></li>
+                    <li>Si se solicitaron ambas (o distintas entre MF y Abogado), las opciones son <strong>Comunicación / Aproximación / Ambas / Denegar</strong></li>
                     <li><strong>Tiempo:</strong> Duración en meses</li>
-                    <li><strong>Distancia:</strong> Metros de distancia mínima</li>
+                    <li><strong>Distancia:</strong> Metros de distancia mínima (solo si incluye aproximación)</li>
                     <li>Disponible para delitos como Amenazas, Coacciones, Lesiones, Maltrato de Obra</li>
-                    <li>El campo se muestra/oculta según si se marcó "Alejamiento" en la petición del MF o Abogado</li>
+                    <li>El campo se muestra/oculta según si se solicitó una prohibición en la petición del MF o Abogado</li>
                 </ul>
 
-                <!-- IMAGEN: Captura de la sección de Alejamiento con campos de tiempo y distancia -->
+                <!-- IMAGEN: Captura de la sección de Prohibición en el Fallo -->
                 <figure class="guide-image">
-                    <img loading="lazy" src="img/guia/seccion-alejamiento.png" alt="Sección de alejamiento">
-                    <figcaption>Campos de tiempo y distancia de alejamiento</figcaption>
+                    <img loading="lazy" src="img/guia/seccion-prohibicion-fallo.png" alt="Sección de prohibición en el fallo">
+                    <figcaption>Sección de prohibición en el fallo con opciones adaptadas al tipo solicitado</figcaption>
                 </figure>
 
                 <h4>Inhabilitación</h4>
@@ -2731,7 +2762,7 @@
                                         <small>
                                             💰 Multa (meses + cuota)<br>
                                             💵 Indemnización (opcional)<br>
-                                            🚫 Alejamiento (opcional)<br>
+                                            🚫 Prohibición art. 48 CP (opcional)<br>
                                             📛 Inhabilitación (opcional)
                                         </small>
                                     </div>
@@ -2959,12 +2990,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Tiempo de alejamiento (meses)</td>
-                            <td style="padding: 0.5rem; border: 1px solid #ddd;">MF o Abogado solicitaron alejamiento</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Tiempo de prohibición (meses)</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">MF o Abogado solicitaron prohibición de comunicación, aproximación o ambas</td>
                         </tr>
                         <tr>
-                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Distancia de alejamiento (metros)</td>
-                            <td style="padding: 0.5rem; border: 1px solid #ddd;">MF o Abogado solicitaron alejamiento</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">Distancia de aproximación (metros)</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">MF o Abogado solicitaron prohibición de aproximación o ambas</td>
                         </tr>
                         <tr>
                             <td style="padding: 0.5rem; border: 1px solid #ddd;">Indemnización (euros)</td>
@@ -3000,7 +3031,7 @@
                     <ul style="margin-top: 0.5rem; margin-bottom: 0;">
                         <li><strong>Días de multa:</strong> No pueden superar lo pedido por MF o Abogado</li>
                         <li><strong>Cuota de multa:</strong> Se compara con las cuotas solicitadas (acepta decimales: 6,50 o 6.50)</li>
-                        <li><strong>Alejamiento:</strong> No puede superar el tiempo solicitado</li>
+                        <li><strong>Prohibición:</strong> El tiempo no puede superar lo solicitado por MF o Abogado</li>
                         <li><strong>Indemnización:</strong> No puede superar la cantidad solicitada</li>
                         <li>El campo se resalta en <span style="color: red; font-weight: bold;">rojo</span> si hay problema</li>
                         <li>Aparece una <strong>notificación emergente (toast)</strong> explicando el error</li>
