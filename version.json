@@ -1,6 +1,6 @@
 {
     "download_url":  "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size":  26506899,
+    "file_size":  26507984,
     "latest":  "1.0.99.10",
     "versions":  [
                      {
@@ -69,7 +69,7 @@
                          "fecha":  "2026-03-10"
                      },
                      {
-                         "novedades":  "bugs en version.json",
+                         "novedades":  "Correcion de bugs",
                          "version":  "1.0.99.10",
                          "fecha":  "2026-03-12"
                      },
