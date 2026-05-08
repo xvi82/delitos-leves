@@ -54,6 +54,59 @@
             border-bottom: 1px solid var(--border);
         }
 
+        /* ========================================
+           CONTROL DE ADQUISICIÓN DE LICENCIAS
+           Reglas que se aplican cuando el body lleva la clase .sales-disabled
+           (la añade el script al final del archivo cuando SALES_ENABLED = false).
+           ======================================== */
+        .sales-disabled-only { display: none; }
+        body.sales-disabled .sales-active-only { display: none !important; }
+        body.sales-disabled .sales-disabled-only { display: block; }
+
+        /* Cuando las ventas están suspendidas, el enlace "Adquirir Licencia"
+           del menú superior se muestra atenuado y con el sufijo (pendiente). */
+        body.sales-disabled #nav-activacion {
+            color: #999;
+            font-style: italic;
+        }
+        body.sales-disabled #nav-activacion::after {
+            content: " (pendiente)";
+            font-size: 0.85em;
+            color: #b08840;
+            font-style: normal;
+        }
+        body.sales-disabled #nav-activacion:hover {
+            color: var(--accent);
+        }
+
+        /* Aviso visual cuando las adquisiciones están suspendidas */
+        .sales-suspended-notice {
+            background-color: #fdf6e3;
+            border: 1px solid #d4b96e;
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            padding: 1.5rem 1.8rem;
+            text-align: left;
+        }
+
+        .sales-suspended-notice h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .sales-suspended-notice p {
+            margin-bottom: 0.7rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .sales-suspended-notice p:last-child {
+            margin-bottom: 0;
+        }
+
         /* Aviso de público destinatario */
         .audience-badge {
             display: inline-flex;
@@ -981,7 +1034,7 @@
             <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar y Probar Gratis</a>
             <div class="trial-highlight">
                 <span class="highlight-icon">⚡</span>
-                <span class="highlight-text">5 días gratis • Sin compromiso • Funcionalidad completa</span>
+                <span class="highlight-text">5 días gratis • Funcionalidad completa</span>
             </div>
             <p class="download-counter" id="downloadCounter" style="display: none;">
                 <span class="counter-icon">📥</span>
@@ -994,10 +1047,22 @@
     <!-- Sección Adquisición de Licencia (oculta por defecto) -->
     <section class="section-activacion" id="activacion">
         <div class="container">
-            <h2>Adquirir Licencia Permanente</h2>
-            <p class="section-subtitle">Complete los datos para proceder a la adquisición</p>
+            <h2 class="sales-active-only">Adquirir Licencia Permanente</h2>
+            <h2 class="sales-disabled-only">Adquisición de licencias</h2>
+            <p class="section-subtitle sales-active-only">Complete los datos para proceder a la adquisición</p>
+            <p class="section-subtitle sales-disabled-only">Pendiente de autorización del Consejo General del Poder Judicial</p>
 
-            <div class="form-wrapper">
+            <!-- Aviso mostrado cuando SALES_ENABLED = false -->
+            <div class="form-wrapper sales-disabled-only">
+                <div class="sales-suspended-notice">
+                    <h3>Adquisición temporalmente no disponible</h3>
+                    <p>La distribución de licencias se encuentra suspendida en tanto se obtiene la correspondiente declaración de compatibilidad por el Consejo General del Poder Judicial conforme al artículo 19.f) de la Ley 53/1984, de 26 de diciembre, y al artículo 389.5.º de la Ley Orgánica del Poder Judicial.</p>
+                    <p>La aplicación puede descargarse y utilizarse en su periodo de prueba gratuito sin coste alguno.</p>
+                </div>
+            </div>
+
+            <!-- Bloque de adquisición normal (oculto cuando SALES_ENABLED = false) -->
+            <div class="form-wrapper sales-active-only">
                 <!-- Aviso de restricción subjetiva -->
                 <div class="form-restriction">
                     <strong>Adquisición restringida.</strong> La licencia se otorga exclusivamente a jueces y magistrados en activo de la Carrera Judicial. Tras la adquisición se verificará la condición profesional del solicitante; si no se acreditara, se procederá a la devolución íntegra del importe abonado.
@@ -1692,6 +1757,25 @@
     <button class="btn-top" id="btnTop" title="Volver al inicio">↑</button>
 
     <script>
+        // =====================================================================
+        // CONTROL DE ADQUISICIÓN DE LICENCIAS
+        // ---------------------------------------------------------------------
+        // Mientras esté pendiente la declaración de compatibilidad por el CGPJ,
+        // la adquisición de licencias permanece deshabilitada.
+        //
+        // PARA REACTIVAR LAS ADQUISICIONES cuando se obtenga la compatibilidad:
+        //     1. Cambiar la siguiente constante de  false  a  true.
+        //     2. (Opcional) Añadir en el footer la mención al acuerdo
+        //        del CGPJ que reconoce la compatibilidad.
+        //
+        // No es necesario tocar nada más: el formulario, el precio y el botón
+        // siguen presentes en el HTML y volverán a mostrarse automáticamente.
+        // =====================================================================
+        const SALES_ENABLED = false;
+        if (!SALES_ENABLED) {
+            document.body.classList.add('sales-disabled');
+        }
+
         // =============================================
         // 1. Botón Volver Arriba
         // =============================================
