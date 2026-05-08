@@ -54,6 +54,29 @@
             border-bottom: 1px solid var(--border);
         }
 
+        /* Aviso de público destinatario */
+        .audience-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            max-width: 720px;
+            margin: 0 auto 2rem auto;
+            padding: 0.7rem 1.2rem;
+            background-color: #fdf6e3;
+            border: 1px solid #d4b96e;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .audience-badge-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
         .logo {
             font-size: 3rem;
             font-weight: 700;
@@ -355,6 +378,24 @@
             padding: 2rem;
         }
 
+        /* Aviso de restricción subjetiva del formulario */
+        .form-restriction {
+            background-color: #fdf6e3;
+            border: 1px solid #d4b96e;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .form-restriction strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         .field {
             margin-bottom: 1.25rem;
         }
@@ -560,6 +601,27 @@
             color: rgba(255,255,255,0.8);
             padding: 3rem 0;
             text-align: center;
+        }
+
+        .footer-legal {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-sep {
+            color: rgba(255,255,255,0.4);
+            margin: 0 0.6rem;
         }
 
         /* Botón Volver Arriba */
@@ -903,15 +965,19 @@
 
     <header id="inicio">
         <div class="container">
+            <div class="audience-badge">
+                <span class="audience-badge-icon">⚖️</span>
+                <span>Aplicación destinada exclusivamente a jueces y magistrados en activo de la Carrera Judicial. La adquisición de la licencia está sujeta a verificación previa de la condición profesional del solicitante.</span>
+            </div>
             <h1 class="logo">Procesador de Delitos Leves</h1>
             <nav>
                 <a href="#caracteristicas">Características</a>
                 <a href="#requisitos">Requisitos e Instalación</a>
                 <a href="#descarga" style="font-weight: bold;">Descargar</a>
-                <a id="nav-activacion">Comprar Licencia</a>
+                <a id="nav-activacion">Adquirir Licencia</a>
             </nav>
             <br><br>
-            <p class="subtitle">Una solución tecnológica integral diseñada para optimizar la redacción de sentencias por delitos leves.</p>
+            <p class="subtitle">Solución técnica diseñada para optimizar la redacción de sentencias por delitos leves en los órganos judiciales.</p>
             <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar y Probar Gratis</a>
             <div class="trial-highlight">
                 <span class="highlight-icon">⚡</span>
@@ -925,13 +991,18 @@
         </div>
     </header>
 
-    <!-- Sección Activación / Compra de Licencia (oculta por defecto) -->
+    <!-- Sección Adquisición de Licencia (oculta por defecto) -->
     <section class="section-activacion" id="activacion">
         <div class="container">
             <h2>Adquirir Licencia Permanente</h2>
-            <p class="section-subtitle">Complete el formulario para proceder al pago seguro</p>
+            <p class="section-subtitle">Complete los datos para proceder a la adquisición</p>
 
             <div class="form-wrapper">
+                <!-- Aviso de restricción subjetiva -->
+                <div class="form-restriction">
+                    <strong>Adquisición restringida.</strong> La licencia se otorga exclusivamente a jueces y magistrados en activo de la Carrera Judicial. Tras la adquisición se verificará la condición profesional del solicitante; si no se acreditara, se procederá a la devolución íntegra del importe abonado.
+                </div>
+
                 <!-- Precio destacado -->
                 <div class="price-box">
                     <span class="price-label">Licencia permanente</span>
@@ -971,7 +1042,7 @@
 
                     <button type="submit" class="btn-submit btn-pay">
                         <span class="btn-icon">💳</span>
-                        Proceder al Pago Seguro
+                        Adquirir licencia
                     </button>
 
                     <div class="payment-info">
@@ -985,11 +1056,11 @@
                     </div>
 
                     <div class="info-box">
-                        <strong>Proceso de compra</strong>
+                        <strong>Proceso de adquisición de la licencia</strong>
                         <ol>
-                            <li>Complete los datos y haga clic en "Proceder al Pago Seguro".</li>
+                            <li>Complete los datos y haga clic en "Adquirir licencia".</li>
                             <li>Será redirigido a la pasarela segura de Stripe para introducir su tarjeta.</li>
-                            <li>Una vez confirmado el pago, recibirá automáticamente su código de activación por email.</li>
+                            <li>Una vez confirmado el pago, recibirá automáticamente su código de licencia por correo electrónico.</li>
                             <li>Introduzca el código en la aplicación para activar su licencia.</li>
                         </ol>
                     </div>
@@ -1596,9 +1667,9 @@
     <!-- Final CTA -->
     <section class="final-cta" id="descarga">
         <div class="container">
-            <h2>Optimice su gestión judicial hoy mismo</h2>
-            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Únase a los profesionales que ya han modernizado su flujo de trabajo con una herramienta diseñada a medida para sus necesidades.</p>
-            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar Ahora</a>
+            <h2>Optimice su gestión judicial</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Diseñada para los órganos judiciales que conocen de los procedimientos por delitos leves.</p>
+            <a href="https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip" class="btn-download">Descargar</a>
             <p class="license-info" style="color: rgba(255,255,255,0.6); margin-top: 1rem;">* Descarga segura desde GitHub</p>
         </div>
     </section>
@@ -1607,6 +1678,13 @@
         <div class="container">
             <p>&copy; 2024-2026 Procesador de Delitos Leves. Todos los derechos reservados.</p>
             <p style="font-size: 0.8rem; margin-top: 0.5rem;">Desarrollado para el entorno Windows.</p>
+            <p class="footer-legal">
+                <a href="aviso-legal.html">Aviso legal</a>
+                <span class="footer-sep">·</span>
+                <a href="politica-privacidad.html">Política de privacidad</a>
+                <span class="footer-sep">·</span>
+                <a href="terminos-licencia.html">Términos de la licencia</a>
+            </p>
         </div>
     </footer>
 
