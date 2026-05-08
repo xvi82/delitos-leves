@@ -890,16 +890,15 @@
         <a class="nav-item" data-target="caracteristicas">Interfaz</a>
         <a class="nav-item" data-target="sec-partes">Partes</a>
         <a class="nav-item" data-target="sec-argumentos">Argumentos</a>
-        <a class="nav-item" data-target="sec-biblioteca">Biblioteca</a>
         <a class="nav-item" data-target="sec-hechos">Hechos</a>
         <a class="nav-item" data-target="sec-penas">Penas</a>
         <a class="nav-item" data-target="sec-config">Configuración</a>
         <a class="nav-item" data-target="sec-dictado">Dictado</a>
-        <a class="nav-item" data-target="sec-herramientas-ia">Herramientas IA</a>
-        <a class="nav-item" data-target="sec-analisis-ia">Análisis IA</a>
+        <!-- [OCULTO-IA] Items del menú lateral relativos a IA. Para reactivar, descomentar las dos líneas siguientes. -->
+        <!-- <a class="nav-item" data-target="sec-herramientas-ia">Herramientas IA</a> -->
+        <!-- <a class="nav-item" data-target="sec-analisis-ia">Análisis IA</a> -->
         <a class="nav-item" data-target="sec-cambios">Cambios</a>
         <a class="nav-item" data-target="sec-estadisticas">Estadísticas</a>
-        <a class="nav-item" data-target="sec-borradores">Seguridad</a>
     </nav>
 
     <header id="inicio">
@@ -1047,25 +1046,8 @@
         </div>
     </section>
 
-    <!-- Sección Nueva: Biblioteca Comunitaria -->
-    <section class="section reverse" id="sec-biblioteca">
-        <div class="container">
-            <div class="split-layout">
-                <div class="text-block">
-                    <h3>Biblioteca comunitaria de argumentos</h3>
-                    <p>Amplíe su repertorio jurídico con argumentos compartidos por otros usuarios. La biblioteca comunitaria le permite explorar, buscar y descargar razonamientos jurídicos clasificados por categorías.</p>
-                    <p>Filtre por tipo de argumento (atenuantes, agravantes, responsabilidad civil, procedimiento...) y enriquezca su repositorio personal con las aportaciones de la comunidad. También puede contribuir publicando sus propios argumentos para ayudar a otros usuarios.</p>
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">* Requiere conexión a Internet para acceder a la biblioteca.</p>
-                </div>
-                <div class="image-block">
-                    <img src="img/biblioteca comunitaria.png" alt="Biblioteca Comunitaria de Argumentos Jurídicos">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Sección Nueva 1: Hechos Probados Dinámicos -->
-    <section class="section" id="sec-hechos">
+    <section class="section reverse" id="sec-hechos">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1081,7 +1063,7 @@
     </section>
 
     <!-- Sección Nueva 2: Cálculo y Alerta de Penas -->
-    <section class="section reverse" id="sec-penas">
+    <section class="section" id="sec-penas">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1097,7 +1079,7 @@
     </section>
 
     <!-- Sección 4: Configuración -->
-    <section class="section" id="sec-config">
+    <section class="section reverse" id="sec-config">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1113,7 +1095,7 @@
     </section>
 
     <!-- Sección 5: Dictado por Voz -->
-    <section class="section reverse" id="sec-dictado">
+    <section class="section" id="sec-dictado">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1129,8 +1111,10 @@
         </div>
     </section>
 
+    <!-- [OCULTO-IA] Sección 6: Herramientas de IA en Texto. Envuelta en <template> para que NO se renderice ni se ejecute, pero el contenido permanece en el archivo. Para reactivar, eliminar la línea <template> y la línea </template>. -->
+    <template>
     <!-- Sección 6: Herramientas de IA en Texto -->
-    <section class="section" id="sec-herramientas-ia">
+    <section class="section reverse" id="sec-herramientas-ia">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1147,9 +1131,14 @@
             </div>
         </div>
     </section>
+    </template>
+    <!-- [/OCULTO-IA] Fin sección 6 -->
 
+
+    <!-- [OCULTO-IA] Sección 7: Asistente de IA. Envuelta en <template> para que NO se renderice ni se ejecute. Para reactivar, eliminar la línea <template> y la línea </template>. -->
+    <template>
     <!-- Sección 7: Asistente de IA -->
-    <section class="section reverse" id="sec-analisis-ia">
+    <section class="section" id="sec-analisis-ia">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1164,9 +1153,12 @@
             </div>
         </div>
     </section>
+    </template>
+    <!-- [/OCULTO-IA] Fin sección 7 -->
+
 
     <!-- Sección 8: Resaltado de Cambios -->
-    <section class="section" id="sec-cambios">
+    <section class="section reverse" id="sec-cambios">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1182,7 +1174,7 @@
     </section>
 
     <!-- Sección 9: Estadísticas de Uso -->
-    <section class="section reverse" id="sec-estadisticas">
+    <section class="section" id="sec-estadisticas">
         <div class="container">
             <div class="split-layout">
                 <div class="text-block">
@@ -1196,24 +1188,6 @@
                 </div>
                 <div class="image-block">
                     <img src="img/estadistica.png" alt="Panel de Estadísticas de Uso">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Nueva: Borradores Protegidos -->
-    <section class="section" id="sec-borradores">
-        <div class="container">
-            <div class="split-layout">
-                <div class="text-block">
-                    <h3>Borradores protegidos con contraseña</h3>
-                    <p>Proteja sus sentencias más sensibles con cifrado de nivel profesional. La aplicación permite guardar borradores cifrados con contraseña personal, añadiendo una capa extra de confidencialidad.</p>
-                    <p><strong>🔐 Cifrado seguro:</strong> Utiliza el estándar Fernet (AES-128-CBC) con derivación de clave PBKDF2, siguiendo las recomendaciones de seguridad OWASP.</p>
-                    <p><strong>📁 Formato exclusivo:</strong> Los borradores protegidos se guardan con extensión <code>.pdlx</code> y solo pueden abrirse con la contraseña correcta.</p>
-                    <p><strong>🛡️ Privacidad total:</strong> Ni siquiera con acceso físico al archivo se puede leer el contenido sin la contraseña.</p>
-                </div>
-                <div class="image-block">
-                    <img src="img/borrador protegido.png" alt="Borrador Protegido con Contraseña">
                 </div>
             </div>
         </div>
@@ -1976,10 +1950,10 @@
 
             // Secciones a observar
             const sectionIds = [
-                'caracteristicas', 'sec-partes', 'sec-argumentos', 'sec-biblioteca',
-                'sec-hechos', 'sec-penas', 'sec-config', 'sec-dictado', 
-                'sec-herramientas-ia', 'sec-analisis-ia', 'sec-cambios', 
-                'sec-estadisticas', 'sec-borradores'
+                'caracteristicas', 'sec-partes', 'sec-argumentos', 'sec-hechos',
+                'sec-penas', 'sec-config', 'sec-dictado',
+                // [OCULTO-IA] 'sec-herramientas-ia', 'sec-analisis-ia',
+                'sec-cambios', 'sec-estadisticas'
             ];
 
             // Mostrar/ocultar navegación según scroll
