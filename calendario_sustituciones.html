@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cuadro de Sustituciones · 15 julio – 9 septiembre 2026</title>
+<style>
+  :root {
+    --bg: #f5f6fa;
+    --ink: #2c3e50;
+    --muted: #7f8c8d;
+    --line: #e6e9ef;
+    --card: #ffffff;
+    --weekend: #eef1f5;
+    --outside: #f0f2f6;
+    --no-sub: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    padding: 24px;
+  }
+  h1 { margin: 0 0 6px; font-size: 26px; }
+  .header { text-align: center; margin-bottom: 18px; }
+  .header p { margin: 2px 0; color: var(--muted); }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 14px auto 22px;
+    max-width: 1200px;
+  }
+  .legend-item {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-item .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,.55);
+    display: inline-block;
+  }
+  .legend-item.muted {
+    background: #bdc3c7; color: #2c3e50;
+  }
+
+  .months {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .month {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  }
+  .month-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .dow {
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .day {
+    min-height: 78px;
+    border-radius: 8px;
+    padding: 5px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 1.15;
+    position: relative;
+    overflow: hidden;
+    transition: transform .12s ease;
+  }
+  .day:hover { transform: scale(1.04); z-index: 2; cursor: default; }
+  .day .num {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .day.outside {
+    background: var(--outside);
+    color: #b0b8c1;
+  }
+  .day.weekend {
+    background: var(--weekend);
+    color: #95a5a6;
+  }
+  .day.no-sub {
+    background: var(--no-sub);
+    border: 1px dashed var(--line);
+    color: var(--muted);
+  }
+  .day.has-sub {
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  }
+  .day .vac {
+    font-size: 9.5px;
+    opacity: .92;
+    word-break: break-word;
+  }
+  .day .sub-tag {
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 800;
+    background: rgba(255,255,255,.22);
+    border-radius: 4px;
+    padding: 2px 4px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+  }
+  .day.weekend .vac {
+    color: #95a5a6;
+    font-weight: 600;
+  }
+
+  .summary {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 24px auto 0;
+    max-width: 1200px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  }
+  .summary h2 {
+    font-size: 18px;
+    margin: 0 0 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    background: #34495e;
+    color: white;
+    font-weight: 600;
+  }
+  td.juez {
+    font-weight: 700;
+  }
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .periodos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .periodo-card {
+    border-left: 6px solid var(--line);
+    background: #fafbfc;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .periodo-card .fechas {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .periodo-card .meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .periodo-card .sust {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+
+  .alert {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 14px auto;
+    max-width: 1200px;
+    font-size: 14px;
+    color: #856404;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Cuadro de Sustituciones</h1>
+  <p>Periodo de sustitución: <strong>15 julio – 9 septiembre 2026</strong></p>
+  <p style="font-size:13px">Pasa el ratón por encima de cada día para ver el detalle.</p>
+</div>
+
+<div class="alert">
+  <strong>Aviso:</strong> Los Juzgados <strong>3º, 8º y 9º</strong> no se han incluido como sustitutos
+  (no han facilitado vacaciones o no están disponibles para sustituir).
+  Del <strong>31 de agosto al 7 de septiembre</strong> el Juzgado 2º es el único disponible.
+</div>
+
+<div class="legend" id="legend"></div>
+
+<div class="months" id="months"></div>
+
+<div class="summary">
+  <h2>Bloques de sustitución</h2>
+  <div class="periodos" id="periodos"></div>
+
+  <h2 style="margin-top:22px">Resumen de carga por sustituto (días laborables)</h2>
+  <table>
+    <thead>
+      <tr><th>Juzgado sustituto</th><th>Días laborables</th><th>Bloques cubiertos</th></tr>
+    </thead>
+    <tbody id="tbody-resumen"></tbody>
+  </table>
+</div>
+
+<script>
+// ============ DATOS ============
+
+// Vacaciones por juzgado (pueden ser varias). Inclusive en ambos extremos.
+const VACACIONES = {
+  1:  [['2026-08-03', '2026-09-07']],
+  2:  [['2026-09-21', '2026-10-09'], ['2026-11-16', '2026-11-30']], // fuera del periodo de sustitución
+  4:  [['2026-08-10', '2026-09-07']],
+  5:  [['2026-08-10', '2026-09-10']],
+  6:  [['2026-07-22', '2026-07-28'], ['2026-08-31', '2026-09-07']],
+  7:  [['2026-08-05', '2026-09-07']],
+  10: [['2026-08-03', '2026-09-08']],
+  11: [['2026-08-01', '2026-09-08']],
+};
+
+// Juzgados que NO pueden sustituir (no han facilitado info / no disponibles)
+const NO_SUSTITUYEN = new Set([3, 8, 9]);
+
+// Asignaciones de sustituto por bloques
+const BLOQUES = [
+  { inicio: '2026-07-22', fin: '2026-07-28', sustituto: 10 },
+  { inicio: '2026-08-03', fin: '2026-08-07', sustituto: 4  },
+  { inicio: '2026-08-10', fin: '2026-08-14', sustituto: 6  },
+  { inicio: '2026-08-17', fin: '2026-08-21', sustituto: 2  },
+  { inicio: '2026-08-24', fin: '2026-08-28', sustituto: 6  },
+  { inicio: '2026-08-31', fin: '2026-09-07', sustituto: 2  },
+  { inicio: '2026-09-08', fin: '2026-09-08', sustituto: 7  },
+  { inicio: '2026-09-09', fin: '2026-09-09', sustituto: 11 },
+];
+
+// Colores por sustituto
+const COLOR_SUSTITUTO = {
+  1:  '#3498db',
+  2:  '#e74c3c',
+  4:  '#27ae60',
+  5:  '#16a085',
+  6:  '#e67e22',
+  7:  '#9b59b6',
+  10: '#1abc9c',
+  11: '#e91e63',
+};
+
+const PERIODO_INICIO = '2026-07-15';
+const PERIODO_FIN    = '2026-09-09';
+
+// ============ UTILIDADES ============
+
+function parseISO(s) {
+  const [y,m,d] = s.split('-').map(Number);
+  return new Date(y, m-1, d);
+}
+function fmtISO(d) {
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+function inRange(d, ini, fin) {
+  return d >= parseISO(ini) && d <= parseISO(fin);
+}
+function juzgadosDeVacaciones(d) {
+  const out = [];
+  for (const [juz, periodos] of Object.entries(VACACIONES)) {
+    for (const [ini, fin] of periodos) {
+      if (inRange(d, ini, fin)) { out.push(Number(juz)); break; }
+    }
+  }
+  return out.sort((a,b)=>a-b);
+}
+function sustitutoDelDia(d) {
+  for (const b of BLOQUES) {
+    if (inRange(d, b.inicio, b.fin)) return b.sustituto;
+  }
+  return null;
+}
+function esLaborable(d) {
+  const w = d.getDay();
+  return w !== 0 && w !== 6;
+}
+function dentroPeriodo(d) {
+  return inRange(d, PERIODO_INICIO, PERIODO_FIN);
+}
+
+const NOMBRES_MES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                     'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DOW = ['LUN','MAR','MIÉ','JUE','VIE','SÁB','DOM'];
+
+// ============ RENDER LEYENDA ============
+
+function renderLeyenda() {
+  const el = document.getElementById('legend');
+  // Sustitutos que aparecen en BLOQUES
+  const usados = [...new Set(BLOQUES.map(b => b.sustituto))].sort((a,b)=>a-b);
+  for (const j of usados) {
+    const span = document.createElement('span');
+    span.className = 'legend-item';
+    span.style.background = COLOR_SUSTITUTO[j];
+    span.innerHTML = `<span class="dot"></span> Sustituye Jdo. ${j}º`;
+    el.appendChild(span);
+  }
+  const noSub = document.createElement('span');
+  noSub.className = 'legend-item muted';
+  noSub.textContent = 'Sin necesidad de sustitución';
+  el.appendChild(noSub);
+}
+
+// ============ RENDER MES ============
+
+function renderMes(year, month /* 1-12 */) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'month';
+
+  const title = document.createElement('div');
+  title.className = 'month-title';
+  title.textContent = `${NOMBRES_MES[month-1]} ${year}`;
+  wrapper.appendChild(title);
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  // Cabecera días de la semana
+  for (const d of DOW) {
+    const dh = document.createElement('div');
+    dh.className = 'dow';
+    dh.textContent = d;
+    grid.appendChild(dh);
+  }
+
+  // Calcular padding inicial (lunes=0)
+  const primerDia = new Date(year, month-1, 1);
+  let offset = primerDia.getDay() - 1; // queremos lunes=0
+  if (offset < 0) offset = 6; // domingo
+  for (let i=0; i<offset; i++) {
+    const empty = document.createElement('div');
+    grid.appendChild(empty);
+  }
+
+  // Días del mes
+  const ultimo = new Date(year, month, 0).getDate();
+  for (let d=1; d<=ultimo; d++) {
+    const fecha = new Date(year, month-1, d);
+    const cel = document.createElement('div');
+    cel.className = 'day';
+
+    const fueraPeriodo = !dentroPeriodo(fecha);
+    const finde = !esLaborable(fecha);
+    const vacaciones = juzgadosDeVacaciones(fecha);
+    const sustituto = fueraPeriodo ? null : sustitutoDelDia(fecha);
+
+    // Tooltip
+    let tip = `${d} ${NOMBRES_MES[month-1]} (${['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'][fecha.getDay()]})\n`;
+    if (fueraPeriodo) tip += 'Fuera del periodo de sustitución';
+    else if (finde) tip += 'Fin de semana – no se sustituye';
+    else if (vacaciones.length === 0) tip += 'Sin vacaciones – no se necesita sustituto';
+    else {
+      tip += `De vacaciones: ${vacaciones.map(j=>'Jdo '+j+'º').join(', ')}\n`;
+      tip += `Sustituye: Juzgado ${sustituto}º`;
+    }
+    cel.title = tip;
+
+    if (fueraPeriodo) {
+      cel.classList.add('outside');
+      cel.innerHTML = `<div class="num">${d}</div>`;
+    } else if (finde) {
+      cel.classList.add('weekend');
+      let html = `<div class="num">${d}</div>`;
+      if (vacaciones.length) {
+        html += `<div class="vac">Vac: ${vacaciones.map(j=>j+'º').join(', ')}</div>`;
+      }
+      cel.innerHTML = html;
+    } else if (vacaciones.length === 0) {
+      cel.classList.add('no-sub');
+      cel.innerHTML = `<div class="num">${d}</div><div class="vac">sin sust.</div>`;
+    } else {
+      cel.classList.add('has-sub');
+      cel.style.background = COLOR_SUSTITUTO[sustituto] || '#95a5a6';
+      cel.innerHTML = `
+        <div class="num">${d}</div>
+        <div class="vac">Vac: ${vacaciones.map(j=>j+'º').join(', ')}</div>
+        <div class="sub-tag">Sust: ${sustituto}º</div>
+      `;
+    }
+    grid.appendChild(cel);
+  }
+
+  wrapper.appendChild(grid);
+  return wrapper;
+}
+
+// ============ RESUMEN Y BLOQUES ============
+
+function renderBloques() {
+  const cont = document.getElementById('periodos');
+  for (const b of BLOQUES) {
+    const ini = parseISO(b.inicio), fin = parseISO(b.fin);
+    let dias = 0;
+    for (let d = new Date(ini); d <= fin; d.setDate(d.getDate()+1)) {
+      if (esLaborable(d)) dias++;
+    }
+    // juzgados de vacaciones que aparecen en ese bloque
+    const juzVac = new Set();
+    for (let d = new Date(ini); d <= fin; d.setDate(d.getDate()+1)) {
+      juzgadosDeVacaciones(d).forEach(j => juzVac.add(j));
+    }
+    const card = document.createElement('div');
+    card.className = 'periodo-card';
+    card.style.borderLeftColor = COLOR_SUSTITUTO[b.sustituto];
+    const fmt = d => `${d.getDate()} ${NOMBRES_MES[d.getMonth()].toLowerCase()}`;
+    card.innerHTML = `
+      <div class="fechas">${fmt(ini)} – ${fmt(fin)}</div>
+      <div class="meta">${dias} día${dias===1?'':'s'} laborable${dias===1?'':'s'}
+        · Vacaciones: ${[...juzVac].sort((a,b)=>a-b).map(j=>j+'º').join(', ') || '—'}</div>
+      <div class="sust">
+        <span class="pill" style="background:${COLOR_SUSTITUTO[b.sustituto]}">Sustituye: Jdo ${b.sustituto}º</span>
+      </div>`;
+    cont.appendChild(card);
+  }
+}
+
+function renderResumen() {
+  const tbody = document.getElementById('tbody-resumen');
+  const acumulados = {};
+  const bloquesPorJuez = {};
+  for (const b of BLOQUES) {
+    const ini = parseISO(b.inicio), fin = parseISO(b.fin);
+    let dias = 0;
+    for (let d = new Date(ini); d <= fin; d.setDate(d.getDate()+1)) {
+      if (esLaborable(d)) dias++;
+    }
+    acumulados[b.sustituto] = (acumulados[b.sustituto] || 0) + dias;
+    if (!bloquesPorJuez[b.sustituto]) bloquesPorJuez[b.sustituto] = [];
+    const fmt = d => `${d.getDate()} ${NOMBRES_MES[d.getMonth()].toLowerCase().slice(0,3)}`;
+    bloquesPorJuez[b.sustituto].push(`${fmt(ini)}–${fmt(fin)}`);
+  }
+  const orden = Object.keys(acumulados).map(Number).sort((a,b)=>acumulados[b]-acumulados[a]);
+  for (const j of orden) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="juez"><span class="pill" style="background:${COLOR_SUSTITUTO[j]}">Jdo ${j}º</span></td>
+      <td><strong>${acumulados[j]}</strong></td>
+      <td style="font-size:12px;color:#555">${bloquesPorJuez[j].join(' · ')}</td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+// ============ MAIN ============
+
+renderLeyenda();
+const cont = document.getElementById('months');
+cont.appendChild(renderMes(2026, 7));
+cont.appendChild(renderMes(2026, 8));
+cont.appendChild(renderMes(2026, 9));
+renderBloques();
+renderResumen();
+</script>
+
+</body>
+</html>
