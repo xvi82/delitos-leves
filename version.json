@@ -1,13 +1,8 @@
 {
     "download_url":  "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size":  26507984,
-    "latest":  "1.0.99.10",
+    "file_size":  27061170,
+    "latest":  "1.0.99.11",
     "versions":  [
-                     {
-                         "novedades":  "Se corrigio la apertura de borradores arrastrados para que el aviso de Borrador cargado exitosamente (y el de recuperacion) se muestre siempre en primer plano, anclado a la ventana principal, evitando que quede oculto detras del Explorador de Windows.",
-                         "version":  "1.0.96",
-                         "fecha":  "2026-02-19"
-                     },
                      {
                          "novedades":  "Se corrigio la seccion de inhabilitacion para que el razonamiento tenga capitalizacion y punto final automaticos, actualice la vista previa en tiempo real al escribir, se renderice en fundamentos aunque aun no se haya elegido duracion y, ademas, el Entry de razonamiento permanezca oculto hasta seleccionar el tiempo de inhabilitacion (en caso principal, segundo delito y denuncias cruzadas).",
                          "version":  "1.0.97",
@@ -77,6 +72,11 @@
                          "novedades":  "Migrado cifrado de archivos de cryptography (Fernet/AES-128-CBC) a pycryptodome (AES-256-GCM) para reducir el tamano del ejecutable compilado en ~1-1.5 MB sin perder seguridad.",
                          "version":  "1.0.99.9",
                          "fecha":  "2026-03-12"
+                     },
+                     {
+                         "novedades":  "Cifrado de las API Keys (OpenAI y Gemini) en config.json, que ahora se almacenan cifradas y atadas a la maquina en lugar de en texto plano, con migracion automatica y descifrado transparente al cargar.",
+                         "version":  "1.0.99.11",
+                         "fecha":  "2026-06-02"
                      }
                  ]
 }
