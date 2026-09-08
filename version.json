@@ -1,21 +1,16 @@
 {
     "download_url":  "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
-    "file_size":  26574760,
-    "latest":  "1.0.99.13",
+    "file_size":  26578648,
+    "latest":  "1.0.99.14",
     "versions":  [
-                     {
-                         "novedades":  "Se corrigio la seccion de inhabilitacion para que el razonamiento tenga capitalizacion y punto final automaticos, actualice la vista previa en tiempo real al escribir, se renderice en fundamentos aunque aun no se haya elegido duracion y, ademas, el Entry de razonamiento permanezca oculto hasta seleccionar el tiempo de inhabilitacion (en caso principal, segundo delito y denuncias cruzadas).",
-                         "version":  "1.0.97",
-                         "fecha":  "2026-02-19"
-                     },
                      {
                          "novedades":  "Se anadio un modo opcional de edicion manual de la vista previa de sentencia (desactivado por defecto) con conservacion inteligente de cambios al regenerar, persistencia en borrador y exportacion a DOCX, ademas de menus contextuales ampliados con cortar/copiar/pegar, formato (negrita/cursiva/subrayado), repositorio de argumentos e historial de portapapeles (en cursiva), incluyendo las ventanas de Seguir escribiendo.",
                          "version":  "1.0.99",
                          "fecha":  "2026-02-20"
                      },
                      {
-                         "novedades":  "fix: la funcion Limpiar ahora restablece el tk.Text/vista previa a su estado inicial, evitando que persistan ediciones manuales anteriores.",
-                         "version":  "1.0.99.3",
+                         "novedades":  "Se anadio una pestana Edicion con controles para habilitar la edicion manual de la vista previa, conservar y exportar sus cambiosformato (incluyendo borrador y DOCX), ampliar menus contextuales (cortarcopiarpegar, formato, argumentos y portapapeles en cursiva) tambien en Seguir escribiendo, mejorar el estado SIN GUARDAR, optimizar rendimiento para evitar bloqueos y permitir resaltado visual configurable (desactivado/azul suave/color personalizado con intensidad, solo en vista previa).",
+                         "version":  "1.0.991",
                          "fecha":  "2026-02-23"
                      },
                      {
@@ -24,8 +19,8 @@
                          "fecha":  "2026-02-23"
                      },
                      {
-                         "novedades":  "Se anadio una pestana Edicion con controles para habilitar la edicion manual de la vista previa, conservar y exportar sus cambiosformato (incluyendo borrador y DOCX), ampliar menus contextuales (cortarcopiarpegar, formato, argumentos y portapapeles en cursiva) tambien en Seguir escribiendo, mejorar el estado SIN GUARDAR, optimizar rendimiento para evitar bloqueos y permitir resaltado visual configurable (desactivado/azul suave/color personalizado con intensidad, solo en vista previa).",
-                         "version":  "1.0.991",
+                         "novedades":  "fix: la funcion Limpiar ahora restablece el tk.Text/vista previa a su estado inicial, evitando que persistan ediciones manuales anteriores.",
+                         "version":  "1.0.99.3",
                          "fecha":  "2026-02-23"
                      },
                      {
@@ -34,13 +29,13 @@
                          "fecha":  "2026-02-24"
                      },
                      {
-                         "novedades":  "Se anadio el delito Abandono de animales con su articulo, texto explicativo y rangos penales correctos (multa 16 meses, trabajos 3190 dias e inhabilitacion obligatoria 1236 meses), integrandolo en tooltips, validaciones, generacion de sentencia y guardado/apertura de borradores, y se rediseno la UI de inhabilitacion para mostrar Maltrato en una fila y Abandono en 5 filas de 5 botones (1236).",
-                         "version":  "1.0.99.6",
+                         "novedades":  "Se ha restaurado en la configuracion la opcion para elegir entre el modo de dictado de voz \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Normal\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" y \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\... (recortado)",
+                         "version":  "1.0.99.5",
                          "fecha":  "2026-03-03"
                      },
                      {
-                         "novedades":  "Se ha restaurado en la configuracion la opcion para elegir entre el modo de dictado de voz \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Normal\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" y \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\... (recortado)",
-                         "version":  "1.0.99.5",
+                         "novedades":  "Se anadio el delito Abandono de animales con su articulo, texto explicativo y rangos penales correctos (multa 16 meses, trabajos 3190 dias e inhabilitacion obligatoria 1236 meses), integrandolo en tooltips, validaciones, generacion de sentencia y guardado/apertura de borradores, y se rediseno la UI de inhabilitacion para mostrar Maltrato en una fila y Abandono en 5 filas de 5 botones (1236).",
+                         "version":  "1.0.99.6",
                          "fecha":  "2026-03-03"
                      },
                      {
@@ -54,13 +49,13 @@
                          "fecha":  "2026-03-10"
                      },
                      {
-                         "novedades":  "Migrado cifrado de archivos de cryptography (Fernet/AES-128-CBC) a pycryptodome (AES-256-GCM) para reducir el tamano del ejecutable compilado en ~1-1.5 MB sin perder seguridad.",
-                         "version":  "1.0.99.9",
+                         "novedades":  "Correcion de bugs",
+                         "version":  "1.0.99.10",
                          "fecha":  "2026-03-12"
                      },
                      {
-                         "novedades":  "Correcion de bugs",
-                         "version":  "1.0.99.10",
+                         "novedades":  "Migrado cifrado de archivos de cryptography (Fernet/AES-128-CBC) a pycryptodome (AES-256-GCM) para reducir el tamano del ejecutable compilado en ~1-1.5 MB sin perder seguridad.",
+                         "version":  "1.0.99.9",
                          "fecha":  "2026-03-12"
                      },
                      {
@@ -72,6 +67,11 @@
                          "novedades":  "Corregido un nonlocal ausente en el callback del dictado continuo que, tras 5 errores de conexion consecutivos, provocaba un UnboundLocalError silencioso que dejaba el microfono escuchando indefinidamente, el boton en rojo y el estado de grabacion bloqueado.",
                          "version":  "1.0.99.12",
                          "fecha":  "2026-06-10"
+                     },
+                     {
+                         "novedades":  "Al aplicar la configuracion, la vista previa actualiza al momento el tamano del formato manual y el resaltado de ediciones, y el merge ya no mezcla las etiquetas de negrita/cursiva/subrayado con el texto al regenerar la sentencia.",
+                         "version":  "1.0.99.14",
+                         "fecha":  "2026-09-08"
                      },
                      {
                          "novedades":  "Correccion de emparejamientos en comparecencias, valoracion, penas y fallo con dos denunciados o dos delitos; los argumentos propios de absolucion se insertan ya en ambos fallos; y, con dos delitos, los marcos de Fallo muestran el nombre del delito y se restauran al limpiar o volver a uno solo. Corregidos articulos de argumentos propios, deteccion de nombres con n, concordancia de genero en cruzadas y condena, formateo del delito y abandono de animales en el Ministerio Fiscal, y la frase automatica de absolucion. Ampliadas las listas de nombres masculinos y femeninos con miles de entradas del INE, censo 2025, y variantes sin tilde, para detectar mejor el genero en los textos.",
