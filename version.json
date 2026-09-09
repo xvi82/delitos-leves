@@ -1,21 +1,16 @@
 {
     "download_url":  "https://github.com/xvi82/delitos-leves/releases/download/app/Procesador.de.Delitos.Leves.zip",
     "file_size":  26578648,
-    "latest":  "1.0.99.14",
+    "latest":  "1.0.99.15",
     "versions":  [
                      {
-                         "novedades":  "Se anadio un modo opcional de edicion manual de la vista previa de sentencia (desactivado por defecto) con conservacion inteligente de cambios al regenerar, persistencia en borrador y exportacion a DOCX, ademas de menus contextuales ampliados con cortar/copiar/pegar, formato (negrita/cursiva/subrayado), repositorio de argumentos e historial de portapapeles (en cursiva), incluyendo las ventanas de Seguir escribiendo.",
-                         "version":  "1.0.99",
-                         "fecha":  "2026-02-20"
+                         "novedades":  "Se ha movido la gestion de license.key a _internal/license.key, incorporando migracion automatica desde la raiz y un fallback compatible para lectura/escritura que evita romper la activacion, la validacion de comunidad y la apertura de borradores.",
+                         "version":  "1.0.99.2",
+                         "fecha":  "2026-02-23"
                      },
                      {
                          "novedades":  "Se anadio una pestana Edicion con controles para habilitar la edicion manual de la vista previa, conservar y exportar sus cambiosformato (incluyendo borrador y DOCX), ampliar menus contextuales (cortarcopiarpegar, formato, argumentos y portapapeles en cursiva) tambien en Seguir escribiendo, mejorar el estado SIN GUARDAR, optimizar rendimiento para evitar bloqueos y permitir resaltado visual configurable (desactivado/azul suave/color personalizado con intensidad, solo en vista previa).",
                          "version":  "1.0.991",
-                         "fecha":  "2026-02-23"
-                     },
-                     {
-                         "novedades":  "Se ha movido la gestion de license.key a _internal/license.key, incorporando migracion automatica desde la raiz y un fallback compatible para lectura/escritura que evita romper la activacion, la validacion de comunidad y la apertura de borradores.",
-                         "version":  "1.0.99.2",
                          "fecha":  "2026-02-23"
                      },
                      {
@@ -69,14 +64,19 @@
                          "fecha":  "2026-06-10"
                      },
                      {
+                         "novedades":  "Correccion de emparejamientos en comparecencias, valoracion, penas y fallo con dos denunciados o dos delitos; los argumentos propios de absolucion se insertan ya en ambos fallos; y, con dos delitos, los marcos de Fallo muestran el nombre del delito y se restauran al limpiar o volver a uno solo. Corregidos articulos de argumentos propios, deteccion de nombres con n, concordancia de genero en cruzadas y condena, formateo del delito y abandono de animales en el Ministerio Fiscal, y la frase automatica de absolucion. Ampliadas las listas de nombres masculinos y femeninos con miles de entradas del INE, censo 2025, y variantes sin tilde, para detectar mejor el genero en los textos.",
+                         "version":  "1.0.99.13",
+                         "fecha":  "2026-09-08"
+                     },
+                     {
                          "novedades":  "Al aplicar la configuracion, la vista previa actualiza al momento el tamano del formato manual y el resaltado de ediciones, y el merge ya no mezcla las etiquetas de negrita/cursiva/subrayado con el texto al regenerar la sentencia.",
                          "version":  "1.0.99.14",
                          "fecha":  "2026-09-08"
                      },
                      {
-                         "novedades":  "Correccion de emparejamientos en comparecencias, valoracion, penas y fallo con dos denunciados o dos delitos; los argumentos propios de absolucion se insertan ya en ambos fallos; y, con dos delitos, los marcos de Fallo muestran el nombre del delito y se restauran al limpiar o volver a uno solo. Corregidos articulos de argumentos propios, deteccion de nombres con n, concordancia de genero en cruzadas y condena, formateo del delito y abandono de animales en el Ministerio Fiscal, y la frase automatica de absolucion. Ampliadas las listas de nombres masculinos y femeninos con miles de entradas del INE, censo 2025, y variantes sin tilde, para detectar mejor el genero en los textos.",
-                         "version":  "1.0.99.13",
-                         "fecha":  "2026-09-08"
+                         "novedades":  "SenorIA conserva las correcciones al cambiar de pestana, anonimiza mejor los hechos (boton Anonimizar, nombres del formulario y aviso al valorar) y ya no deja Valorar bloqueado ni el titulo con delitivo",
+                         "version":  "1.0.99.15",
+                         "fecha":  "2026-09-09"
                      }
                  ]
 }
